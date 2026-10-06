@@ -4,6 +4,17 @@ import { calculatePremium } from "../utils/calcPremium";
 import { formatINR, formatPercent } from "../utils/format";
 import ResultCard from "../components/ResultCard";
 import WhatsAppShare from "../components/WhatsAppShare";
+import PrintButton from "../components/PrintButton";
+import FAQ from "../components/FAQ";
+
+const FAQ_ITEMS = [
+  { q: "How is LIC premium calculated?", a: "LIC premium is calculated based on the tabular rate per ₹1000 of Sum Assured, which varies by plan, age, and term. The base premium gets a rebate for high SA (₹2.50/1000 for SA ≥5L, ₹4/1000 for SA ≥10L) and mode rebate (2% yearly, 1% half-yearly). GST is added at 4.5% first year and 2.25% renewal." },
+  { q: "What is the difference between first year and renewal GST?", a: "First year GST on life insurance is 4.5% of the premium, while renewal year GST is 2.25%. This is because a portion of the first year premium goes towards agent commission and setup costs." },
+  { q: "What is SA rebate?", a: "Sum Assured rebate is a discount on the tabular premium rate for higher SA amounts. SA ≥ ₹5 lakh gets ₹2.50/1000 rebate, SA ≥ ₹10 lakh gets ₹4/1000 rebate. This effectively reduces your per-unit premium cost." },
+  { q: "How does payment mode affect premium?", a: "Yearly mode gets the best deal with a 2% rebate. Half-yearly has 1% rebate but factor 0.5131 (slightly more than half). Quarterly uses factor 0.2615 and monthly 0.0875 — both slightly higher than proportional, so yearly payment is most economical." },
+  { q: "Which LIC plan has the lowest premium?", a: "Term plans like Tech Term (854) and Jeevan Amar (855) have the lowest premiums per lakh of cover since they offer pure protection without savings. Among savings plans, longer terms generally have lower premiums per year." },
+  { q: "Can I change my payment mode after taking a policy?", a: "Yes, you can change the premium payment mode by contacting your LIC branch. The premium amount will be recalculated based on the new mode factor and rebate." },
+];
 
 const selectablePlans = LIC_PLANS.filter(
   (p) => Object.keys(p.premiumRates).length > 0 || p.fixedPremium,
@@ -220,7 +231,8 @@ export default function PremiumCalculator() {
             </div>
           )}
 
-          <div className="flex justify-end">
+          <div className="flex justify-end gap-2">
+            <PrintButton />
             <WhatsAppShare text={shareText} />
           </div>
         </div>
@@ -230,6 +242,8 @@ export default function PremiumCalculator() {
           Try adjusting the inputs.
         </div>
       )}
+
+      <FAQ items={FAQ_ITEMS} />
     </div>
   );
 }

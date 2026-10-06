@@ -3,6 +3,17 @@ import { calculateTaxBenefit } from "../utils/calcTax";
 import { formatINR } from "../utils/format";
 import ResultCard from "../components/ResultCard";
 import WhatsAppShare from "../components/WhatsAppShare";
+import PrintButton from "../components/PrintButton";
+import FAQ from "../components/FAQ";
+
+const FAQ_ITEMS = [
+  { q: "How much tax can I save with LIC?", a: "Under Section 80C of the Income Tax Act (old regime), you can claim deduction up to ₹1,50,000/year on life insurance premiums. The actual tax saved depends on your income tax slab — up to 30% of the deduction amount." },
+  { q: "Is Section 80C available in the new tax regime?", a: "No. The new tax regime (FY 2025-26) does not allow Section 80C deductions. However, the new regime has lower base tax rates and higher exemption limits. Section 10(10D) maturity exemption still applies in both regimes." },
+  { q: "What is Section 10(10D)?", a: "Section 10(10D) exempts maturity proceeds from income tax, provided the annual premium does not exceed 10% of the Sum Assured. If premium > 10% SA, the maturity amount may be partially or fully taxable." },
+  { q: "Are LIC premiums eligible for 80C if paid for family?", a: "Yes, premiums paid for self, spouse, and children are eligible for 80C deduction. However, the total 80C limit of ₹1.5 lakh includes all eligible investments (PPF, ELSS, NSC, etc.)." },
+  { q: "Is the death benefit from LIC taxable?", a: "No. Death benefit received by the nominee/legal heir is completely tax-free under Section 10(10D), regardless of the premium amount. There is no cap on this exemption." },
+  { q: "Which tax regime is better for LIC policyholders?", a: "Generally, the old regime is better if you have significant 80C investments (LIC, PPF, ELSS). The new regime may be better for those with fewer deductions. Use our calculator to compare both." },
+];
 
 const INCOME_PRESETS = [
   { label: "₹5L", value: 500000 },
@@ -88,9 +99,12 @@ export default function TaxCalculator() {
         </div>
       </div>
 
-      <div className="flex justify-end">
+      <div className="flex justify-end gap-2">
+        <PrintButton />
         <WhatsAppShare text={shareText} />
       </div>
+
+      <FAQ items={FAQ_ITEMS} />
     </div>
   );
 }

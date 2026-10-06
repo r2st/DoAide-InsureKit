@@ -4,6 +4,16 @@ import { calculatePremium } from "../utils/calcPremium";
 import { calculateMaturity, calculateTotalPremiumsPaid, calculateIRR } from "../utils/calcMaturity";
 import { formatINR, formatPercent } from "../utils/format";
 import WhatsAppShare from "../components/WhatsAppShare";
+import PrintButton from "../components/PrintButton";
+import FAQ from "../components/FAQ";
+
+const FAQ_ITEMS = [
+  { q: "How do I choose the best LIC plan?", a: "Consider your goal (protection, savings, child's future, retirement), budget, and term. Pure term plans offer maximum cover at minimum cost. Endowment plans combine savings + insurance. Money back plans give periodic returns. Compare using our tool to see premiums, maturity, and IRR side by side." },
+  { q: "What does IRR tell me about a plan?", a: "IRR (Internal Rate of Return) shows the effective annual return on your premiums accounting for time value of money. Higher IRR = better returns. Typical LIC endowment IRR is 4-6%. Compare this with FD (6-7%) and PPF (7.1%) rates." },
+  { q: "What is the difference between endowment and term plans?", a: "Endowment plans combine life cover with savings — you get maturity benefit if you survive the term. Term plans offer only life cover — no maturity benefit, but premiums are 10-20× cheaper for the same cover." },
+  { q: "Which plan is best for tax saving?", a: "All LIC plans qualify for Section 80C deduction up to ₹1.5 lakh. For pure tax saving with good returns, consider Jeevan Anand (715) or Jeevan Labh (736). Term plans give maximum cover per rupee of premium." },
+  { q: "Can I compare more than 3 plans?", a: "Currently you can compare up to 3 plans at a time. For a broader comparison, run multiple comparisons and note down the key metrics (premium, maturity, IRR) for each plan." },
+];
 
 const comparablePlans = getPlansForComparison();
 
@@ -144,11 +154,14 @@ export default function PlanComparison() {
             ))}
           </div>
 
-          <div className="flex justify-end mt-4">
+          <div className="flex justify-end gap-2 mt-4">
+            <PrintButton />
             <WhatsAppShare text={shareText} />
           </div>
         </div>
       )}
+
+      <FAQ items={FAQ_ITEMS} />
     </div>
   );
 }

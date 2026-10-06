@@ -10,6 +10,17 @@ import {
 import { formatINR, formatPercent } from "../utils/format";
 import ResultCard from "../components/ResultCard";
 import WhatsAppShare from "../components/WhatsAppShare";
+import PrintButton from "../components/PrintButton";
+import FAQ from "../components/FAQ";
+
+const FAQ_ITEMS = [
+  { q: "How is LIC maturity value calculated?", a: "Maturity value = Sum Assured (× maturity multiplier if applicable) + Total SRB (Simple Reversionary Bonus) + FAB (Final Additional Bonus). Some plans like Jeevan Lakshya pay 110% of SA at maturity." },
+  { q: "What is SRB (Simple Reversionary Bonus)?", a: "SRB is declared annually by LIC per ₹1000 of Sum Assured. It accrues each year and is paid along with maturity or death benefit. For example, SRB of ₹45/1000 on ₹10L SA = ₹45,000 per year bonus." },
+  { q: "What is FAB (Final Additional Bonus)?", a: "FAB is a one-time bonus added at maturity for policies with longer terms (usually 15+ years). Unlike SRB which is per 1000 of SA, FAB is calculated per 1000 of total accrued SRB." },
+  { q: "What is IRR?", a: "IRR (Internal Rate of Return) is the effective annual return on your premiums. It accounts for the time value of money — premiums paid early contribute more than later ones. For LIC endowments, IRR is typically 4-6%." },
+  { q: "Are LIC maturity proceeds taxable?", a: "If annual premium is ≤ 10% of Sum Assured, maturity proceeds are fully exempt under Section 10(10D) of the Income Tax Act. If premium exceeds 10% of SA, the maturity amount may be taxable." },
+  { q: "Can I use a custom bonus rate?", a: "Yes! Leave the SRB field blank to use the plan's default rate, or enter a custom rate if you want to estimate maturity with different bonus assumptions." },
+];
 
 const maturityPlans = LIC_PLANS.filter(
   (p) =>
@@ -206,7 +217,8 @@ export default function MaturityCalculator() {
             </div>
           </div>
 
-          <div className="flex justify-end">
+          <div className="flex justify-end gap-2">
+            <PrintButton />
             <WhatsAppShare text={shareText} />
           </div>
         </div>
@@ -215,6 +227,8 @@ export default function MaturityCalculator() {
           Could not calculate maturity for this combination. Try adjusting inputs.
         </div>
       )}
+
+      <FAQ items={FAQ_ITEMS} />
     </div>
   );
 }

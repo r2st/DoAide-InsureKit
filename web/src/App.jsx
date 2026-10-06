@@ -7,6 +7,11 @@ import MaturityCalculator from "./pages/MaturityCalculator";
 import PlanComparison from "./pages/PlanComparison";
 import CommissionCalculator from "./pages/CommissionCalculator";
 import TaxCalculator from "./pages/TaxCalculator";
+import PolicyTracker from "./pages/PolicyTracker";
+import BonusHistory from "./pages/BonusHistory";
+import MarketingGenerator from "./pages/MarketingGenerator";
+import ClientReminders from "./pages/ClientReminders";
+import ReceiptGenerator from "./pages/ReceiptGenerator";
 import SEOHead from "./components/SEOHead";
 
 const ROUTES = [
@@ -15,6 +20,11 @@ const ROUTES = [
   { path: "/plan-comparison", label: "Compare", component: PlanComparison },
   { path: "/commission-calculator", label: "Commission", component: CommissionCalculator },
   { path: "/tax-calculator", label: "Tax", component: TaxCalculator },
+  { path: "/policy-tracker", label: "Tracker", component: PolicyTracker },
+  { path: "/bonus-history", label: "Bonus", component: BonusHistory },
+  { path: "/marketing", label: "Marketing", component: MarketingGenerator },
+  { path: "/client-reminders", label: "Clients", component: ClientReminders },
+  { path: "/receipt-generator", label: "Receipt", component: ReceiptGenerator },
 ];
 
 export default function App() {

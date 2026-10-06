@@ -5,6 +5,17 @@ import { calculateCommission, calculateCommissionByYear } from "../utils/calcCom
 import { formatINR, formatPercent } from "../utils/format";
 import ResultCard from "../components/ResultCard";
 import WhatsAppShare from "../components/WhatsAppShare";
+import PrintButton from "../components/PrintButton";
+import FAQ from "../components/FAQ";
+
+const FAQ_ITEMS = [
+  { q: "How is LIC agent commission calculated?", a: "Commission is a percentage of the premium paid. First year (FY) commission is higher than renewal. FY rates depend on the Premium Paying Term (PPT): 25% for PPT 15+, 20% for PPT 12-14, 15% for PPT 8-11, 10% for PPT 5-7. Term plans get 28% FY." },
+  { q: "What is renewal commission?", a: "Renewal commission is paid every year from the 2nd year onwards when the policyholder pays their premium. Standard renewal rate is 7.5% for most plans, 5% for plans with PPT 5-7 years." },
+  { q: "Is commission paid on GST amount?", a: "No, commission is calculated on the base premium before GST. GST on premium goes to the government." },
+  { q: "What about commission on single premium plans?", a: "Single premium plans pay commission only once (first year). There is no renewal commission since there's only one premium payment." },
+  { q: "Do government schemes (PMJJBY, PMSBY) pay commission?", a: "No, government schemes like PMJJBY (₹436) and PMSBY (₹20) do not pay agent commission. These are social security schemes subsidized by the government." },
+  { q: "What is MDRT and how does it affect commission?", a: "MDRT (Million Dollar Round Table) is a global recognition for top insurance agents. While MDRT doesn't directly change commission rates, LIC offers additional incentives and bonuses for high-performing agents through club membership (Star, MDRT, COT, TOT)." },
+];
 
 const commissionPlans = LIC_PLANS.filter(
   (p) => p.type !== PLAN_TYPES.GOVT && Object.keys(p.premiumRates).length > 0,
@@ -156,7 +167,8 @@ export default function CommissionCalculator() {
             <p className="mt-1">Renewal: 7.5% (life), 5% (short PPT). Actual may vary by club/MDRT status.</p>
           </div>
 
-          <div className="flex justify-end">
+          <div className="flex justify-end gap-2">
+            <PrintButton />
             <WhatsAppShare text={shareText} />
           </div>
         </div>
@@ -165,6 +177,8 @@ export default function CommissionCalculator() {
           Could not calculate commission. Try adjusting inputs.
         </div>
       )}
+
+      <FAQ items={FAQ_ITEMS} />
     </div>
   );
 }
