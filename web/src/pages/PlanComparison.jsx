@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { getPlansForComparison } from "../data/licPlans";
+import { getPlansForComparison, getSRBRate } from "../data/licPlans";
 import { calculatePremium } from "../utils/calcPremium";
 import { calculateMaturity, calculateTotalPremiumsPaid, calculateIRR } from "../utils/calcMaturity";
 import { formatINR, formatPercent } from "../utils/format";
@@ -105,8 +105,8 @@ export default function PlanComparison() {
                   highlight
                 />
                 <Row
-                  label="Bonus Rate"
-                  values={results.map((r) => r.plan.isNonPar ? "Non-par" : `₹${r.plan.bonusRate}/1000`)}
+                  label="SRB Rate"
+                  values={results.map((r) => r.plan.isNonPar ? "Non-par" : `₹${r.mat.srbRate}/1000`)}
                 />
                 <Row
                   label="Profit"
@@ -118,9 +118,13 @@ export default function PlanComparison() {
                   highlight
                 />
                 <Row
+                  label="FAB Rate"
+                  values={results.map((r) => r.mat.fabRate > 0 ? `₹${r.mat.fabRate}/1000` : "—")}
+                />
+                <Row
                   label="Death Benefit"
                   values={results.map((r) =>
-                    r.plan.type === "term" ? formatINR(sumAssured) : `SA + Bonus (min ${formatINR(sumAssured)})`
+                    r.plan.deathBenefit || (r.plan.type === "term" ? formatINR(sumAssured) : `SA + SRB (min ${formatINR(sumAssured)})`)
                   )}
                 />
                 <Row

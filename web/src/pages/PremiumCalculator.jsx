@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
-import { LIC_PLANS, MODE_LABELS, PLAN_TYPES } from "../data/licPlans";
+import { LIC_PLANS, MODE_LABELS } from "../data/licPlans";
 import { calculatePremium } from "../utils/calcPremium";
-import { formatINR } from "../utils/format";
+import { formatINR, formatPercent } from "../utils/format";
 import ResultCard from "../components/ResultCard";
 import WhatsAppShare from "../components/WhatsAppShare";
 
@@ -15,6 +15,7 @@ export default function PremiumCalculator() {
   const [sumAssured, setSumAssured] = useState(1000000);
   const [term, setTerm] = useState(20);
   const [mode, setMode] = useState("yearly");
+  const [isFirstYear, setIsFirstYear] = useState(true);
 
   const plan = useMemo(() => selectablePlans.find((p) => p.id === planId), [planId]);
 
@@ -31,8 +32,8 @@ export default function PremiumCalculator() {
 
   const result = useMemo(() => {
     if (!plan) return null;
-    return calculatePremium(plan, age, sumAssured, term, mode);
-  }, [plan, age, sumAssured, term, mode]);
+    return calculatePremium(plan, age, sumAssured, term, mode, isFirstYear);
+  }, [plan, age, sumAssured, term, mode, isFirstYear]);
 
   const shareText = result
     ? `LIC ${plan.name} (Table ${plan.tableNo})\nAge: ${age}, SA: ${formatINR(sumAssured)}, Term: ${term}yr\nPremium (${MODE_LABELS[mode]}): ${formatINR(result.totalPremium)} (incl. GST)\n\nCalculated on DoAide InsureKit — insure.doaide.com`
@@ -136,6 +137,29 @@ export default function PremiumCalculator() {
                   ))}
                 </div>
               </div>
+              <div className="sm:col-span-2">
+                <label className="block text-xs text-white/40 mb-1.5 uppercase tracking-wide">
+                  GST Year
+                </label>
+                <div className="flex gap-2">
+                  {[
+                    { key: true, label: "1st Year (4.5%)" },
+                    { key: false, label: "Renewal (2.25%)" },
+                  ].map(({ key, label }) => (
+                    <button
+                      key={String(key)}
+                      onClick={() => setIsFirstYear(key)}
+                      className={`px-3 py-2 rounded-lg text-sm font-medium transition-all ${
+                        isFirstYear === key
+                          ? "bg-signal text-ink-900"
+                          : "bg-white/5 text-white/50 hover:bg-white/10 hover:text-white/70"
+                      }`}
+                    >
+                      {label}
+                    </button>
+                  ))}
+                </div>
+              </div>
             </>
           )}
         </div>
@@ -157,12 +181,16 @@ export default function PremiumCalculator() {
 
       {result ? (
         <div className="animate-fade-up">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
             <ResultCard
               label={`Premium (${MODE_LABELS[mode]})`}
               value={formatINR(result.basePremium)}
             />
-            <ResultCard label="GST (18%)" value={formatINR(result.gst)} />
+            <ResultCard
+              label={`GST (${formatPercent(result.gstRate)})`}
+              value={formatINR(result.gst)}
+              sub={isFirstYear ? "First year rate" : "Renewal rate"}
+            />
             <ResultCard
               label="Total Premium"
               value={formatINR(result.totalPremium)}
@@ -174,6 +202,23 @@ export default function PremiumCalculator() {
               sub={result.ratePerThousand ? `₹${result.ratePerThousand}/1000 SA` : null}
             />
           </div>
+
+          {(result.saRebate > 0 || result.modeRebate > 0) && (
+            <div className="panel-inner p-3 mb-4 space-y-1 text-xs">
+              {result.saRebate > 0 && (
+                <div className="flex justify-between text-white/40">
+                  <span>SA rebate (SA ≥ {sumAssured >= 1000000 ? "₹10L" : "₹5L"})</span>
+                  <span className="text-good">−₹{result.saRebate}/1000 SA → ₹{result.effectiveRate}/1000</span>
+                </div>
+              )}
+              {result.modeRebate > 0 && (
+                <div className="flex justify-between text-white/40">
+                  <span>Mode rebate ({MODE_LABELS[mode]})</span>
+                  <span className="text-good">−{formatPercent(result.modeRebate)}</span>
+                </div>
+              )}
+            </div>
+          )}
 
           <div className="flex justify-end">
             <WhatsAppShare text={shareText} />

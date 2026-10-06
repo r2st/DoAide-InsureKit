@@ -1,8 +1,7 @@
-import { MODE_FACTORS, GST_RATE } from "../data/licPlans";
+import { MODE_FACTORS } from "../data/licPlans";
+import { getSRBRate, getFABRate, getSASlabBonus } from "../data/licPlans";
 
-export function calculateMaturity(plan, sumAssured, term, customBonusRate = null) {
-  const bonusRate = customBonusRate ?? plan.bonusRate;
-
+export function calculateMaturity(plan, sumAssured, term, customSRBRate = null) {
   if (plan.isNonPar) {
     const ga = (plan.guaranteedAdditions / 1000) * sumAssured * term;
     return {
@@ -11,21 +10,38 @@ export function calculateMaturity(plan, sumAssured, term, customBonusRate = null
       fab: 0,
       guaranteedAdditions: Math.round(ga),
       maturityValue: Math.round(sumAssured + ga),
-      bonusRate: 0,
+      srbRate: 0,
+      fabRate: 0,
+      saSlabBonus: 0,
+      maturityMultiplier: 1,
     };
   }
 
-  const totalBonus = Math.round((bonusRate / 1000) * sumAssured * term);
-  const fab = Math.round(((plan.fabRate || 0) / 100) * totalBonus);
-  const maturityValue = sumAssured + totalBonus + fab;
+  const baseSRB = customSRBRate ?? getSRBRate(plan, term);
+  const saSlabBonus = getSASlabBonus(plan, sumAssured);
+  const effectiveSRB = baseSRB + saSlabBonus;
+
+  const totalBonus = Math.round((effectiveSRB / 1000) * sumAssured * term);
+
+  const fabRatePerThousand = getFABRate(plan, term);
+  const fab = Math.round((fabRatePerThousand / 1000) * totalBonus);
+
+  const maturityMultiplier = plan.maturityMultiplier || 1;
+  const baseSA = Math.round(sumAssured * maturityMultiplier);
+
+  const maturityValue = baseSA + totalBonus + fab;
 
   return {
     sumAssured,
+    baseSA,
     totalBonus,
     fab,
     guaranteedAdditions: 0,
     maturityValue: Math.round(maturityValue),
-    bonusRate,
+    srbRate: effectiveSRB,
+    fabRate: fabRatePerThousand,
+    saSlabBonus,
+    maturityMultiplier,
   };
 }
 

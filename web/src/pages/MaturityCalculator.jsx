@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { LIC_PLANS, PLAN_TYPES } from "../data/licPlans";
+import { LIC_PLANS, PLAN_TYPES, getSRBRate } from "../data/licPlans";
 import { calculatePremium } from "../utils/calcPremium";
 import {
   calculateMaturity,
@@ -28,6 +28,11 @@ export default function MaturityCalculator() {
 
   const plan = useMemo(() => maturityPlans.find((p) => p.id === planId), [planId]);
 
+  const defaultSRB = useMemo(() => {
+    if (!plan) return 0;
+    return getSRBRate(plan, term);
+  }, [plan, term]);
+
   const premResult = useMemo(() => {
     if (!plan) return null;
     return calculatePremium(plan, age, sumAssured, term, "yearly");
@@ -35,8 +40,8 @@ export default function MaturityCalculator() {
 
   const matResult = useMemo(() => {
     if (!plan) return null;
-    const bonusRate = customBonus !== "" ? Number(customBonus) : null;
-    return calculateMaturity(plan, sumAssured, term, bonusRate);
+    const srbRate = customBonus !== "" ? Number(customBonus) : null;
+    return calculateMaturity(plan, sumAssured, term, srbRate);
   }, [plan, sumAssured, term, customBonus]);
 
   const totalPaid = useMemo(() => {
@@ -56,14 +61,14 @@ export default function MaturityCalculator() {
 
   const shareText =
     matResult && premResult
-      ? `LIC ${plan.name} — Maturity Analysis\nSA: ${formatINR(sumAssured)}, Term: ${term}yr\nTotal Premiums: ${formatINR(totalPaid)}\nMaturity Value: ${formatINR(matResult.maturityValue)}\nIRR: ${irr !== null ? formatPercent(irr) : "N/A"}\n\nCalculated on DoAide InsureKit — insure.doaide.com`
+      ? `LIC ${plan.name} (Table ${plan.tableNo}) — Maturity Analysis\nSA: ${formatINR(sumAssured)}, Term: ${term}yr\nSRB: ₹${matResult.srbRate}/1000 SA\nTotal Premiums: ${formatINR(totalPaid)}\nMaturity Value: ${formatINR(matResult.maturityValue)}\nIRR: ${irr !== null ? formatPercent(irr) : "N/A"}\n\nCalculated on DoAide InsureKit — insure.doaide.com`
       : "";
 
   return (
     <div className="animate-fade-up">
       <h1 className="text-2xl font-bold text-white mb-1">LIC Maturity Calculator</h1>
       <p className="text-white/40 text-sm mb-6">
-        Calculate maturity value with bonus, FAB, and compare IRR
+        Calculate maturity value with SRB (Simple Reversionary Bonus), FAB, and IRR
       </p>
 
       <div className="panel p-5 mb-6">
@@ -92,12 +97,12 @@ export default function MaturityCalculator() {
           </div>
           <div className="sm:col-span-2">
             <label className="block text-xs text-white/40 mb-1.5 uppercase tracking-wide">
-              Bonus Rate (₹/1000 SA) — leave blank for default ({plan?.isNonPar ? "Non-par plan" : `₹${plan?.bonusRate}`})
+              SRB Rate (₹/1000 SA) — leave blank for default ({plan?.isNonPar ? "Non-par plan" : `₹${defaultSRB}`})
             </label>
             <input
               type="number"
               className="input-field"
-              placeholder={plan?.isNonPar ? "N/A" : String(plan?.bonusRate)}
+              placeholder={plan?.isNonPar ? "N/A" : String(defaultSRB)}
               value={customBonus}
               onChange={(e) => setCustomBonus(e.target.value)}
               disabled={plan?.isNonPar}
@@ -109,16 +114,23 @@ export default function MaturityCalculator() {
       {matResult && premResult ? (
         <div className="animate-fade-up">
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-4">
-            <ResultCard label="Sum Assured" value={formatINR(matResult.sumAssured)} />
+            <ResultCard
+              label={matResult.maturityMultiplier > 1 ? `SA (×${matResult.maturityMultiplier})` : "Sum Assured"}
+              value={formatINR(matResult.baseSA || matResult.sumAssured)}
+            />
             {matResult.totalBonus > 0 && (
               <ResultCard
-                label="Total Bonus"
+                label="Total SRB"
                 value={formatINR(matResult.totalBonus)}
-                sub={`₹${matResult.bonusRate}/1000 SA × ${term}yr`}
+                sub={`₹${matResult.srbRate}/1000 SA × ${term}yr${matResult.saSlabBonus > 0 ? ` (incl. +₹${matResult.saSlabBonus} slab)` : ""}`}
               />
             )}
             {matResult.fab > 0 && (
-              <ResultCard label="FAB" value={formatINR(matResult.fab)} sub={`${plan.fabRate}% of bonus`} />
+              <ResultCard
+                label="FAB"
+                value={formatINR(matResult.fab)}
+                sub={`₹${matResult.fabRate}/1000 of total SRB`}
+              />
             )}
             {matResult.guaranteedAdditions > 0 && (
               <ResultCard label="Guaranteed Additions" value={formatINR(matResult.guaranteedAdditions)} />
@@ -161,14 +173,14 @@ export default function MaturityCalculator() {
             <div className="w-full h-6 rounded-full overflow-hidden flex">
               <div
                 className="bg-signal h-full"
-                style={{ width: `${(matResult.sumAssured / matResult.maturityValue) * 100}%` }}
+                style={{ width: `${((matResult.baseSA || matResult.sumAssured) / matResult.maturityValue) * 100}%` }}
                 title="Sum Assured"
               />
               {matResult.totalBonus > 0 && (
                 <div
                   className="bg-signal-soft h-full"
                   style={{ width: `${(matResult.totalBonus / matResult.maturityValue) * 100}%` }}
-                  title="Bonus"
+                  title="SRB"
                 />
               )}
               {matResult.fab > 0 && (
@@ -188,7 +200,7 @@ export default function MaturityCalculator() {
             </div>
             <div className="flex gap-4 mt-2 text-xs text-white/40">
               <span className="flex items-center gap-1"><span className="w-2 h-2 rounded bg-signal inline-block" /> SA</span>
-              {matResult.totalBonus > 0 && <span className="flex items-center gap-1"><span className="w-2 h-2 rounded bg-signal-soft inline-block" /> Bonus</span>}
+              {matResult.totalBonus > 0 && <span className="flex items-center gap-1"><span className="w-2 h-2 rounded bg-signal-soft inline-block" /> SRB</span>}
               {matResult.fab > 0 && <span className="flex items-center gap-1"><span className="w-2 h-2 rounded bg-signal-dim inline-block" /> FAB</span>}
               {matResult.guaranteedAdditions > 0 && <span className="flex items-center gap-1"><span className="w-2 h-2 rounded bg-signal-soft inline-block" /> GA</span>}
             </div>

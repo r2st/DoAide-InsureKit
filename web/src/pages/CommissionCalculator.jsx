@@ -151,8 +151,9 @@ export default function CommissionCalculator() {
           )}
 
           <div className="panel-inner p-3 mb-4 text-xs text-white/30">
-            Commission rates as per LIC guidelines (updated Oct 2024). First year includes base commission.
-            Actual commission may vary based on club membership and MDRT qualification.
+            <p>Commission rates as per LIC guidelines (post Oct 2024). FY rate depends on PPT:</p>
+            <p className="mt-1">PPT 15+ yr: 25% | 12-14 yr: 20% | 8-11 yr: 15% | 5-7 yr: 10% | Term: 28%</p>
+            <p className="mt-1">Renewal: 7.5% (life), 5% (short PPT). Actual may vary by club/MDRT status.</p>
           </div>
 
           <div className="flex justify-end">
