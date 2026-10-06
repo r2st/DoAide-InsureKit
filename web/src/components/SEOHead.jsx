@@ -1,7 +1,20 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
+const SITE_URL = "https://insure.doaide.com";
+const SITE_NAME = "DoAide InsureKit";
+
 const META = {
+  "/": {
+    title: "DoAide InsureKit — Free LIC Insurance Calculators & Agent Tools",
+    description: "Free LIC premium calculator, maturity calculator, plan comparison, commission calculator, tax benefit tools, revival & surrender calculators for LIC agents and policyholders.",
+    keywords: "LIC calculator, LIC premium calculator, LIC agent tools, LIC maturity calculator, LIC commission calculator, insurance calculator India, free LIC tools",
+    faq: [
+      { q: "Is InsureKit free to use?", a: "Yes, completely free. No login, no registration, no hidden charges." },
+      { q: "Are the calculations accurate?", a: "Calculations are based on LIC's published premium rates and bonus rates. Always verify with LIC before making financial decisions." },
+      { q: "Which LIC plans are supported?", a: "InsureKit supports 24+ LIC plans including Jeevan Anand, New Endowment, Jeevan Labh, Jeevan Lakshya, Tech Term, and more." },
+    ],
+  },
   "/premium-calculator": {
     title: "LIC Premium Calculator 2025 — Calculate Exact Premium with GST | DoAide InsureKit",
     description: "Free LIC premium calculator. Select any LIC plan, enter age, sum assured, term — get exact premium with GST. Jeevan Anand, Jeevan Labh, Tech Term & more.",
@@ -26,7 +39,7 @@ const META = {
     description: "Compare LIC plans side by side — premium, maturity value, death benefit, features. Find the best LIC policy for your needs.",
     keywords: "LIC plan comparison, best LIC plan, compare LIC policies, LIC plan features, which LIC plan is best",
     faq: [
-      { q: "Which is the best LIC plan in 2025?", a: "It depends on your needs. Jeevan Anand (715) is best for savings + whole life cover, Tech Term (854) for pure protection, Jeevan Labh (736) for limited premium payment." },
+      { q: "Which is the best LIC plan in 2025?", a: "It depends on your needs. Jeevan Anand (715/815) is best for savings + whole life cover, Tech Term (854) for pure protection, Jeevan Labh (736) for limited premium payment." },
     ],
   },
   "/commission-calculator": {
@@ -38,7 +51,7 @@ const META = {
     ],
   },
   "/tax-calculator": {
-    title: "LIC Tax Benefit Calculator — Section 80C, 80D, 10(10D) | DoAide InsureKit",
+    title: "LIC Tax Benefit Calculator — Section 80C, 10(10D) | DoAide InsureKit",
     description: "Calculate tax benefits on LIC premiums under Section 80C. Check maturity exemption under 10(10D). Compare old vs new tax regime.",
     keywords: "LIC tax benefit, Section 80C LIC, LIC 10(10D), LIC tax exemption, insurance tax saving",
     faq: [
@@ -58,7 +71,7 @@ const META = {
     description: "View historical LIC bonus rates (SRB) from 2015 to 2025. Compare bonus trends across Jeevan Anand, Jeevan Labh, New Endowment and other plans.",
     keywords: "LIC bonus rate, LIC SRB rate, LIC bonus history, LIC reversionary bonus, LIC bonus 2025",
     faq: [
-      { q: "What is the current LIC bonus rate?", a: "Bonus rates vary by plan. For 2024-25: Jeevan Anand ₹45/1000, New Endowment ₹42/1000, Jeevan Umang ₹50/1000, Amritbaal ₹58/1000." },
+      { q: "What is the current LIC bonus rate?", a: "Bonus rates vary by plan. For 2024-25: Jeevan Anand ₹45-46/1000, New Endowment ₹42-43/1000, Jeevan Umang ₹50/1000, Amritbaal ₹58/1000." },
     ],
   },
   "/marketing": {
@@ -85,14 +98,34 @@ const META = {
       { q: "Is this an official LIC receipt?", a: "No, this is an unofficial reference receipt for record-keeping. For official receipts, contact LIC or use their portal." },
     ],
   },
+  "/revival-calculator": {
+    title: "LIC Revival Calculator 2025 — Lapsed Policy Revival Amount | DoAide InsureKit",
+    description: "Calculate the amount needed to revive a lapsed LIC policy. Includes arrears, interest, GST, and medical requirement check. Free revival quote tool.",
+    keywords: "LIC revival calculator, LIC lapsed policy, policy revival amount, LIC revival interest, revive LIC policy",
+    faq: [
+      { q: "How do I revive a lapsed LIC policy?", a: "Pay all arrears with interest (approx 9.25% p.a.) plus GST. Revival within 2 years usually doesn't need medical tests. Contact your LIC branch with the revival amount." },
+      { q: "What is the time limit for revival?", a: "LIC allows revival within 5 years from the date of first unpaid premium. Beyond that, the policy cannot be revived." },
+      { q: "Is medical examination required for revival?", a: "For policies lapsed more than 2 years, medical examination is generally required. For shorter lapse periods, revival without medical is usually possible." },
+    ],
+  },
+  "/surrender-calculator": {
+    title: "LIC Surrender Value Calculator 2025 — GSV & SSV | DoAide InsureKit",
+    description: "Calculate LIC policy surrender value — both Guaranteed Surrender Value (GSV) and Special Surrender Value (SSV). Know what you'll receive before surrendering.",
+    keywords: "LIC surrender value, LIC GSV calculator, LIC SSV calculator, LIC policy surrender, surrender value calculation",
+    faq: [
+      { q: "When can I surrender my LIC policy?", a: "You can surrender after paying premiums for at least 3 full years. Before 3 years, no surrender value is payable." },
+      { q: "What is the difference between GSV and SSV?", a: "GSV is a guaranteed percentage of premiums paid. SSV is based on paid-up value with a multiplier. LIC pays whichever is higher." },
+      { q: "Should I surrender my LIC policy?", a: "Surrendering usually results in significant financial loss. Consider making it paid-up or taking a loan against it instead." },
+    ],
+  },
 };
 
 function buildStructuredData(pathname, meta) {
   const base = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    name: "DoAide InsureKit",
-    url: "https://insure.doaide.com",
+    name: SITE_NAME,
+    url: SITE_URL,
     description: "Free LIC insurance calculators and agent tools",
     applicationCategory: "FinanceApplication",
     operatingSystem: "All",
@@ -125,18 +158,38 @@ export default function SEOHead() {
     if (!meta) return;
     document.title = meta.title;
 
-    const setMeta = (name, content) => {
-      let el = document.querySelector(`meta[name="${name}"]`);
+    const setMeta = (attr, key, content) => {
+      let el = document.querySelector(`meta[${attr}="${key}"]`);
       if (!el) {
         el = document.createElement("meta");
-        el.setAttribute("name", name);
+        el.setAttribute(attr, key);
         document.head.appendChild(el);
       }
       el.setAttribute("content", content);
     };
 
-    setMeta("description", meta.description);
-    setMeta("keywords", meta.keywords);
+    setMeta("name", "description", meta.description);
+    setMeta("name", "keywords", meta.keywords);
+
+    const canonicalUrl = `${SITE_URL}${pathname === "/" ? "" : pathname}`;
+    let canonical = document.querySelector("link[rel='canonical']");
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.setAttribute("rel", "canonical");
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute("href", canonicalUrl);
+
+    setMeta("property", "og:title", meta.title);
+    setMeta("property", "og:description", meta.description);
+    setMeta("property", "og:url", canonicalUrl);
+    setMeta("property", "og:type", "website");
+    setMeta("property", "og:site_name", SITE_NAME);
+    setMeta("property", "og:locale", "en_IN");
+
+    setMeta("name", "twitter:card", "summary");
+    setMeta("name", "twitter:title", meta.title);
+    setMeta("name", "twitter:description", meta.description);
 
     const schemas = buildStructuredData(pathname, meta);
 

@@ -172,6 +172,46 @@ export const BONUS_HISTORY = [
       { year: "2020-21", rate: 48 },
     ],
   },
+  {
+    planId: "jeevan_anand_815",
+    planName: "Jeevan Anand",
+    tableNo: 815,
+    history: [
+      { year: "2024-25", rate: 46 },
+      { year: "2023-24", rate: 46 },
+      { year: "2022-23", rate: 46 },
+    ],
+  },
+  {
+    planId: "new_endowment_814",
+    planName: "New Endowment Plan",
+    tableNo: 814,
+    history: [
+      { year: "2024-25", rate: 43 },
+      { year: "2023-24", rate: 43 },
+      { year: "2022-23", rate: 43 },
+    ],
+  },
+  {
+    planId: "jeevan_lakshya_833",
+    planName: "Jeevan Lakshya",
+    tableNo: 833,
+    history: [
+      { year: "2024-25", rate: 50 },
+      { year: "2023-24", rate: 50 },
+      { year: "2022-23", rate: 50 },
+    ],
+  },
+  {
+    planId: "new_children_money_back_832",
+    planName: "New Children's Money Back",
+    tableNo: 832,
+    history: [
+      { year: "2024-25", rate: 53 },
+      { year: "2023-24", rate: 53 },
+      { year: "2022-23", rate: 53 },
+    ],
+  },
 ];
 
 export function getBonusHistory(planId) {
