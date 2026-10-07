@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
-import { getClients, addClient, updateClient, deleteClient, getUpcomingEvents, validateClient } from "../utils/clientStore";
+import { validateClient } from "../utils/clientStore";
+import { useClients } from "../hooks/useClients";
 import FAQ from "../components/FAQ";
 import PrintButton from "../components/PrintButton";
 import HowItWorks from "../components/HowItWorks";
@@ -13,14 +14,34 @@ const HOW_IT_WORKS = [
 
 const FAQ_ITEMS = [
   { q: "Why should I track client birthdays and anniversaries?", a: "Sending timely wishes builds personal rapport with clients. It keeps you top-of-mind and leads to referrals and repeat business. Successful LIC agents consistently maintain personal touch with clients." },
-  { q: "Where is my client data stored?", a: "All client data is stored locally in your browser (localStorage). No data is sent to any server, ensuring complete privacy of your client information." },
+  { q: "Where is my client data stored?", a: "If you're signed in, data syncs to the cloud and is available on any device. If not signed in, data is stored locally in your browser (localStorage)." },
   { q: "How do I enter dates?", a: "Enter birthday and anniversary as month-day format (MM-DD). For example, 03-15 for March 15th. The system automatically calculates the next occurrence." },
   { q: "Can I send WhatsApp greetings directly?", a: "Yes! Click the WhatsApp icon next to any upcoming event to open a pre-filled WhatsApp message for that client." },
-  { q: "What happens if I clear my browser data?", a: "All client data will be lost. Use the Print/PDF button regularly to keep a backup of your client list." },
+  { q: "What happens if I clear my browser data?", a: "If signed in, your data is safe in the cloud. If not signed in, all client data will be lost — use Print/PDF to keep a backup." },
 ];
 
+function computeUpcomingEvents(clients, daysAhead) {
+  const now = new Date();
+  const events = [];
+  for (const client of clients) {
+    for (const type of ["birthday", "anniversary"]) {
+      const val = client[type];
+      if (!val) continue;
+      const [month, day] = val.split("-").map(Number);
+      const thisYear = now.getFullYear();
+      let next = new Date(thisYear, month - 1, day);
+      if (next < now) next = new Date(thisYear + 1, month - 1, day);
+      const daysUntil = Math.ceil((next - now) / (24 * 60 * 60 * 1000));
+      if (daysUntil >= 0 && daysUntil <= daysAhead) {
+        events.push({ clientId: client.id, clientName: client.name, type, date: next.toISOString().slice(0, 10), daysUntil, phone: client.phone });
+      }
+    }
+  }
+  return events.sort((a, b) => a.daysUntil - b.daysUntil);
+}
+
 export default function ClientReminders() {
-  const [clients, setClients] = useState(() => getClients());
+  const { clients, loading, addClient, updateClient, removeClient, isCloud } = useClients();
   const [showForm, setShowForm] = useState(false);
   const [errors, setErrors] = useState([]);
   const [daysRange, setDaysRange] = useState(30);
@@ -35,7 +56,7 @@ export default function ClientReminders() {
     notes: "",
   });
 
-  const upcoming = useMemo(() => getUpcomingEvents(daysRange), [clients, daysRange]);
+  const upcoming = useMemo(() => computeUpcomingEvents(clients, daysRange), [clients, daysRange]);
 
   const todayEvents = useMemo(() => upcoming.filter((e) => e.daysUntil === 0), [upcoming]);
   const thisWeekEvents = useMemo(() => upcoming.filter((e) => e.daysUntil > 0 && e.daysUntil <= 7), [upcoming]);
@@ -48,7 +69,7 @@ export default function ClientReminders() {
     );
   }, [clients, search]);
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     const errs = validateClient(form);
     if (errs.length > 0) {
@@ -56,12 +77,10 @@ export default function ClientReminders() {
       return;
     }
     if (editingId) {
-      updateClient(editingId, form);
-      setClients(getClients());
+      await updateClient(editingId, form);
       setEditingId(null);
     } else {
-      const newClient = addClient(form);
-      setClients((prev) => [...prev, newClient]);
+      await addClient(form);
     }
     setShowForm(false);
     setErrors([]);
@@ -82,9 +101,8 @@ export default function ClientReminders() {
     setErrors([]);
   }
 
-  function handleDelete(id) {
-    const updated = deleteClient(id);
-    setClients(updated);
+  async function handleDelete(id) {
+    await removeClient(id);
     if (editingId === id) {
       setEditingId(null);
       setShowForm(false);
@@ -119,9 +137,13 @@ export default function ClientReminders() {
         Track client birthdays and anniversaries — never miss a greeting
       </p>
       <p className="text-white/30 text-xs mb-6 flex items-center gap-1.5">
-        <span className="inline-block w-3.5 h-3.5">💾</span>
-        Your reminders are saved in this browser. Sign in to sync across devices.
+        <span className="inline-block w-3.5 h-3.5">{isCloud ? "\u{2601}\u{FE0F}" : "\u{1F4BE}"}</span>
+        {isCloud ? "Your data is synced to the cloud across all your devices." : "Your reminders are saved in this browser. Sign in to sync across devices."}
       </p>
+
+      {loading && (
+        <div className="panel p-8 text-center text-white/40 text-sm mb-6">Loading clients...</div>
+      )}
 
       <HowItWorks steps={HOW_IT_WORKS} />
 

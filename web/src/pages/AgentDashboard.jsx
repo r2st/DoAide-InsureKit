@@ -1,15 +1,15 @@
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
-import { getPolicies, getUpcomingRenewals } from "../utils/policyStore";
-import { getClients, getUpcomingEvents } from "../utils/clientStore";
+import { useClients } from "../hooks/useClients";
+import { usePolicies } from "../hooks/usePolicies";
 import { formatINR } from "../utils/format";
 import FAQ from "../components/FAQ";
 
 const FAQ_ITEMS = [
-  { q: "Where does the dashboard data come from?", a: "The dashboard reads from policies you've added in Policy Tracker and clients in Client Reminders. Both are stored locally in your browser — no server needed." },
+  { q: "Where does the dashboard data come from?", a: "The dashboard reads from policies you've added in Policy Tracker and clients in Client Reminders. Sign in to sync data across all your devices." },
   { q: "How do I increase my portfolio value?", a: "Add all your client policies to the Policy Tracker. The dashboard automatically calculates totals and shows your progress toward LIC club targets." },
   { q: "What are LIC club targets?", a: "LIC rewards agents based on First Year Commission (FYC): Star Club (₹3L+), MDRT (₹6L+), COT (₹12L+), TOT (₹24L+). Each tier gets bonus commission on FYC." },
-  { q: "Is this data synced across devices?", a: "Currently data is stored in your browser only. We're working on cloud sync. For now, use Export CSV in Policy Tracker to keep backups." },
+  { q: "Is this data synced across devices?", a: "Yes! Sign in with Google to sync your data across all devices. If not signed in, data is stored locally in your browser." },
 ];
 
 const QUICK_LINKS = [
@@ -23,11 +23,31 @@ const QUICK_LINKS = [
   { path: "/marketing", name: "Marketing Templates", icon: "📣" },
 ];
 
+function computeUpcomingEvents(clients, daysAhead) {
+  const now = new Date();
+  const events = [];
+  for (const client of clients) {
+    for (const type of ["birthday", "anniversary"]) {
+      const val = client[type];
+      if (!val) continue;
+      const [month, day] = val.split("-").map(Number);
+      const thisYear = now.getFullYear();
+      let next = new Date(thisYear, month - 1, day);
+      if (next < now) next = new Date(thisYear + 1, month - 1, day);
+      const daysUntil = Math.ceil((next - now) / (24 * 60 * 60 * 1000));
+      if (daysUntil >= 0 && daysUntil <= daysAhead) {
+        events.push({ clientId: client.id, clientName: client.name, type, date: next.toISOString().slice(0, 10), daysUntil, phone: client.phone });
+      }
+    }
+  }
+  return events.sort((a, b) => a.daysUntil - b.daysUntil);
+}
+
 export default function AgentDashboard() {
-  const policies = useMemo(() => getPolicies(), []);
-  const clients = useMemo(() => getClients(), []);
-  const upcomingRenewals = useMemo(() => getUpcomingRenewals(30), []);
-  const upcomingEvents = useMemo(() => getUpcomingEvents(7), []);
+  const { clients, loading: clientsLoading, isCloud } = useClients();
+  const { policies, loading: policiesLoading, getUpcomingRenewals } = usePolicies();
+  const upcomingRenewals = useMemo(() => getUpcomingRenewals(30), [getUpcomingRenewals]);
+  const upcomingEvents = useMemo(() => computeUpcomingEvents(clients, 7), [clients]);
 
   const stats = useMemo(() => {
     const active = policies.filter((p) => (p.status || "active") === "active");
@@ -49,9 +69,17 @@ export default function AgentDashboard() {
   return (
     <div className="animate-fade-up">
       <h1 className="text-2xl font-bold text-white mb-1">Agent Dashboard</h1>
-      <p className="text-white/40 text-sm mb-6">
+      <p className="text-white/40 text-sm mb-2">
         Your portfolio at a glance — policies, clients, renewals, and performance
       </p>
+      <p className="text-white/30 text-xs mb-6 flex items-center gap-1.5">
+        <span className="inline-block w-3.5 h-3.5">{isCloud ? "\u{2601}\u{FE0F}" : "\u{1F4BE}"}</span>
+        {isCloud ? "Synced to the cloud." : "Data saved locally. Sign in to sync across devices."}
+      </p>
+
+      {(clientsLoading || policiesLoading) && (
+        <div className="panel p-8 text-center text-white/40 text-sm mb-6">Loading your data...</div>
+      )}
 
       {hasData ? (
         <>

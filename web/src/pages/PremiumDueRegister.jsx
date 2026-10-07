@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { getPolicies, getUpcomingRenewals } from "../utils/policyStore";
+import { usePolicies } from "../hooks/usePolicies";
 import { formatINR } from "../utils/format";
 import PrintButton from "../components/PrintButton";
 import WhatsAppShare from "../components/WhatsAppShare";
@@ -31,12 +31,12 @@ function getDueStatus(daysUntil) {
 }
 
 export default function PremiumDueRegister() {
+  const { policies: allPolicies, loading, getUpcomingRenewals, isCloud } = usePolicies();
   const [daysAhead, setDaysAhead] = useState(90);
   const [filterText, setFilterText] = useState("");
   const [filterStatus, setFilterStatus] = useState("all");
 
-  const renewals = useMemo(() => getUpcomingRenewals(daysAhead), [daysAhead]);
-  const allPolicies = useMemo(() => getPolicies(), []);
+  const renewals = useMemo(() => getUpcomingRenewals(daysAhead), [getUpcomingRenewals, daysAhead]);
 
   const filtered = useMemo(() => {
     let list = renewals;

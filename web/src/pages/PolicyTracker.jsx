@@ -1,6 +1,7 @@
 import { useState, useMemo } from "react";
 import { LIC_PLANS, MODE_LABELS } from "../data/licPlans";
-import { getPolicies, addPolicy, updatePolicy, deletePolicy, getUpcomingRenewals, validatePolicy } from "../utils/policyStore";
+import { validatePolicy } from "../utils/policyStore";
+import { usePolicies } from "../hooks/usePolicies";
 import { formatINR } from "../utils/format";
 import WhatsAppShare from "../components/WhatsAppShare";
 import FAQ from "../components/FAQ";
@@ -23,7 +24,7 @@ const HOW_IT_WORKS = [
 ];
 
 const FAQ_ITEMS = [
-  { q: "Where is my policy data stored?", a: "All data is stored locally in your browser (localStorage). Nothing is sent to any server. If you clear browser data, the policies will be deleted." },
+  { q: "Where is my policy data stored?", a: "If you're signed in, your data syncs to the cloud and is available on any device. If not signed in, data is stored locally in your browser." },
   { q: "Can I track policies from different clients?", a: "Yes! Add each policy with the client/holder name. You can track unlimited policies for all your clients." },
   { q: "How do premium reminders work?", a: "Set the next due date when adding a policy. The tracker shows upcoming renewals within the next 30 days, sorted by urgency." },
   { q: "Can I export my policy data?", a: "Yes! Click the 'Export CSV' button to download all your policies as a CSV file. You can open it in Excel or Google Sheets." },
@@ -44,7 +45,7 @@ const EMPTY_FORM = {
 };
 
 export default function PolicyTracker() {
-  const [policies, setPolicies] = useState(() => getPolicies());
+  const { policies, loading, addPolicy, updatePolicy, removePolicy, getUpcomingRenewals, isCloud } = usePolicies();
   const [showForm, setShowForm] = useState(false);
   const [editingId, setEditingId] = useState(null);
   const [errors, setErrors] = useState([]);
@@ -52,7 +53,7 @@ export default function PolicyTracker() {
   const [statusFilter, setStatusFilter] = useState("all");
   const [form, setForm] = useState(EMPTY_FORM);
 
-  const upcoming = useMemo(() => getUpcomingRenewals(30), [policies]);
+  const upcoming = useMemo(() => getUpcomingRenewals(30), [getUpcomingRenewals]);
 
   const filteredPolicies = useMemo(() => {
     let result = policies;
@@ -82,7 +83,7 @@ export default function PolicyTracker() {
     };
   }, [policies]);
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     const errs = validatePolicy(form);
     if (errs.length > 0) {
@@ -91,14 +92,10 @@ export default function PolicyTracker() {
     }
 
     if (editingId) {
-      const updated = updatePolicy(editingId, form);
-      if (updated) {
-        setPolicies(getPolicies());
-      }
+      await updatePolicy(editingId, form);
       setEditingId(null);
     } else {
-      const newPolicy = addPolicy(form);
-      setPolicies((prev) => [...prev, newPolicy]);
+      await addPolicy(form);
     }
 
     setShowForm(false);
@@ -131,9 +128,8 @@ export default function PolicyTracker() {
     setForm(EMPTY_FORM);
   }
 
-  function handleDelete(id) {
-    const updated = deletePolicy(id);
-    setPolicies(updated);
+  async function handleDelete(id) {
+    await removePolicy(id);
   }
 
   function exportCSV() {
@@ -173,9 +169,15 @@ export default function PolicyTracker() {
   return (
     <div className="animate-fade-up">
       <h1 className="text-2xl font-bold text-white mb-1">Policy Tracker</h1>
-      <p className="text-white/40 text-sm mb-6">
+      <p className="text-white/40 text-sm mb-2">
         Track client policies, renewal dates, status, and premium reminders
       </p>
+      <p className="text-white/30 text-xs mb-6 flex items-center gap-1.5">
+        <span className="inline-block w-3.5 h-3.5">{isCloud ? "\u{2601}\u{FE0F}" : "\u{1F4BE}"}</span>
+        {isCloud ? "Your policies are synced to the cloud across all your devices." : "Policies are saved in this browser. Sign in to sync across devices."}
+      </p>
+
+      {loading && <div className="panel p-8 text-center text-white/40 text-sm mb-6">Loading policies...</div>}
 
       <HowItWorks steps={HOW_IT_WORKS} />
 
