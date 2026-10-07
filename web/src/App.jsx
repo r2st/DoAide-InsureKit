@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import SEOHead from "./components/SEOHead";
 import Breadcrumb from "./components/Breadcrumb";
+import InstallPrompt from "./components/InstallPrompt";
 import HomePage from "./pages/HomePage";
 import PremiumCalculator from "./pages/PremiumCalculator";
 import MaturityCalculator from "./pages/MaturityCalculator";
@@ -144,6 +145,7 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
+      <InstallPrompt />
     </div>
   );
 }

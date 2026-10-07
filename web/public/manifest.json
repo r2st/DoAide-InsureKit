@@ -1,0 +1,32 @@
+{
+  "name": "DoAide InsureKit — LIC Agent Tools",
+  "short_name": "InsureKit",
+  "description": "Free LIC premium calculator, maturity calculator, plan comparison, commission calculator, and agent tools.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#0a0a0b",
+  "background_color": "#0a0a0b",
+  "orientation": "any",
+  "categories": ["finance", "utilities"],
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
