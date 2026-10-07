@@ -59,6 +59,9 @@ import PaidUpValueCalculator from "./pages/PaidUpValueCalculator";
 import InsuranceAgeCalculator from "./pages/InsuranceAgeCalculator";
 import RiderPremiumCalculator from "./pages/RiderPremiumCalculator";
 import RebateCalculator from "./pages/RebateCalculator";
+import SelfMixPresentation from "./pages/SelfMixPresentation";
+import FamilyMixPresentation from "./pages/FamilyMixPresentation";
+import BudgetPresentation from "./pages/BudgetPresentation";
 
 export default function App() {
   const { pathname } = useLocation();
@@ -127,6 +130,9 @@ export default function App() {
           <Route path="/insurance-age-calculator" element={<InsuranceAgeCalculator />} />
           <Route path="/rider-premium-calculator" element={<RiderPremiumCalculator />} />
           <Route path="/rebate-calculator" element={<RebateCalculator />} />
+          <Route path="/self-mix" element={<SelfMixPresentation />} />
+          <Route path="/family-mix" element={<FamilyMixPresentation />} />
+          <Route path="/budget-presentation" element={<BudgetPresentation />} />
         </Routes>
       </main>
       <Footer />

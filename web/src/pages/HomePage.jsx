@@ -153,6 +153,24 @@ const TOOL_CATEGORIES = [
         icon: "📋",
       },
       {
+        path: "/self-mix",
+        name: "Self Mix Presentation",
+        desc: "Multi-plan portfolio for one client — combine endowment, term & money-back",
+        icon: "🔀",
+      },
+      {
+        path: "/family-mix",
+        name: "Family Mix Presentation",
+        desc: "Complete family insurance portfolio — plans for self, spouse & children",
+        icon: "👨‍👩‍👧‍👦",
+      },
+      {
+        path: "/budget-presentation",
+        name: "Budget & Goal-wise Plans",
+        desc: "Find plans by budget, SA target, or maturity goal — 3 comparison modes",
+        icon: "🎯",
+      },
+      {
         path: "/premium-due-register",
         name: "Premium Due Register",
         desc: "Track upcoming premium dues — filter, sort, and send reminders",
