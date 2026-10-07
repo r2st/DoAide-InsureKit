@@ -2,6 +2,14 @@ import { useState, useRef } from "react";
 import { LIC_PLANS, MODE_LABELS } from "../data/licPlans";
 import { formatINR } from "../utils/format";
 import FAQ from "../components/FAQ";
+import HowItWorks from "../components/HowItWorks";
+
+
+const HOW_IT_WORKS = [
+  { title: "Enter policy info", desc: "Policy number, plan, SA, and premium details" },
+  { title: "Add agent details", desc: "Your name, code, and branch" },
+  { title: "Print receipt", desc: "Generate a clean, printable premium receipt" },
+];
 
 const FAQ_ITEMS = [
   { q: "Is this an official LIC receipt?", a: "No. This is an unofficial reference receipt for your records only. For official premium receipts, please use LIC's official portal or visit your nearest LIC branch." },
@@ -55,6 +63,8 @@ export default function ReceiptGenerator() {
       <p className="text-white/40 text-sm mb-6 print:hidden">
         Generate printable premium receipts for your records
       </p>
+
+      <HowItWorks steps={HOW_IT_WORKS} />
 
       <div className="panel p-5 mb-6 print:hidden">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

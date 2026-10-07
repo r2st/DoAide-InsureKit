@@ -6,6 +6,14 @@ import ResultCard from "../components/ResultCard";
 import WhatsAppShare from "../components/WhatsAppShare";
 import PrintButton from "../components/PrintButton";
 import FAQ from "../components/FAQ";
+import HowItWorks from "../components/HowItWorks";
+
+
+const HOW_IT_WORKS = [
+  { title: "Select plan & age", desc: "Choose from 24+ LIC plans and enter your age" },
+  { title: "Set SA & term", desc: "Enter sum assured, term, and payment mode" },
+  { title: "Get exact premium", desc: "See premium with GST, rebates, and mode factor" },
+];
 
 const FAQ_ITEMS = [
   { q: "How is LIC premium calculated?", a: "LIC premium is calculated based on the tabular rate per ₹1000 of Sum Assured, which varies by plan, age, and term. The base premium gets a rebate for high SA (₹2.50/1000 for SA ≥5L, ₹4/1000 for SA ≥10L) and mode rebate (2% yearly, 1% half-yearly). GST is added at 4.5% first year and 2.25% renewal." },
@@ -56,6 +64,8 @@ export default function PremiumCalculator() {
       <p className="text-white/40 text-sm mb-6">
         Calculate exact premium for any LIC plan with GST
       </p>
+
+      <HowItWorks steps={HOW_IT_WORKS} />
 
       <div className="panel p-5 mb-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

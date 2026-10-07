@@ -7,6 +7,14 @@ import ResultCard from "../components/ResultCard";
 import WhatsAppShare from "../components/WhatsAppShare";
 import PrintButton from "../components/PrintButton";
 import FAQ from "../components/FAQ";
+import HowItWorks from "../components/HowItWorks";
+
+
+const HOW_IT_WORKS = [
+  { title: "Select plan", desc: "Pick the LIC plan your client is buying" },
+  { title: "Enter premium", desc: "Set age, SA, and term to calculate premium" },
+  { title: "See commission", desc: "FY, renewal, and total commission over policy term" },
+];
 
 const FAQ_ITEMS = [
   { q: "How is LIC agent commission calculated?", a: "Commission is a percentage of the premium paid. First year (FY) commission is higher than renewal. FY rates depend on the Premium Paying Term (PPT): 25% for PPT 15+, 20% for PPT 12-14, 15% for PPT 8-11, 10% for PPT 5-7. Term plans get 28% FY." },
@@ -55,6 +63,8 @@ export default function CommissionCalculator() {
       <p className="text-white/40 text-sm mb-6">
         Calculate first year, renewal, and total agent commission
       </p>
+
+      <HowItWorks steps={HOW_IT_WORKS} />
 
       <div className="panel p-5 mb-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

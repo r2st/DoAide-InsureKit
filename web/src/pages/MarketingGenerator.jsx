@@ -2,6 +2,14 @@ import { useState, useMemo, useCallback } from "react";
 import { TEMPLATE_CATEGORIES, MARKETING_TEMPLATES, fillTemplate, getTemplatesByCategory } from "../data/marketingTemplates";
 import { LIC_PLANS } from "../data/licPlans";
 import FAQ from "../components/FAQ";
+import HowItWorks from "../components/HowItWorks";
+
+
+const HOW_IT_WORKS = [
+  { title: "Pick a template", desc: "Choose WhatsApp, social, festival, or reminder" },
+  { title: "Fill your details", desc: "Add your name, phone, and plan info" },
+  { title: "Copy & send", desc: "One-click copy to WhatsApp or social media" },
+];
 
 const FAQ_ITEMS = [
   { q: "How do I use these marketing templates?", a: "Select a category, pick a template, fill in your details (name, phone), customize the plan details, then copy the generated message. Paste it directly into WhatsApp, Instagram, Facebook, or any social media." },
@@ -85,6 +93,8 @@ export default function MarketingGenerator() {
       <p className="text-white/40 text-sm mb-6">
         Ready-made WhatsApp messages and social media posts for LIC agents
       </p>
+
+      <HowItWorks steps={HOW_IT_WORKS} />
 
       <div className="panel p-5 mb-6">
         <div className="mb-4">

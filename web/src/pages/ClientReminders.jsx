@@ -2,6 +2,14 @@ import { useState, useMemo } from "react";
 import { getClients, addClient, deleteClient, getUpcomingEvents, validateClient } from "../utils/clientStore";
 import FAQ from "../components/FAQ";
 import PrintButton from "../components/PrintButton";
+import HowItWorks from "../components/HowItWorks";
+
+
+const HOW_IT_WORKS = [
+  { title: "Add clients", desc: "Enter name, birthday, anniversary, and phone" },
+  { title: "View upcoming", desc: "See events in the next 7, 14, or 30 days" },
+  { title: "Send wishes", desc: "One-tap WhatsApp greeting for each event" },
+];
 
 const FAQ_ITEMS = [
   { q: "Why should I track client birthdays and anniversaries?", a: "Sending timely wishes builds personal rapport with clients. It keeps you top-of-mind and leads to referrals and repeat business. Successful LIC agents consistently maintain personal touch with clients." },
@@ -59,6 +67,8 @@ export default function ClientReminders() {
       <p className="text-white/40 text-sm mb-6">
         Track client birthdays and anniversaries — never miss a greeting
       </p>
+
+      <HowItWorks steps={HOW_IT_WORKS} />
 
       {upcoming.length > 0 && (
         <div className="panel p-4 mb-6 border-l-4 border-l-signal">

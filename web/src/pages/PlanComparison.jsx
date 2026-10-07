@@ -6,6 +6,14 @@ import { formatINR, formatPercent } from "../utils/format";
 import WhatsAppShare from "../components/WhatsAppShare";
 import PrintButton from "../components/PrintButton";
 import FAQ from "../components/FAQ";
+import HowItWorks from "../components/HowItWorks";
+
+
+const HOW_IT_WORKS = [
+  { title: "Choose plans", desc: "Select 2-3 plans from preset comparison groups" },
+  { title: "Set age, SA & term", desc: "Enter common parameters for fair comparison" },
+  { title: "Compare side by side", desc: "See premium, maturity, IRR, and features together" },
+];
 
 const FAQ_ITEMS = [
   { q: "How do I choose the best LIC plan?", a: "Consider your goal (protection, savings, child's future, retirement), budget, and term. Pure term plans offer maximum cover at minimum cost. Endowment plans combine savings + insurance. Money back plans give periodic returns. Compare using our tool to see premiums, maturity, and IRR side by side." },
@@ -49,6 +57,8 @@ export default function PlanComparison() {
     <div className="animate-fade-up">
       <h1 className="text-2xl font-bold text-white mb-1">LIC Plan Comparison</h1>
       <p className="text-white/40 text-sm mb-6">Compare 2-3 plans side by side</p>
+
+      <HowItWorks steps={HOW_IT_WORKS} />
 
       <div className="panel p-5 mb-6">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">

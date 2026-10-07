@@ -118,6 +118,90 @@ const META = {
       { q: "Should I surrender my LIC policy?", a: "Surrendering usually results in significant financial loss. Consider making it paid-up or taking a loan against it instead." },
     ],
   },
+  "/loan-calculator": {
+    title: "Loan Against LIC Policy Calculator 2026 — Max Amount & Interest | DoAide InsureKit",
+    description: "Calculate maximum loan amount against your LIC policy. Compare policy loan interest (9%) vs personal loan (12%) vs gold loan (8.5%). Free loan calculator.",
+    keywords: "LIC loan calculator, loan against LIC policy, LIC policy loan interest rate, LIC surrender vs loan, policy loan amount",
+    faq: [
+      { q: "How much can I borrow against my LIC policy?", a: "You can borrow up to 90% of the surrender value of your policy. The surrender value depends on years of premium paid and bonus accrued." },
+      { q: "What is the interest rate on LIC policy loan?", a: "LIC charges approximately 9% p.a. on policy loans, which is lower than personal loan rates (12-18%)." },
+    ],
+  },
+  "/premium-calendar": {
+    title: "LIC Premium Due Date Calendar — Track All Instalments | DoAide InsureKit",
+    description: "Generate a complete premium due date calendar for any LIC policy. Track yearly, half-yearly, quarterly, or monthly premium due dates. Share via WhatsApp.",
+    keywords: "LIC premium due date, LIC premium calendar, LIC payment schedule, LIC premium reminder, premium instalment dates",
+    faq: [
+      { q: "How are premium due dates calculated?", a: "Due dates are based on the policy start date and payment mode — yearly, half-yearly, quarterly, or monthly." },
+      { q: "What is the grace period?", a: "30 days for yearly/half-yearly payments, 15 days for quarterly/monthly payments." },
+    ],
+  },
+  "/claim-estimator": {
+    title: "LIC Claim Amount Estimator 2026 — Maturity & Death Claim | DoAide InsureKit",
+    description: "Estimate LIC maturity or death claim amount with bonus projections. Three scenarios: conservative, current, and optimistic. Free claim amount calculator.",
+    keywords: "LIC claim amount, LIC maturity claim, LIC death claim calculator, LIC bonus projection, LIC claim estimator",
+    faq: [
+      { q: "How is LIC maturity claim calculated?", a: "Maturity claim = Sum Assured + Total SRB (Simple Reversionary Bonus) + FAB (Final Additional Bonus). Some plans have maturity multipliers." },
+      { q: "What is included in a death claim?", a: "Death claim is the higher of (SA + Bonus) or guaranteed minimum death benefit. Plus any accrued reversionary bonus." },
+    ],
+  },
+  "/plan-recommender": {
+    title: "LIC Plan Recommender 2026 — Best Plan for Your Age & Budget | DoAide InsureKit",
+    description: "Get personalized LIC plan recommendations. Answer 3 questions — age, budget, goal — and get the top 3 LIC plans ranked by returns, affordability, and features.",
+    keywords: "best LIC plan, LIC plan recommendation, which LIC plan to buy, LIC plan for 30 year old, LIC plan suggestion",
+    faq: [
+      { q: "How are plans recommended?", a: "Plans are scored based on IRR (returns), budget affordability, bonus rates, and goal alignment. Top 3 matches are shown." },
+      { q: "Which LIC plan is best for savings?", a: "Jeevan Labh (836) and Jeevan Lakshya (833) offer the highest IRR among endowment plans. Use the recommender for personalized results." },
+    ],
+  },
+  "/compare-plans": {
+    title: "Compare Any Two LIC Plans 2026 — Custom Parameters | DoAide InsureKit",
+    description: "Compare any two LIC plans with different age, sum assured, and term for each. Side-by-side comparison of premium, maturity, IRR, and features.",
+    keywords: "compare LIC plans, LIC plan vs plan, LIC policy comparison, best LIC plan comparison, compare two LIC policies",
+    faq: [
+      { q: "Can I compare plans with different parameters?", a: "Yes! Unlike the standard comparison tool, this lets you set different age, SA, and term for each plan." },
+    ],
+  },
+  "/guides": {
+    title: "LIC Insurance Guides & Articles — DoAide InsureKit",
+    description: "In-depth guides on LIC plans, bonus rates, policy revival, and more. Expert articles for LIC agents and policyholders.",
+    keywords: "LIC guides, LIC articles, LIC plan guide, LIC bonus rates guide, LIC revival guide",
+  },
+  "/guides/best-lic-plans-2026": {
+    title: "Best LIC Plans 2026 — Complete Comparison Guide | DoAide InsureKit",
+    description: "Comprehensive guide to the best LIC plans in 2026. Compare endowment, term, whole life, and limited premium plans by returns, features, and suitability.",
+    keywords: "best LIC plan 2026, top LIC plans, LIC plan comparison guide, best endowment plan, best term plan LIC",
+    faq: [
+      { q: "Which LIC plan gives the highest returns?", a: "Among endowment plans, Jeevan Labh (836) and Jeevan Lakshya (833) typically offer the highest IRR of 5-6%." },
+      { q: "Which LIC plan is best for a salaried person?", a: "Jeevan Anand (815) for savings + whole life cover, or Tech Term (854) for pure protection at the lowest premium." },
+    ],
+  },
+  "/guides/check-policy-status": {
+    title: "How to Check LIC Policy Status Online — Step by Step | DoAide InsureKit",
+    description: "Complete guide to check LIC policy status online via website, app, SMS, and helpline. Check premium payment status, maturity date, and bonus details.",
+    keywords: "check LIC policy status, LIC policy status online, LIC premium status, LIC policy details, LIC customer portal",
+    faq: [
+      { q: "Can I check policy status without registration?", a: "Yes, via SMS (send ASKLIC to 56677) or by calling the LIC helpline at 022-68276827." },
+    ],
+  },
+  "/guides/bonus-rates-history": {
+    title: "LIC Bonus Rates History 2024-2026 — SRB Rates by Plan | DoAide InsureKit",
+    description: "Complete history of LIC Simple Reversionary Bonus (SRB) rates from 2024 to 2026. Track bonus trends for Jeevan Anand, Jeevan Labh, New Endowment, and more.",
+    keywords: "LIC bonus rate history, LIC SRB rate 2025, LIC bonus rate 2026, LIC reversionary bonus history, LIC plan bonus",
+    faq: [
+      { q: "How is LIC bonus calculated?", a: "LIC declares SRB as ₹X per ₹1000 of Sum Assured. Annual bonus = (SRB rate / 1000) × Sum Assured." },
+      { q: "Is LIC bonus guaranteed?", a: "Bonus declared and added to a policy becomes guaranteed. But future bonus rates are not guaranteed and depend on LIC's annual surplus." },
+    ],
+  },
+  "/guides/revive-lapsed-policy": {
+    title: "How to Revive a Lapsed LIC Policy — Complete Guide | DoAide InsureKit",
+    description: "Step-by-step guide to reviving a lapsed LIC policy. Eligibility, documents needed, revival amount calculation, online & offline methods, and tips to avoid future lapses.",
+    keywords: "revive lapsed LIC policy, LIC policy revival, lapsed policy revival amount, LIC revival process, how to revive LIC",
+    faq: [
+      { q: "Can I revive a policy after 5 years?", a: "Generally no. LIC's standard revival period is 5 years from the first unpaid premium. Special revival schemes may extend this." },
+      { q: "Is interest charged on revival?", a: "Yes, approximately 9.25% p.a. on unpaid premiums plus GST." },
+    ],
+  },
 };
 
 function buildStructuredData(pathname, meta) {

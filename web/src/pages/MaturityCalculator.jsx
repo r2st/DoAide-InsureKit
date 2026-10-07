@@ -12,6 +12,14 @@ import ResultCard from "../components/ResultCard";
 import WhatsAppShare from "../components/WhatsAppShare";
 import PrintButton from "../components/PrintButton";
 import FAQ from "../components/FAQ";
+import HowItWorks from "../components/HowItWorks";
+
+
+const HOW_IT_WORKS = [
+  { title: "Select plan & SA", desc: "Pick your LIC plan and enter sum assured" },
+  { title: "Set term & age", desc: "Enter policy term and age for premium calculation" },
+  { title: "See maturity value", desc: "Get maturity with bonus, FAB, IRR, and premium paid" },
+];
 
 const FAQ_ITEMS = [
   { q: "How is LIC maturity value calculated?", a: "Maturity value = Sum Assured (× maturity multiplier if applicable) + Total SRB (Simple Reversionary Bonus) + FAB (Final Additional Bonus). Some plans like Jeevan Lakshya pay 110% of SA at maturity." },
@@ -81,6 +89,8 @@ export default function MaturityCalculator() {
       <p className="text-white/40 text-sm mb-6">
         Calculate maturity value with SRB (Simple Reversionary Bonus), FAB, and IRR
       </p>
+
+      <HowItWorks steps={HOW_IT_WORKS} />
 
       <div className="panel p-5 mb-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

@@ -1,6 +1,14 @@
 import { Link } from "react-router-dom";
 import FAQ from "../components/FAQ";
 
+const POPULAR_TOOLS = [
+  { path: "/premium-calculator", name: "Premium Calculator", icon: "₹" },
+  { path: "/maturity-calculator", name: "Maturity Calculator", icon: "📈" },
+  { path: "/plan-recommender", name: "Plan Recommender", icon: "🎯" },
+  { path: "/compare-plans", name: "Compare Plans", icon: "⚖️" },
+  { path: "/commission-calculator", name: "Commission Calculator", icon: "💰" },
+];
+
 const TOOL_CATEGORIES = [
   {
     title: "Calculators",
@@ -16,31 +24,49 @@ const TOOL_CATEGORIES = [
         path: "/maturity-calculator",
         name: "Maturity Calculator",
         desc: "Estimate maturity value with SRB bonus, FAB, and IRR returns",
-        icon: "\u{1F4C8}",
+        icon: "📈",
       },
       {
         path: "/commission-calculator",
         name: "Commission Calculator",
         desc: "Calculate first year, renewal, and total agent commission",
-        icon: "\u{1F4B0}",
+        icon: "💰",
       },
       {
         path: "/tax-calculator",
         name: "Tax Benefit Calculator",
         desc: "Section 80C deduction & 10(10D) maturity exemption — old vs new regime",
-        icon: "\u{1F4CB}",
+        icon: "📋",
       },
       {
         path: "/revival-calculator",
         name: "Revival Calculator",
         desc: "Estimate amount needed to revive a lapsed policy — arrears + interest",
-        icon: "\u{1F504}",
+        icon: "🔄",
       },
       {
         path: "/surrender-calculator",
         name: "Surrender Value Calculator",
         desc: "Calculate GSV & SSV — know what you'll get before surrendering",
-        icon: "\u{1F4C9}",
+        icon: "📉",
+      },
+      {
+        path: "/loan-calculator",
+        name: "Loan Against Policy",
+        desc: "Calculate max loan amount, interest, and compare with bank rates",
+        icon: "🏦",
+      },
+      {
+        path: "/claim-estimator",
+        name: "Claim Estimator",
+        desc: "Estimate maturity or death claim with 3 bonus projection scenarios",
+        icon: "📝",
+      },
+      {
+        path: "/premium-calendar",
+        name: "Premium Calendar",
+        desc: "See all upcoming premium due dates — share via WhatsApp",
+        icon: "📅",
       },
     ],
   },
@@ -52,43 +78,61 @@ const TOOL_CATEGORIES = [
         path: "/plan-comparison",
         name: "Plan Comparison",
         desc: "Compare 2-3 LIC plans side by side — premium, maturity, IRR, features",
-        icon: "\u{2696}\u{FE0F}",
+        icon: "⚖️",
+      },
+      {
+        path: "/compare-plans",
+        name: "Compare Any Plans",
+        desc: "Compare any two plans with different age, SA, and term for each",
+        icon: "🔍",
+      },
+      {
+        path: "/plan-recommender",
+        name: "Plan Recommender",
+        desc: "Quiz-style tool — answer 3 questions, get the best LIC plan for you",
+        icon: "🎯",
       },
       {
         path: "/client-reminders",
         name: "Birthday Reminders",
         desc: "Track client birthdays & anniversaries — send WhatsApp greetings",
-        icon: "\u{1F382}",
+        icon: "🎂",
       },
       {
         path: "/policy-tracker",
         name: "Policy Tracker",
         desc: "Track client policies, renewal dates, and premium due reminders",
-        icon: "\u{1F4C4}",
+        icon: "📄",
       },
     ],
   },
   {
     title: "Resources",
-    description: "Bonus history, marketing templates, and more",
+    description: "Bonus history, marketing templates, guides, and more",
     tools: [
       {
         path: "/bonus-history",
         name: "Bonus History",
         desc: "Historical SRB rates from 2015-2025 — track bonus trends by plan",
-        icon: "\u{1F4CA}",
+        icon: "📊",
       },
       {
         path: "/marketing",
         name: "Marketing Generator",
         desc: "Ready-made WhatsApp & social media templates for LIC agents",
-        icon: "\u{1F4E3}",
+        icon: "📣",
       },
       {
         path: "/receipt-generator",
         name: "Receipt Generator",
         desc: "Generate printable premium payment receipts for your records",
-        icon: "\u{1F9FE}",
+        icon: "🧾",
+      },
+      {
+        path: "/guides",
+        name: "Guides & Articles",
+        desc: "In-depth guides on best plans, bonus history, policy revival, and more",
+        icon: "📖",
       },
     ],
   },
@@ -114,6 +158,24 @@ export default function HomePage() {
           Premium calculators, maturity estimates, commission tools, and client management — everything an LIC agent needs, no login required
         </p>
       </div>
+
+      <section className="mb-10">
+        <div className="mb-3">
+          <h2 className="text-sm font-medium text-signal uppercase tracking-wide">Popular Tools</h2>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          {POPULAR_TOOLS.map((tool) => (
+            <Link
+              key={tool.path}
+              to={tool.path}
+              className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-signal/10 hover:bg-signal/20 transition-colors no-underline group"
+            >
+              <span className="text-base">{tool.icon}</span>
+              <span className="text-sm font-medium text-white group-hover:text-signal transition-colors">{tool.name}</span>
+            </Link>
+          ))}
+        </div>
+      </section>
 
       {TOOL_CATEGORIES.map((category) => (
         <section key={category.title} className="mb-10">

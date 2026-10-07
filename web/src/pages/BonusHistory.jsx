@@ -3,8 +3,16 @@ import { getAllBonusPlans, getBonusHistory } from "../data/bonusHistory";
 import WhatsAppShare from "../components/WhatsAppShare";
 import PrintButton from "../components/PrintButton";
 import FAQ from "../components/FAQ";
+import HowItWorks from "../components/HowItWorks";
 
 const allPlans = getAllBonusPlans();
+
+
+const HOW_IT_WORKS = [
+  { title: "Select plan", desc: "Choose from 15+ participating LIC plans" },
+  { title: "View history", desc: "See SRB rates from 2015 to 2025" },
+  { title: "Track trends", desc: "Compare bonus trends year over year" },
+];
 
 const FAQ_ITEMS = [
   { q: "What is Simple Reversionary Bonus (SRB)?", a: "SRB is a bonus declared annually by LIC on participating plans. It is expressed as ₹ per 1000 of Sum Assured and accrues every year. Once declared, the bonus is guaranteed and added to the policy." },
@@ -33,6 +41,8 @@ export default function BonusHistory() {
       <p className="text-white/40 text-sm mb-6">
         Historical Simple Reversionary Bonus (SRB) rates by plan and year
       </p>
+
+      <HowItWorks steps={HOW_IT_WORKS} />
 
       <div className="panel p-5 mb-6">
         <label className="block text-xs text-white/40 mb-1.5 uppercase tracking-wide">Select Plan</label>

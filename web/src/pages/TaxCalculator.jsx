@@ -5,6 +5,14 @@ import ResultCard from "../components/ResultCard";
 import WhatsAppShare from "../components/WhatsAppShare";
 import PrintButton from "../components/PrintButton";
 import FAQ from "../components/FAQ";
+import HowItWorks from "../components/HowItWorks";
+
+
+const HOW_IT_WORKS = [
+  { title: "Enter premium & SA", desc: "Your annual premium and sum assured" },
+  { title: "Set your income", desc: "Enter annual income and choose tax regime" },
+  { title: "See tax savings", desc: "80C deduction and 10(10D) exemption comparison" },
+];
 
 const FAQ_ITEMS = [
   { q: "How much tax can I save with LIC?", a: "Under Section 80C of the Income Tax Act (old regime), you can claim deduction up to ₹1,50,000/year on life insurance premiums. The actual tax saved depends on your income tax slab — up to 30% of the deduction amount." },
@@ -46,6 +54,8 @@ export default function TaxCalculator() {
       <p className="text-white/40 text-sm mb-6">
         Section 80C deduction, 10(10D) maturity exemption — old vs new regime
       </p>
+
+      <HowItWorks steps={HOW_IT_WORKS} />
 
       <div className="panel p-5 mb-6">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">

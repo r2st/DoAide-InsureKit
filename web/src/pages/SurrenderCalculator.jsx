@@ -7,6 +7,14 @@ import ResultCard from "../components/ResultCard";
 import WhatsAppShare from "../components/WhatsAppShare";
 import PrintButton from "../components/PrintButton";
 import FAQ from "../components/FAQ";
+import HowItWorks from "../components/HowItWorks";
+
+
+const HOW_IT_WORKS = [
+  { title: "Select plan", desc: "Pick your LIC plan and enter policy details" },
+  { title: "Enter years paid", desc: "How many years of premium completed" },
+  { title: "See surrender value", desc: "Compare GSV vs SSV and loss on surrender" },
+];
 
 const FAQ_ITEMS = [
   { q: "What is surrender value?", a: "Surrender value is the amount you receive if you terminate your LIC policy before maturity. It becomes available after 3 full years of premium payment. There are two types — GSV (Guaranteed Surrender Value) and SSV (Special Surrender Value)." },
@@ -60,6 +68,8 @@ export default function SurrenderCalculator() {
       <p className="text-white/40 text-sm mb-6">
         Calculate Guaranteed (GSV) and Special Surrender Value (SSV)
       </p>
+
+      <HowItWorks steps={HOW_IT_WORKS} />
 
       <div className="panel p-5 mb-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

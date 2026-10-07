@@ -5,8 +5,16 @@ import { formatINR } from "../utils/format";
 import WhatsAppShare from "../components/WhatsAppShare";
 import FAQ from "../components/FAQ";
 import PrintButton from "../components/PrintButton";
+import HowItWorks from "../components/HowItWorks";
 
 const MODE_OPTIONS = Object.entries(MODE_LABELS);
+
+
+const HOW_IT_WORKS = [
+  { title: "Add policies", desc: "Enter client name, plan, and premium details" },
+  { title: "Track renewals", desc: "See upcoming premium due dates at a glance" },
+  { title: "Send reminders", desc: "Share renewal reminders via WhatsApp" },
+];
 
 const FAQ_ITEMS = [
   { q: "Where is my policy data stored?", a: "All data is stored locally in your browser (localStorage). Nothing is sent to any server. If you clear browser data, the policies will be deleted." },
@@ -63,6 +71,8 @@ export default function PolicyTracker() {
       <p className="text-white/40 text-sm mb-6">
         Track client policies, renewal dates, and premium reminders
       </p>
+
+      <HowItWorks steps={HOW_IT_WORKS} />
 
       {upcoming.length > 0 && (
         <div className="panel p-4 mb-6 border-l-4 border-l-warn">

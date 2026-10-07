@@ -6,6 +6,14 @@ import ResultCard from "../components/ResultCard";
 import WhatsAppShare from "../components/WhatsAppShare";
 import PrintButton from "../components/PrintButton";
 import FAQ from "../components/FAQ";
+import HowItWorks from "../components/HowItWorks";
+
+
+const HOW_IT_WORKS = [
+  { title: "Enter premium", desc: "Annual premium amount and payment mode" },
+  { title: "Set lapse period", desc: "How many months since last premium paid" },
+  { title: "Get revival cost", desc: "See arrears, interest, GST, and total amount" },
+];
 
 const FAQ_ITEMS = [
   { q: "What is policy revival?", a: "Revival is the process of restoring a lapsed LIC policy. A policy lapses when premiums are not paid within the grace period (30 days for yearly/half-yearly, 15 days for quarterly/monthly). You can revive it by paying all arrears with interest." },
@@ -37,6 +45,8 @@ export default function RevivalCalculator() {
       <p className="text-white/40 text-sm mb-6">
         Estimate the amount needed to revive a lapsed LIC policy
       </p>
+
+      <HowItWorks steps={HOW_IT_WORKS} />
 
       <div className="panel p-5 mb-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
