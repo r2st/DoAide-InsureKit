@@ -456,6 +456,105 @@ const META = {
       { q: "Can I export reports?", a: "Yes, use Print/PDF to save any report. You can print or email them." },
     ],
   },
+  "/paid-up-value": {
+    title: "LIC Paid-Up Value Calculator 2026 — Reduced SA & GSV | DoAide InsureKit",
+    description: "Calculate LIC paid-up value when you stop paying premiums. Get paid-up SA, vested bonus, GSV, and maturity estimate. Know your options before deciding.",
+    keywords: "LIC paid up value, paid up calculator, LIC reduced paid up, LIC GSV calculator, stop LIC premium, LIC paid up maturity",
+    faq: [
+      { q: "What is LIC paid-up value?", a: "When you stop paying premiums after 3+ years, LIC converts your policy to paid-up. Paid-up SA = original SA × (premiums paid / total premiums due)." },
+      { q: "Do bonuses continue on a paid-up policy?", a: "No. Only bonuses accrued before the policy became paid-up remain. No future bonuses are added." },
+    ],
+  },
+  "/insurance-age-calculator": {
+    title: "Insurance Age Calculator — Age Nearest Birthday for LIC | DoAide InsureKit",
+    description: "Calculate insurance age (age nearest birthday) used by LIC for premium rates. Know when your insurance age changes and save on premiums by acting before the cutoff.",
+    keywords: "insurance age calculator, age nearest birthday, LIC age calculation, insurance age LIC, LIC premium age, age nearest birthday calculator",
+    faq: [
+      { q: "What is insurance age?", a: "Insurance age is age nearest birthday — not completed age. If you're 6+ months past your last birthday, your insurance age is one year more." },
+      { q: "When does insurance age change?", a: "Insurance age increases 6 months after your birthday. Acting before this date locks in the lower premium rate." },
+    ],
+  },
+  "/rider-premium-calculator": {
+    title: "LIC Rider Premium Calculator 2026 — ADB, Term, CI & PWD | DoAide InsureKit",
+    description: "Calculate LIC rider premiums — Accidental Death Benefit, Term Rider, Critical Illness, and Premium Waiver Disability. Rate tables, GST, and combined premium analysis.",
+    keywords: "LIC rider premium, LIC ADB rider, LIC critical illness rider, LIC term rider, LIC rider calculator, LIC rider rates",
+    faq: [
+      { q: "What are LIC riders?", a: "Riders are optional add-on benefits attached to a base LIC policy — ADB, Term Rider, Critical Illness, and Premium Waiver. They provide extra coverage at small additional premium." },
+      { q: "Is GST applicable on riders?", a: "Yes, 18% GST is charged on rider premiums, different from the base life insurance premium GST of 4.5%/2.25%." },
+    ],
+  },
+  "/rebate-calculator": {
+    title: "LIC SA & Mode Rebate Calculator — Premium Savings Tool | DoAide InsureKit",
+    description: "Calculate LIC SA rebate and mode rebate savings. Compare payment modes, see how higher SA reduces premium rate. Optimize premium cost for clients.",
+    keywords: "LIC rebate calculator, LIC SA rebate, LIC mode rebate, LIC premium discount, LIC yearly rebate, LIC premium savings",
+    faq: [
+      { q: "What is SA rebate in LIC?", a: "SA ≥ ₹5L gets ₹2.50/1000 rebate, SA ≥ ₹10L gets ₹4.00/1000 rebate on the tabular premium rate." },
+      { q: "What is mode rebate?", a: "Yearly mode gets 2% rebate, half-yearly 1%. Quarterly and monthly modes get no rebate." },
+    ],
+  },
+  "/self-mix": {
+    title: "Self Mix Presentation — Multi-Plan Portfolio for LIC Clients | DoAide InsureKit",
+    description: "Create a multi-plan insurance portfolio for one client. Combine endowment, money-back, and term plans. See combined coverage, premium, and maturity analysis.",
+    keywords: "LIC self mix, multi plan portfolio, LIC plan combination, LIC portfolio presentation, LIC agent presentation, insurance portfolio",
+    faq: [
+      { q: "What is a Self Mix?", a: "A Self Mix shows 2-5 LIC policies for one person — combining endowment, money-back, and term plans for optimal coverage." },
+      { q: "Why recommend multiple policies?", a: "Different plans serve different goals: savings, periodic income, and high protection. A mix covers all financial goals better than one plan." },
+    ],
+  },
+  "/family-mix": {
+    title: "Family Mix Presentation — Family Insurance Portfolio | DoAide InsureKit",
+    description: "Create a complete family insurance portfolio. Assign the right LIC plan to self, spouse, and children. See combined family coverage and premium analysis.",
+    keywords: "LIC family plan, family insurance portfolio, LIC family mix, family protection plan, LIC plan for family, insurance for family",
+    faq: [
+      { q: "What is a Family Mix?", a: "A Family Mix shows LIC policies for all family members — self, spouse, children — in one view, helping agents present complete family protection." },
+      { q: "Which plans are best for children?", a: "Jeevan Tarun (834), Amritbaal (774), and Children's Money Back (832) are popular child plans." },
+    ],
+  },
+  "/budget-presentation": {
+    title: "Budget & Goal-wise LIC Plan Finder — Premium, SA & Maturity | DoAide InsureKit",
+    description: "Find LIC plans by budget, coverage target, or maturity goal. Three comparison modes: budget-wise, SA-wise, and maturity-wise. Free plan finder for agents.",
+    keywords: "LIC plan by budget, LIC plan finder, best LIC plan for budget, LIC plan comparison, LIC maturity goal, LIC SA target",
+    faq: [
+      { q: "What is budget-wise comparison?", a: "Shows all LIC plans that fit within your annual premium budget, sorted by coverage and maturity value." },
+      { q: "What is maturity-wise comparison?", a: "Given a target maturity amount, it reverse-calculates which plans can reach that goal and what premium/SA is needed." },
+    ],
+  },
+  "/club-qualification": {
+    title: "LIC Club Qualification Progress Tracker — Branch to Chairman's Club | DoAide InsureKit",
+    description: "Track your progress toward LIC club qualifications — Branch Manager, Divisional Manager, Zonal Manager, Chairman's Club, and MDRT. See pace projections and monthly targets.",
+    keywords: "LIC club qualification, LIC branch manager club, LIC chairman club, MDRT qualification, LIC agent club, LIC performance tracker",
+    faq: [
+      { q: "What are LIC club qualifications?", a: "LIC rewards top agents with 4 club levels — Branch Manager, Divisional Manager, Zonal Manager, and Chairman's Club — based on policies, FYP, and lives." },
+      { q: "What is MDRT?", a: "Million Dollar Round Table is an international recognition requiring approximately ₹35 lakh FYP for Indian agents." },
+    ],
+  },
+  "/greeting-cards": {
+    title: "LIC Agent Greeting Card Creator — Birthday, Festival & Custom | DoAide InsureKit",
+    description: "Create personalized greeting cards for LIC clients — birthdays, Diwali, New Year, policy anniversaries. Multiple templates and themes. Share via WhatsApp.",
+    keywords: "LIC greeting card, LIC agent birthday card, insurance agent greetings, LIC Diwali card, LIC client birthday, WhatsApp greeting card",
+    faq: [
+      { q: "Why send greeting cards?", a: "Personal greetings build lasting relationships. Clients who feel valued are more likely to renew, refer friends, and buy additional plans." },
+      { q: "Can I customize messages?", a: "Yes! Choose Custom occasion for your own message, or edit any template. Messages work perfectly on WhatsApp." },
+    ],
+  },
+  "/doctor-panel": {
+    title: "LIC Panel Doctor & Hospital Locator — Medical Exam Directory | DoAide InsureKit",
+    description: "Find LIC-approved panel doctors and hospitals for medical examinations. Search by city and specialization. 20 cities, 12 specializations. Medical test requirements by SA.",
+    keywords: "LIC panel doctor, LIC medical exam, LIC hospital panel, LIC approved doctor, LIC medical test, insurance medical exam",
+    faq: [
+      { q: "What is an LIC panel doctor?", a: "LIC maintains a panel of approved doctors who conduct medical exams for policy issuance, revival, and claims." },
+      { q: "When is a medical exam required?", a: "For new policies above SA limits (by age), revival after 2 years of lapse, and non-early claims." },
+    ],
+  },
+  "/business-card": {
+    title: "LIC Agent Business Card Creator — Digital Cards for WhatsApp | DoAide InsureKit",
+    description: "Create professional digital business cards for LIC agents. 6 themes, photo upload, WhatsApp sharing. Include agent code, branch, and contact details.",
+    keywords: "LIC agent business card, insurance agent card, LIC digital card, LIC agent WhatsApp card, professional business card, LIC agent branding",
+    faq: [
+      { q: "What details to include?", a: "Name, LIC agent code, branch, phone, email. Optional: designation, WhatsApp number, tagline, and headshot photo." },
+      { q: "Can I print these cards?", a: "Yes! Download the card image and print at any shop. Standard size: 3.5 × 2 inches on 300 GSM paper." },
+    ],
+  },
   "/guides/ulip-vs-mutual-fund": {
     title: "ULIP vs Mutual Fund: Which is Better in 2026? | DoAide InsureKit",
     description: "Detailed comparison of ULIPs and mutual funds — charges, returns, tax benefits, flexibility, and suitability. Make an informed investment choice.",
