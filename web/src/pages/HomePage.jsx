@@ -74,6 +74,12 @@ const TOOL_CATEGORIES = [
         desc: "See all upcoming premium due dates — share via WhatsApp",
         icon: "📅",
       },
+      {
+        path: "/sip-vs-insurance",
+        name: "SIP vs Insurance",
+        desc: "Compare endowment returns vs term + SIP strategy — show the wealth gap",
+        icon: "📊",
+      },
     ],
   },
   {

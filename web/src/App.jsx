@@ -48,6 +48,7 @@ import GuideLicCommissionStructure from "./pages/GuideLicCommissionStructure";
 import GuideHowToBecomeAgent from "./pages/GuideHowToBecomeAgent";
 import GuideBestPlansForTaxSaving from "./pages/GuideBestPlansForTaxSaving";
 import ClaimSettlementRatio from "./pages/ClaimSettlementRatio";
+import SipVsInsurance from "./pages/SipVsInsurance";
 
 export default function App() {
   const { pathname } = useLocation();
@@ -105,6 +106,7 @@ export default function App() {
           <Route path="/guides/how-to-become-lic-agent" element={<GuideHowToBecomeAgent />} />
           <Route path="/guides/best-plans-for-tax-saving" element={<GuideBestPlansForTaxSaving />} />
           <Route path="/claim-settlement-ratio" element={<ClaimSettlementRatio />} />
+          <Route path="/sip-vs-insurance" element={<SipVsInsurance />} />
         </Routes>
       </main>
       <Footer />

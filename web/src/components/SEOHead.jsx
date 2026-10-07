@@ -380,6 +380,17 @@ const META = {
       { q: "What is the maximum tax saving from LIC?", a: "Up to ₹46,800/year (31.2% of ₹1.5L) under old regime. Shared with PPF, ELSS, EPF, home loan principal." },
     ],
   },
+  "/sip-vs-insurance": {
+    title: "SIP vs Insurance Calculator — Term + SIP vs Endowment Returns | DoAide InsureKit",
+    description: "Compare endowment plan returns vs term insurance + SIP strategy. See why pure term + SIP creates 3-5× more wealth than endowment plans. Free calculator with year-by-year comparison.",
+    keywords: "SIP vs insurance, term plan vs endowment, SIP vs LIC, term insurance SIP, endowment vs mutual fund, insurance vs investment, SIP returns calculator",
+    faq: [
+      { q: "Why is Term + SIP better than Endowment?", a: "Endowment plans return only 4-6% IRR. A term plan gives the same life cover at 1/10th the premium, and the saved amount invested in SIP at 12% CAGR creates 3-5× more wealth over the same period." },
+      { q: "What SIP return should I assume?", a: "Historically, Nifty 50 has returned ~12% CAGR over 15+ year periods. Use 10% for moderate estimates, 8% for conservative. Large-cap index funds are a safe choice." },
+      { q: "Is there any risk in Term + SIP strategy?", a: "Endowment gives guaranteed but low returns. SIP returns are market-linked. However, the premium difference is so large that even at conservative 8% SIP returns, total wealth is usually higher with Term + SIP." },
+      { q: "Should I surrender my endowment policy for Term + SIP?", a: "If you've paid premiums for less than 3 years, you'll get nothing on surrender. After 3+ years, compare surrender value vs continuing. Use InsureKit's Surrender Calculator to check." },
+    ],
+  },
   "/claim-settlement-ratio": {
     title: "Claim Settlement Ratio 2024 — Compare All Life Insurers | DoAide InsureKit",
     description: "Compare IRDAI claim settlement ratios for 20+ life insurance companies. Sort by individual/group CSR. LIC, HDFC Life, Max Life, ICICI Pru, SBI Life & more.",
