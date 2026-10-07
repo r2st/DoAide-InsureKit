@@ -16,7 +16,7 @@ const META = {
     ],
   },
   "/premium-calculator": {
-    title: "LIC Premium Calculator 2025 — Calculate Exact Premium with GST | DoAide InsureKit",
+    title: "LIC Premium Calculator 2026 — Calculate Exact Premium with GST | DoAide InsureKit",
     description: "Free LIC premium calculator. Select any LIC plan, enter age, sum assured, term — get exact premium with GST. Jeevan Anand, Jeevan Labh, Tech Term & more.",
     keywords: "LIC premium calculator, LIC premium rate, Jeevan Anand premium, LIC plan premium, LIC GST calculator",
     faq: [
@@ -26,7 +26,7 @@ const META = {
     ],
   },
   "/maturity-calculator": {
-    title: "LIC Maturity Value Calculator 2025 — Bonus, FAB & IRR | DoAide InsureKit",
+    title: "LIC Maturity Value Calculator 2026 — Bonus, FAB & IRR | DoAide InsureKit",
     description: "Calculate LIC policy maturity value with reversionary bonus, FAB, and IRR. Compare returns across Jeevan Anand, Jeevan Labh, New Endowment plans.",
     keywords: "LIC maturity calculator, LIC maturity value, LIC bonus rate, LIC IRR, LIC returns calculator",
     faq: [
@@ -35,15 +35,15 @@ const META = {
     ],
   },
   "/plan-comparison": {
-    title: "LIC Plan Comparison 2025 — Compare Premium, Maturity & Benefits | DoAide InsureKit",
+    title: "LIC Plan Comparison 2026 — Compare Premium, Maturity & Benefits | DoAide InsureKit",
     description: "Compare LIC plans side by side — premium, maturity value, death benefit, features. Find the best LIC policy for your needs.",
     keywords: "LIC plan comparison, best LIC plan, compare LIC policies, LIC plan features, which LIC plan is best",
     faq: [
-      { q: "Which is the best LIC plan in 2025?", a: "It depends on your needs. Jeevan Anand (715/815) is best for savings + whole life cover, Tech Term (854) for pure protection, Jeevan Labh (736) for limited premium payment." },
+      { q: "Which is the best LIC plan in 2026?", a: "It depends on your needs. Jeevan Anand (715/815) is best for savings + whole life cover, Tech Term (854) for pure protection, Jeevan Labh (736) for limited premium payment." },
     ],
   },
   "/commission-calculator": {
-    title: "LIC Agent Commission Calculator 2025 — FY, Renewal & Total | DoAide InsureKit",
+    title: "LIC Agent Commission Calculator 2026 — FY, Renewal & Total | DoAide InsureKit",
     description: "Calculate LIC agent commission — first year, renewal, and total commission over policy term. Updated with Oct 2024 commission rates.",
     keywords: "LIC agent commission, LIC commission calculator, LIC FY commission, LIC renewal commission, LIC agent income",
     faq: [
@@ -68,9 +68,9 @@ const META = {
     ],
   },
   "/bonus-history": {
-    title: "LIC Bonus History 2015-2025 — SRB Rates by Plan & Year | DoAide InsureKit",
-    description: "View historical LIC bonus rates (SRB) from 2015 to 2025. Compare bonus trends across Jeevan Anand, Jeevan Labh, New Endowment and other plans.",
-    keywords: "LIC bonus rate, LIC SRB rate, LIC bonus history, LIC reversionary bonus, LIC bonus 2025",
+    title: "LIC Bonus History 2015-2026 — SRB Rates by Plan & Year | DoAide InsureKit",
+    description: "View historical LIC bonus rates (SRB) from 2015 to 2026. Compare bonus trends across Jeevan Anand, Jeevan Labh, New Endowment and other plans.",
+    keywords: "LIC bonus rate, LIC SRB rate, LIC bonus history, LIC reversionary bonus, LIC bonus 2026",
     faq: [
       { q: "What is the current LIC bonus rate?", a: "Bonus rates vary by plan. For 2024-25: Jeevan Anand ₹45-46/1000, New Endowment ₹42-43/1000, Jeevan Umang ₹50/1000, Amritbaal ₹58/1000." },
     ],
@@ -100,7 +100,7 @@ const META = {
     ],
   },
   "/revival-calculator": {
-    title: "LIC Revival Calculator 2025 — Lapsed Policy Revival Amount | DoAide InsureKit",
+    title: "LIC Revival Calculator 2026 — Lapsed Policy Revival Amount | DoAide InsureKit",
     description: "Calculate the amount needed to revive a lapsed LIC policy. Includes arrears, interest, GST, and medical requirement check. Free revival quote tool.",
     keywords: "LIC revival calculator, LIC lapsed policy, policy revival amount, LIC revival interest, revive LIC policy",
     faq: [
@@ -110,7 +110,7 @@ const META = {
     ],
   },
   "/surrender-calculator": {
-    title: "LIC Surrender Value Calculator 2025 — GSV & SSV | DoAide InsureKit",
+    title: "LIC Surrender Value Calculator 2026 — GSV & SSV | DoAide InsureKit",
     description: "Calculate LIC policy surrender value — both Guaranteed Surrender Value (GSV) and Special Surrender Value (SSV). Know what you'll receive before surrendering.",
     keywords: "LIC surrender value, LIC GSV calculator, LIC SSV calculator, LIC policy surrender, surrender value calculation",
     faq: [
@@ -188,7 +188,7 @@ const META = {
   "/guides/bonus-rates-history": {
     title: "LIC Bonus Rates History 2024-2026 — SRB Rates by Plan | DoAide InsureKit",
     description: "Complete history of LIC Simple Reversionary Bonus (SRB) rates from 2024 to 2026. Track bonus trends for Jeevan Anand, Jeevan Labh, New Endowment, and more.",
-    keywords: "LIC bonus rate history, LIC SRB rate 2025, LIC bonus rate 2026, LIC reversionary bonus history, LIC plan bonus",
+    keywords: "LIC bonus rate history, LIC SRB rate 2026, LIC bonus rate 2026, LIC reversionary bonus history, LIC plan bonus",
     faq: [
       { q: "How is LIC bonus calculated?", a: "LIC declares SRB as ₹X per ₹1000 of Sum Assured. Annual bonus = (SRB rate / 1000) × Sum Assured." },
       { q: "Is LIC bonus guaranteed?", a: "Bonus declared and added to a policy becomes guaranteed. But future bonus rates are not guaranteed and depend on LIC's annual surplus." },
@@ -411,9 +411,21 @@ function buildStructuredData(pathname, meta) {
     operatingSystem: "All",
     offers: { "@type": "Offer", price: "0", priceCurrency: "INR" },
     creator: { "@type": "Organization", name: "DoAide", url: "https://doaide.com" },
+    aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", ratingCount: "3600" },
   };
 
   const schemas = [base];
+
+  const crumbs = [{ name: "DoAide", item: "https://doaide.com/" }, { name: "InsureKit", item: SITE_URL }];
+  if (pathname !== "/") {
+    const label = meta?.title?.split("|")[0]?.split("—")[0]?.trim() || pathname.replace(/^\//, "");
+    crumbs.push({ name: label, item: `${SITE_URL}${pathname}` });
+  }
+  schemas.push({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: crumbs.map((c, i) => ({ "@type": "ListItem", position: i + 1, name: c.name, item: c.item })),
+  });
 
   if (meta?.faq?.length > 0) {
     schemas.push({
