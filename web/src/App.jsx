@@ -26,10 +26,22 @@ import GuideBestPlans2026 from "./pages/GuideBestPlans2026";
 import GuideCheckPolicyStatus from "./pages/GuideCheckPolicyStatus";
 import GuideBonusRatesHistory from "./pages/GuideBonusRatesHistory";
 import GuideReviveLapsedPolicy from "./pages/GuideReviveLapsedPolicy";
+import GuideLicPremiumPayment from "./pages/GuideLicPremiumPayment";
+import GuideLicPolicyStatus from "./pages/GuideLicPolicyStatus";
+import GuideLicMaturityAmount from "./pages/GuideLicMaturityAmount";
+import GuideLicLoanOnPolicy from "./pages/GuideLicLoanOnPolicy";
+import GuideLicSurrenderValue from "./pages/GuideLicSurrenderValue";
+import GuideLicAgentExam from "./pages/GuideLicAgentExam";
+import GuideLicClaimProcess from "./pages/GuideLicClaimProcess";
+import GuideLicTaxBenefits from "./pages/GuideLicTaxBenefits";
+import GuideBestLicPlansChild from "./pages/GuideBestLicPlansChild";
+import GuideBestTermPlan from "./pages/GuideBestTermPlan";
 import PlansDirectoryPage from "./pages/PlansDirectoryPage";
 import PlanDetailPage from "./pages/PlanDetailPage";
 import VsLicSuperSalesSaathi from "./pages/compare/VsLicSuperSalesSaathi";
 import VsPerfectAgentPlus from "./pages/compare/VsPerfectAgentPlus";
+import PremiumTable from "./pages/PremiumTable";
+import AgentDashboard from "./pages/AgentDashboard";
 import BestLicTools from "./pages/BestLicTools";
 
 export default function App() {
@@ -66,8 +78,20 @@ export default function App() {
           <Route path="/guides/check-policy-status" element={<GuideCheckPolicyStatus />} />
           <Route path="/guides/bonus-rates-history" element={<GuideBonusRatesHistory />} />
           <Route path="/guides/revive-lapsed-policy" element={<GuideReviveLapsedPolicy />} />
+          <Route path="/guides/lic-premium-payment-online" element={<GuideLicPremiumPayment />} />
+          <Route path="/guides/lic-policy-status-check" element={<GuideLicPolicyStatus />} />
+          <Route path="/guides/lic-maturity-amount-check" element={<GuideLicMaturityAmount />} />
+          <Route path="/guides/lic-loan-on-policy" element={<GuideLicLoanOnPolicy />} />
+          <Route path="/guides/lic-surrender-value" element={<GuideLicSurrenderValue />} />
+          <Route path="/guides/lic-agent-exam-preparation" element={<GuideLicAgentExam />} />
+          <Route path="/guides/lic-claim-process" element={<GuideLicClaimProcess />} />
+          <Route path="/guides/lic-tax-benefits" element={<GuideLicTaxBenefits />} />
+          <Route path="/guides/best-lic-plans-for-child" element={<GuideBestLicPlansChild />} />
+          <Route path="/guides/best-term-insurance-plan" element={<GuideBestTermPlan />} />
           <Route path="/plans" element={<PlansDirectoryPage />} />
           <Route path="/plans/:slug" element={<PlanDetailPage />} />
+          <Route path="/premium-table" element={<PremiumTable />} />
+          <Route path="/dashboard" element={<AgentDashboard />} />
           <Route path="/compare/lic-super-sales-saathi" element={<VsLicSuperSalesSaathi />} />
           <Route path="/compare/perfect-agent-plus" element={<VsPerfectAgentPlus />} />
           <Route path="/best-lic-agent-tools-2026" element={<BestLicTools />} />

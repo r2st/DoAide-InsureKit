@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { LIC_PLANS, MODE_LABELS } from "../data/licPlans";
-import { getPolicies, addPolicy, deletePolicy, getUpcomingRenewals, validatePolicy } from "../utils/policyStore";
+import { getPolicies, addPolicy, updatePolicy, deletePolicy, getUpcomingRenewals, validatePolicy } from "../utils/policyStore";
 import { formatINR } from "../utils/format";
 import WhatsAppShare from "../components/WhatsAppShare";
 import FAQ from "../components/FAQ";
@@ -9,38 +9,78 @@ import HowItWorks from "../components/HowItWorks";
 
 const MODE_OPTIONS = Object.entries(MODE_LABELS);
 
+const STATUS_OPTIONS = [
+  { value: "active", label: "Active", color: "bg-good/15 text-good" },
+  { value: "lapsed", label: "Lapsed", color: "bg-bad/15 text-bad" },
+  { value: "paid_up", label: "Paid-Up", color: "bg-warn/15 text-warn" },
+  { value: "matured", label: "Matured", color: "bg-signal/15 text-signal" },
+];
 
 const HOW_IT_WORKS = [
-  { title: "Add policies", desc: "Enter client name, plan, and premium details" },
+  { title: "Add policies", desc: "Enter client name, plan, premium, and status" },
   { title: "Track renewals", desc: "See upcoming premium due dates at a glance" },
-  { title: "Send reminders", desc: "Share renewal reminders via WhatsApp" },
+  { title: "Manage portfolio", desc: "Search, filter, edit, and export your client policies" },
 ];
 
 const FAQ_ITEMS = [
   { q: "Where is my policy data stored?", a: "All data is stored locally in your browser (localStorage). Nothing is sent to any server. If you clear browser data, the policies will be deleted." },
   { q: "Can I track policies from different clients?", a: "Yes! Add each policy with the client/holder name. You can track unlimited policies for all your clients." },
   { q: "How do premium reminders work?", a: "Set the next due date when adding a policy. The tracker shows upcoming renewals within the next 30 days, sorted by urgency." },
-  { q: "Can I export my policy data?", a: "Use the Print/PDF button to generate a printable list of all your tracked policies. You can save this as a PDF from your browser's print dialog." },
-  { q: "What happens if I use a different browser?", a: "Since data is stored in your browser, it won't transfer across browsers or devices automatically. Use Print/PDF to keep a backup." },
+  { q: "Can I export my policy data?", a: "Yes! Click the 'Export CSV' button to download all your policies as a CSV file. You can open it in Excel or Google Sheets." },
+  { q: "What do the policy statuses mean?", a: "Active = premiums being paid regularly. Lapsed = premiums missed for 2+ years. Paid-Up = no more premiums but reduced cover continues. Matured = policy term completed, benefits received." },
 ];
+
+const EMPTY_FORM = {
+  policyNumber: "",
+  holderName: "",
+  planName: LIC_PLANS[0].name,
+  sumAssured: 500000,
+  premium: 25000,
+  mode: "yearly",
+  startDate: "",
+  nextDueDate: "",
+  status: "active",
+  notes: "",
+};
 
 export default function PolicyTracker() {
   const [policies, setPolicies] = useState(() => getPolicies());
   const [showForm, setShowForm] = useState(false);
+  const [editingId, setEditingId] = useState(null);
   const [errors, setErrors] = useState([]);
-  const [form, setForm] = useState({
-    policyNumber: "",
-    holderName: "",
-    planName: LIC_PLANS[0].name,
-    sumAssured: 500000,
-    premium: 25000,
-    mode: "yearly",
-    startDate: "",
-    nextDueDate: "",
-    notes: "",
-  });
+  const [searchQuery, setSearchQuery] = useState("");
+  const [statusFilter, setStatusFilter] = useState("all");
+  const [form, setForm] = useState(EMPTY_FORM);
 
   const upcoming = useMemo(() => getUpcomingRenewals(30), [policies]);
+
+  const filteredPolicies = useMemo(() => {
+    let result = policies;
+    if (statusFilter !== "all") {
+      result = result.filter((p) => (p.status || "active") === statusFilter);
+    }
+    if (searchQuery.trim()) {
+      const q = searchQuery.toLowerCase();
+      result = result.filter(
+        (p) =>
+          p.holderName?.toLowerCase().includes(q) ||
+          p.policyNumber?.toLowerCase().includes(q) ||
+          p.planName?.toLowerCase().includes(q),
+      );
+    }
+    return result;
+  }, [policies, searchQuery, statusFilter]);
+
+  const portfolioStats = useMemo(() => {
+    const active = policies.filter((p) => (p.status || "active") === "active");
+    return {
+      total: policies.length,
+      active: active.length,
+      lapsed: policies.filter((p) => p.status === "lapsed").length,
+      totalSA: active.reduce((s, p) => s + (p.sumAssured || 0), 0),
+      totalPremium: active.reduce((s, p) => s + (p.premium || 0), 0),
+    };
+  }, [policies]);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -49,11 +89,46 @@ export default function PolicyTracker() {
       setErrors(errs);
       return;
     }
-    const newPolicy = addPolicy(form);
-    setPolicies((prev) => [...prev, newPolicy]);
+
+    if (editingId) {
+      const updated = updatePolicy(editingId, form);
+      if (updated) {
+        setPolicies(getPolicies());
+      }
+      setEditingId(null);
+    } else {
+      const newPolicy = addPolicy(form);
+      setPolicies((prev) => [...prev, newPolicy]);
+    }
+
     setShowForm(false);
     setErrors([]);
-    setForm({ policyNumber: "", holderName: "", planName: LIC_PLANS[0].name, sumAssured: 500000, premium: 25000, mode: "yearly", startDate: "", nextDueDate: "", notes: "" });
+    setForm(EMPTY_FORM);
+  }
+
+  function startEdit(policy) {
+    setForm({
+      policyNumber: policy.policyNumber || "",
+      holderName: policy.holderName || "",
+      planName: policy.planName || LIC_PLANS[0].name,
+      sumAssured: policy.sumAssured || 500000,
+      premium: policy.premium || 25000,
+      mode: policy.mode || "yearly",
+      startDate: policy.startDate || "",
+      nextDueDate: policy.nextDueDate || "",
+      status: policy.status || "active",
+      notes: policy.notes || "",
+    });
+    setEditingId(policy.id);
+    setShowForm(true);
+    setErrors([]);
+  }
+
+  function cancelForm() {
+    setShowForm(false);
+    setEditingId(null);
+    setErrors([]);
+    setForm(EMPTY_FORM);
   }
 
   function handleDelete(id) {
@@ -61,19 +136,76 @@ export default function PolicyTracker() {
     setPolicies(updated);
   }
 
+  function exportCSV() {
+    const headers = ["Policy Number", "Holder Name", "Plan", "Sum Assured", "Premium", "Mode", "Start Date", "Next Due", "Status", "Notes"];
+    const rows = policies.map((p) => [
+      p.policyNumber,
+      p.holderName,
+      p.planName,
+      p.sumAssured,
+      p.premium,
+      MODE_LABELS[p.mode] || p.mode,
+      p.startDate || "",
+      p.nextDueDate || "",
+      p.status || "active",
+      p.notes || "",
+    ]);
+
+    const csv = [headers, ...rows].map((row) => row.map((cell) => `"${String(cell).replace(/"/g, '""')}"`).join(",")).join("\n");
+    const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `insurekit-policies-${new Date().toISOString().slice(0, 10)}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
   const shareText = upcoming.length > 0
     ? `Premium Reminders (Next 30 days):\n${upcoming.map((p) => `${p.holderName} — ${p.planName}\nPolicy: ${p.policyNumber}\nPremium: ${formatINR(p.premium)}\nDue: ${p.nextDueDate} (${p.daysUntil <= 0 ? "OVERDUE" : `${p.daysUntil} days`})`).join("\n\n")}\n\n— DoAide InsureKit`
     : "";
+
+  function getStatusBadge(status) {
+    const opt = STATUS_OPTIONS.find((s) => s.value === status) || STATUS_OPTIONS[0];
+    return <span className={`text-xs px-2 py-0.5 rounded ${opt.color}`}>{opt.label}</span>;
+  }
 
   return (
     <div className="animate-fade-up">
       <h1 className="text-2xl font-bold text-white mb-1">Policy Tracker</h1>
       <p className="text-white/40 text-sm mb-6">
-        Track client policies, renewal dates, and premium reminders
+        Track client policies, renewal dates, status, and premium reminders
       </p>
 
       <HowItWorks steps={HOW_IT_WORKS} />
 
+      {/* Portfolio Summary */}
+      {policies.length > 0 && (
+        <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 mb-6">
+          <div className="panel-inner p-3 text-center">
+            <div className="text-lg font-bold text-white">{portfolioStats.total}</div>
+            <div className="text-[10px] text-white/30 uppercase tracking-wide">Total</div>
+          </div>
+          <div className="panel-inner p-3 text-center">
+            <div className="text-lg font-bold text-good">{portfolioStats.active}</div>
+            <div className="text-[10px] text-white/30 uppercase tracking-wide">Active</div>
+          </div>
+          <div className="panel-inner p-3 text-center">
+            <div className="text-lg font-bold text-bad">{portfolioStats.lapsed}</div>
+            <div className="text-[10px] text-white/30 uppercase tracking-wide">Lapsed</div>
+          </div>
+          <div className="panel-inner p-3 text-center">
+            <div className="text-lg font-bold text-signal">{formatINR(portfolioStats.totalSA)}</div>
+            <div className="text-[10px] text-white/30 uppercase tracking-wide">Total SA</div>
+          </div>
+          <div className="panel-inner p-3 text-center">
+            <div className="text-lg font-bold text-white">{formatINR(portfolioStats.totalPremium)}</div>
+            <div className="text-[10px] text-white/30 uppercase tracking-wide">Annual Prem</div>
+          </div>
+        </div>
+      )}
+
+      {/* Upcoming Renewals */}
       {upcoming.length > 0 && (
         <div className="panel p-4 mb-6 border-l-4 border-l-warn">
           <div className="text-sm font-medium text-white mb-2">Upcoming Renewals (Next 30 days)</div>
@@ -97,19 +229,47 @@ export default function PolicyTracker() {
         </div>
       )}
 
-      <div className="flex items-center justify-between mb-4">
-        <div className="text-sm text-white/40">{policies.length} {policies.length === 1 ? "policy" : "policies"} tracked</div>
+      {/* Toolbar */}
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-4">
+        <div className="flex items-center gap-2 w-full sm:w-auto">
+          <input
+            type="text"
+            className="input-field text-sm flex-1 sm:w-48"
+            placeholder="Search policies..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+          <select
+            className="select-field text-sm w-28"
+            value={statusFilter}
+            onChange={(e) => setStatusFilter(e.target.value)}
+          >
+            <option value="all">All Status</option>
+            {STATUS_OPTIONS.map((opt) => (
+              <option key={opt.value} value={opt.value}>{opt.label}</option>
+            ))}
+          </select>
+        </div>
         <div className="flex gap-2">
-          <PrintButton />
-          {upcoming.length > 0 && <WhatsAppShare text={shareText} />}
-          <button onClick={() => setShowForm(!showForm)} className="btn-primary text-sm py-2 px-4">
+          {policies.length > 0 && (
+            <>
+              <button onClick={exportCSV} className="text-xs text-signal hover:text-signal-soft transition-colors py-2 px-3 rounded-lg bg-white/5 hover:bg-white/10">
+                Export CSV
+              </button>
+              <PrintButton />
+              {upcoming.length > 0 && <WhatsAppShare text={shareText} />}
+            </>
+          )}
+          <button onClick={() => { showForm ? cancelForm() : setShowForm(true); }} className="btn-primary text-sm py-2 px-4">
             {showForm ? "Cancel" : "+ Add Policy"}
           </button>
         </div>
       </div>
 
+      {/* Add/Edit Form */}
       {showForm && (
         <form onSubmit={handleSubmit} className="panel p-5 mb-6 animate-fade-up">
+          <div className="text-sm font-medium text-white mb-3">{editingId ? "Edit Policy" : "Add New Policy"}</div>
           {errors.length > 0 && (
             <div className="mb-4 p-3 rounded-lg bg-bad/10 border border-bad/20 text-bad text-sm">
               {errors.map((e, i) => <div key={i}>{e}</div>)}
@@ -128,6 +288,12 @@ export default function PolicyTracker() {
               <label className="block text-xs text-white/40 mb-1.5 uppercase tracking-wide">Plan Name</label>
               <select className="select-field" value={form.planName} onChange={(e) => setForm({ ...form, planName: e.target.value })}>
                 {LIC_PLANS.map((p) => <option key={p.id} value={p.name}>{p.name} ({p.tableNo || "Govt"})</option>)}
+              </select>
+            </div>
+            <div>
+              <label className="block text-xs text-white/40 mb-1.5 uppercase tracking-wide">Status</label>
+              <select className="select-field" value={form.status} onChange={(e) => setForm({ ...form, status: e.target.value })}>
+                {STATUS_OPTIONS.map((opt) => <option key={opt.value} value={opt.value}>{opt.label}</option>)}
               </select>
             </div>
             <div>
@@ -152,27 +318,35 @@ export default function PolicyTracker() {
               <label className="block text-xs text-white/40 mb-1.5 uppercase tracking-wide">Next Premium Due Date</label>
               <input type="date" className="input-field" value={form.nextDueDate} onChange={(e) => setForm({ ...form, nextDueDate: e.target.value })} />
             </div>
-            <div className="sm:col-span-2">
+            <div>
               <label className="block text-xs text-white/40 mb-1.5 uppercase tracking-wide">Notes (optional)</label>
               <input className="input-field" value={form.notes} onChange={(e) => setForm({ ...form, notes: e.target.value })} placeholder="Any additional notes..." />
             </div>
           </div>
-          <div className="mt-4 flex justify-end">
-            <button type="submit" className="btn-primary text-sm py-2 px-6">Save Policy</button>
+          <div className="mt-4 flex justify-end gap-2">
+            <button type="button" onClick={cancelForm} className="text-sm py-2 px-4 rounded-lg bg-white/5 text-white/50 hover:bg-white/10 transition-colors">Cancel</button>
+            <button type="submit" className="btn-primary text-sm py-2 px-6">{editingId ? "Update Policy" : "Save Policy"}</button>
           </div>
         </form>
       )}
 
-      {policies.length > 0 ? (
+      {/* Policy List */}
+      {filteredPolicies.length > 0 ? (
         <div className="space-y-3">
-          {policies.map((p) => (
+          {filteredPolicies.map((p) => (
             <div key={p.id} className="panel p-4">
               <div className="flex items-start justify-between">
                 <div>
-                  <div className="text-sm font-medium text-white">{p.holderName}</div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm font-medium text-white">{p.holderName}</span>
+                    {getStatusBadge(p.status || "active")}
+                  </div>
                   <div className="text-xs text-white/40 mt-0.5">{p.planName} &mdash; Policy #{p.policyNumber}</div>
                 </div>
-                <button onClick={() => handleDelete(p.id)} className="text-xs text-bad/60 hover:text-bad transition-colors print:hidden">Delete</button>
+                <div className="flex gap-2 print:hidden">
+                  <button onClick={() => startEdit(p)} className="text-xs text-signal/60 hover:text-signal transition-colors">Edit</button>
+                  <button onClick={() => handleDelete(p.id)} className="text-xs text-bad/60 hover:text-bad transition-colors">Delete</button>
+                </div>
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-3">
                 <div>
@@ -203,7 +377,9 @@ export default function PolicyTracker() {
       ) : (
         !showForm && (
           <div className="panel-inner p-8 text-center text-white/30 text-sm">
-            No policies tracked yet. Click &quot;+ Add Policy&quot; to get started.
+            {policies.length === 0
+              ? 'No policies tracked yet. Click "+ Add Policy" to get started.'
+              : "No policies match your search/filter."}
           </div>
         )
       )}

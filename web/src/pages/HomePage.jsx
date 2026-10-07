@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 import FAQ from "../components/FAQ";
 
 const POPULAR_TOOLS = [
+  { path: "/dashboard", name: "Agent Dashboard", icon: "📋" },
   { path: "/premium-calculator", name: "Premium Calculator", icon: "₹" },
-  { path: "/maturity-calculator", name: "Maturity Calculator", icon: "📈" },
-  { path: "/plan-recommender", name: "Plan Recommender", icon: "🎯" },
-  { path: "/compare-plans", name: "Compare Plans", icon: "⚖️" },
+  { path: "/premium-table", name: "Premium Table", icon: "📊" },
   { path: "/commission-calculator", name: "Commission Calculator", icon: "💰" },
+  { path: "/compare-plans", name: "Compare Plans", icon: "⚖️" },
 ];
 
 const TOOL_CATEGORIES = [
@@ -19,6 +19,12 @@ const TOOL_CATEGORIES = [
         name: "Premium Calculator",
         desc: "Calculate exact premium for any LIC plan with GST, SA rebate & mode rebate",
         icon: "₹",
+      },
+      {
+        path: "/premium-table",
+        name: "Age-Wise Premium Table",
+        desc: "Full premium grid — see rates for every age and term combination at a glance",
+        icon: "📊",
       },
       {
         path: "/maturity-calculator",
@@ -74,6 +80,12 @@ const TOOL_CATEGORIES = [
     title: "Client Tools",
     description: "Manage clients, track policies, and share plan comparisons",
     tools: [
+      {
+        path: "/dashboard",
+        name: "Agent Dashboard",
+        desc: "Your portfolio at a glance — track policies, clients, renewals, and performance",
+        icon: "📋",
+      },
       {
         path: "/plan-comparison",
         name: "Plan Comparison",

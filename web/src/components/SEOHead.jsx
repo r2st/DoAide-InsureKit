@@ -193,6 +193,106 @@ const META = {
       { q: "Is LIC bonus guaranteed?", a: "Bonus declared and added to a policy becomes guaranteed. But future bonus rates are not guaranteed and depend on LIC's annual surplus." },
     ],
   },
+  "/guides/lic-premium-payment-online": {
+    title: "How to Pay LIC Premium Online: Complete Guide 2026 | DoAide InsureKit",
+    description: "Step-by-step guide to pay LIC premium online via LIC portal, ANANDA app, PayTM, PhonePe, Google Pay, net banking. Grace period rules, charges, and troubleshooting.",
+    keywords: "LIC premium payment online, pay LIC premium, LIC online payment, LIC premium PayTM, LIC premium UPI, LIC grace period",
+    faq: [
+      { q: "How can I pay LIC premium online?", a: "You can pay via LIC website (licindia.in), LIC ANANDA app, PayTM, PhonePe, Google Pay, or net banking. All online payments are free of charge." },
+      { q: "Is there any charge for online LIC premium payment?", a: "No, online premium payment through LIC portal, app, or UPI is completely free. CSC centres may charge ₹20-30." },
+      { q: "What is the grace period for LIC premium payment?", a: "30 days for yearly and half-yearly modes, 15 days for quarterly and monthly modes from the premium due date." },
+    ],
+  },
+  "/guides/lic-policy-status-check": {
+    title: "How to Check LIC Policy Status Online: 6 Methods | DoAide InsureKit",
+    description: "Check your LIC policy status online via website, app, SMS, helpline, agent, or branch. Understand policy status types — In Force, Lapsed, Paid-Up, Discharged.",
+    keywords: "LIC policy status, check LIC policy status online, LIC policy status check, LIC policy details, LIC customer portal login",
+    faq: [
+      { q: "How can I check my LIC policy status online?", a: "Register and login to licindia.in, go to My Policies section. You can also check via the LIC ANANDA app or send ASKLIC <policy number> to 56677." },
+      { q: "Can I check LIC policy status by SMS?", a: "Yes, send ASKLIC <Policy Number> to 56677 or 9222492224 from your registered mobile number." },
+      { q: "What does Lapsed policy status mean?", a: "A lapsed policy means premiums were not paid within the grace period. The policy can be revived within 5 years by paying arrears with interest." },
+    ],
+  },
+  "/guides/lic-maturity-amount-check": {
+    title: "How to Check LIC Maturity Amount Online — Calculator & Guide | DoAide InsureKit",
+    description: "Calculate and check your LIC maturity amount. Understand SA, SRB bonus, FAB components. Sample calculations for Jeevan Anand, Jeevan Labh. Tax rules on maturity.",
+    keywords: "LIC maturity amount, check LIC maturity value, LIC maturity calculator, LIC bonus calculation, LIC maturity claim, LIC 10(10D)",
+    faq: [
+      { q: "How is LIC maturity amount calculated?", a: "Maturity amount = Sum Assured + Total Simple Reversionary Bonus (SRB) + Final Additional Bonus (FAB). Some plans have maturity multipliers." },
+      { q: "Is LIC maturity amount taxable?", a: "No, if the annual premium is less than 10% of Sum Assured and the policy runs for at least 5 years. Otherwise, it's taxable under Section 10(10D)." },
+      { q: "How do I check my LIC maturity amount online?", a: "Login to licindia.in > My Policies > click your policy number. Use InsureKit's free Maturity Calculator for detailed projections with bonus." },
+    ],
+  },
+  "/guides/lic-loan-on-policy": {
+    title: "How to Get Loan Against LIC Policy: Complete Guide 2026 | DoAide InsureKit",
+    description: "Get loan against LIC policy — eligibility, max loan amount (90% of surrender value), interest rate (9%), application process, required documents, and repayment options.",
+    keywords: "loan against LIC policy, LIC policy loan, LIC loan interest rate, LIC loan eligibility, LIC loan amount, policy loan vs surrender",
+    faq: [
+      { q: "How much loan can I get against my LIC policy?", a: "You can borrow up to 90% of the surrender value. The surrender value depends on premiums paid and bonus accrued." },
+      { q: "What is the interest rate on LIC policy loan?", a: "LIC charges approximately 9% per annum on policy loans, significantly lower than personal loans (12-18%)." },
+      { q: "Can I get a loan on a term insurance policy?", a: "No, term insurance policies have no surrender value, so they cannot be used for policy loans. Only endowment and whole life policies qualify." },
+    ],
+  },
+  "/guides/lic-surrender-value": {
+    title: "LIC Surrender Value: GSV, SSV Calculator & Rules | DoAide InsureKit",
+    description: "Calculate LIC surrender value — Guaranteed (GSV) and Special (SSV). Year-wise surrender value table, tax implications, and 4 better alternatives to surrendering.",
+    keywords: "LIC surrender value, LIC GSV, LIC SSV, LIC surrender value calculator, surrender LIC policy, LIC surrender tax",
+    faq: [
+      { q: "When can I surrender my LIC policy?", a: "You can surrender after paying premiums for at least 3 full years. Before 3 years, no surrender value is payable." },
+      { q: "What is the difference between GSV and SSV?", a: "GSV (Guaranteed Surrender Value) is a guaranteed percentage of premiums paid. SSV (Special Surrender Value) is based on paid-up value with a multiplier. LIC pays whichever is higher." },
+      { q: "Is surrender value taxable?", a: "If surrendered before 5 years (or 2 years for ULIPs post-2012), the entire amount is taxable. After 5 years, it's exempt under Section 10(10D) if premium < 10% of SA." },
+    ],
+  },
+  "/guides/lic-agent-exam-preparation": {
+    title: "LIC Agent Exam 2026: IC-38 Syllabus, Tips & Study Material | DoAide InsureKit",
+    description: "Complete guide to LIC agent exam (IC-38) — eligibility, syllabus, exam pattern, preparation strategy, free study resources, and career growth path as a LIC agent.",
+    keywords: "LIC agent exam, IC-38 exam, LIC agent syllabus, LIC agent preparation, become LIC agent, IRDAI license exam",
+    faq: [
+      { q: "What is the qualification to become a LIC agent?", a: "Minimum 10th pass (rural areas) or 12th pass (urban areas), age 18+, Indian citizen. No upper age limit." },
+      { q: "How difficult is the LIC agent exam?", a: "The IC-38 exam is moderate difficulty — 50 MCQs in 1 hour, 35% passing marks. With 2-3 weeks of focused preparation, most candidates pass on the first attempt." },
+      { q: "What is the LIC agent exam syllabus?", a: "The IC-38 covers insurance principles, LIC products, IRDAI regulations, customer service, and professional ethics. Topic weightage: insurance basics 40%, products 30%, regulations 20%, ethics 10%." },
+    ],
+  },
+  "/guides/lic-claim-process": {
+    title: "LIC Claim Process: Documents, Steps & Settlement Guide | DoAide InsureKit",
+    description: "Complete LIC claim process — maturity, death, and survival benefit claims. Required documents, online and branch filing, settlement timeline, rejection reasons, and escalation.",
+    keywords: "LIC claim process, LIC maturity claim, LIC death claim, LIC claim documents, LIC claim settlement, LIC claim rejection",
+    faq: [
+      { q: "How long does LIC take to settle a claim?", a: "Maturity claims: 30 days. Death claims: 30-90 days depending on complexity. Early death claims (within 3 years) may take longer due to investigation." },
+      { q: "What documents are needed for LIC death claim?", a: "Original policy bond, death certificate, claimant's ID/address proof, cancelled cheque, NEFT form. For accidental death: FIR, post-mortem report, police investigation report." },
+      { q: "What to do if LIC rejects my claim?", a: "File a grievance with LIC branch > approach LIC Zonal Manager > complaint to IRDAI (igms.irda.gov.in) > approach Insurance Ombudsman." },
+    ],
+  },
+  "/guides/lic-tax-benefits": {
+    title: "LIC Tax Benefits: Section 80C, 10(10D) Complete Guide 2026 | DoAide InsureKit",
+    description: "Tax benefits on LIC policies — Section 80C deduction on premiums, Section 10(10D) maturity exemption, old vs new regime comparison, and tax planning strategies.",
+    keywords: "LIC tax benefits, LIC 80C deduction, LIC 10(10D), LIC tax saving, insurance tax benefit, LIC new tax regime",
+    faq: [
+      { q: "Is LIC premium eligible for 80C deduction?", a: "Yes, LIC premiums up to ₹1.5 lakh per year qualify for Section 80C deduction under the old tax regime. Premium must be less than 10% of Sum Assured." },
+      { q: "Is LIC maturity amount tax-free?", a: "Yes, under Section 10(10D), if annual premium is less than 10% of SA and the policy runs for 5+ years. Otherwise, maturity amount is taxable as income." },
+      { q: "Can I claim LIC tax benefit under new tax regime?", a: "Section 80C deduction is NOT available under the new tax regime. However, Section 10(10D) maturity exemption applies under both regimes." },
+    ],
+  },
+  "/guides/best-lic-plans-for-child": {
+    title: "Best LIC Plans for Children 2026: Top 5 with Returns | DoAide InsureKit",
+    description: "Best LIC plans for children in 2026 — Amritbaal, Jeevan Tarun, Children's Money Back compared. Sample calculations, education cost planning, and how to choose.",
+    keywords: "best LIC plan for child, LIC children plan, Amritbaal LIC, Jeevan Tarun, children's education plan, LIC child policy",
+    faq: [
+      { q: "Which LIC plan is best for a child?", a: "Amritbaal (774) is the best dedicated children's plan with guaranteed additions. Jeevan Tarun (834) and New Children's Money Back (832) are also excellent choices." },
+      { q: "What is the minimum age to buy a children's LIC plan?", a: "Amritbaal can be bought from age 0 (90 days). Jeevan Tarun from age 0-12 years. New Children's Money Back from age 0-12 years." },
+      { q: "When should I start a LIC plan for my child?", a: "The earlier the better. Starting at birth vs age 5 can reduce annual premiums by 30-40% for the same maturity amount." },
+    ],
+  },
+  "/guides/best-term-insurance-plan": {
+    title: "Best Term Insurance Plans 2026: LIC vs Private Comparison | DoAide InsureKit",
+    description: "Compare best term insurance plans 2026 — LIC Tech Term, Jeevan Amar vs HDFC Click2Protect, ICICI iProtect, Max Life. Claim ratios, premiums, riders, and buying guide.",
+    keywords: "best term insurance plan, LIC vs private term plan, Tech Term 854, term insurance comparison, cheapest term plan, term insurance claim ratio",
+    faq: [
+      { q: "Which is the best term insurance plan in 2026?", a: "LIC Tech Term (854) offers the trust of LIC with competitive premiums. For the lowest premium, HDFC Click2Protect and Max Life Smart Secure are top choices." },
+      { q: "Is LIC better than private for term insurance?", a: "LIC has a higher claim settlement ratio (98.6% vs 97-98% for top private insurers). Private insurers offer lower premiums and more riders. Both are equally regulated by IRDAI." },
+      { q: "How much term insurance cover do I need?", a: "Standard rule: 10-15x your annual income. A 30-year-old earning ₹10 lakh/year should have at least ₹1-1.5 crore term cover." },
+    ],
+  },
   "/plans": {
     title: "All LIC Plans 2026 — Complete Directory with Details & Premium | DoAide InsureKit",
     description: "Browse all LIC plans — Endowment, Money Back, Term, Whole Life, Child, Pension, ULIP. Compare features, check eligibility, calculate premium. Free, no login.",
@@ -200,6 +300,25 @@ const META = {
     faq: [
       { q: "How many LIC plans are currently available?", a: "LIC currently offers 30+ plans across categories: Endowment, Money Back, Term, Whole Life, Child, Pension, ULIP, and Government Schemes." },
       { q: "Which LIC plan is best for savings?", a: "Jeevan Labh (736) and Jeevan Lakshya (833) offer the highest IRR among endowment plans. Use our Plan Recommender for personalized suggestions." },
+    ],
+  },
+  "/premium-table": {
+    title: "LIC Age-Wise Premium Table 2026 — Rates for All Ages & Terms | DoAide InsureKit",
+    description: "Complete age-wise premium rate table for every LIC plan. See premium per ₹1000 SA for all age-term combinations. Show clients exact rates — the agent's must-have tool.",
+    keywords: "LIC premium table, LIC premium rates by age, LIC age wise premium, LIC rate per 1000, LIC premium chart, LIC premium grid",
+    faq: [
+      { q: "What is a premium rate table?", a: "It shows the tabular premium rate per ₹1000 of Sum Assured for every valid age-term combination. Multiply by your SA (in thousands) to get the annual premium." },
+      { q: "Why are some cells empty?", a: "LIC restricts certain age-term combinations. For example, a 50-year-old cannot take a 35-year endowment because maturity age would exceed limits." },
+      { q: "Are SA rebates included?", a: "When you set a Sum Assured ≥ ₹5L, the SA rebate is automatically applied. Toggle 'Show rate per 1000' to see raw tabular rates." },
+    ],
+  },
+  "/dashboard": {
+    title: "LIC Agent Dashboard — Portfolio Summary & Performance | DoAide InsureKit",
+    description: "Free agent dashboard for LIC agents. Track your total portfolio, active policies, upcoming renewals, client events, and club qualification progress.",
+    keywords: "LIC agent dashboard, LIC agent portfolio, LIC agent performance, LIC agent CRM, LIC policy management",
+    faq: [
+      { q: "Where does the dashboard data come from?", a: "The dashboard reads from policies added in Policy Tracker and clients in Client Reminders. Data is stored locally in your browser." },
+      { q: "What are LIC club targets?", a: "LIC rewards agents based on First Year Commission: Star Club (₹3L+), MDRT (₹6L+), COT (₹12L+), TOT (₹24L+)." },
     ],
   },
   "/compare/lic-super-sales-saathi": {

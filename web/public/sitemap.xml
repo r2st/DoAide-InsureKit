@@ -5,6 +5,8 @@
   <url><loc>https://insure.doaide.com/premium-calculator</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://insure.doaide.com/maturity-calculator</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://insure.doaide.com/commission-calculator</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://insure.doaide.com/premium-table</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://insure.doaide.com/dashboard</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://insure.doaide.com/tax-calculator</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://insure.doaide.com/plan-comparison</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://insure.doaide.com/compare-plans</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -24,6 +26,16 @@
   <url><loc>https://insure.doaide.com/guides/check-policy-status</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://insure.doaide.com/guides/bonus-rates-history</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://insure.doaide.com/guides/revive-lapsed-policy</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://insure.doaide.com/guides/lic-premium-payment-online</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://insure.doaide.com/guides/lic-policy-status-check</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://insure.doaide.com/guides/lic-maturity-amount-check</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://insure.doaide.com/guides/lic-loan-on-policy</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://insure.doaide.com/guides/lic-surrender-value</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://insure.doaide.com/guides/lic-agent-exam-preparation</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://insure.doaide.com/guides/lic-claim-process</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://insure.doaide.com/guides/lic-tax-benefits</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://insure.doaide.com/guides/best-lic-plans-for-child</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://insure.doaide.com/guides/best-term-insurance-plan</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://insure.doaide.com/compare/lic-super-sales-saathi</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://insure.doaide.com/compare/perfect-agent-plus</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://insure.doaide.com/best-lic-agent-tools-2026</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
