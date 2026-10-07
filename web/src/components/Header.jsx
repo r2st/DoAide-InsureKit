@@ -1,3 +1,5 @@
+import UserMenu from "./UserMenu";
+
 export default function Header() {
   return (
     <header className="border-b border-white/7">
@@ -11,8 +13,11 @@ export default function Header() {
             <span className="text-white/30 text-xs ml-1.5">by DoAide</span>
           </div>
         </a>
-        <div className="text-white/30 text-xs hidden sm:block">
-          Free LIC Agent Tools — No Login Required
+        <div className="flex items-center gap-4">
+          <div className="text-white/30 text-xs hidden sm:block">
+            Free LIC Agent Tools
+          </div>
+          <UserMenu />
         </div>
       </div>
     </header>

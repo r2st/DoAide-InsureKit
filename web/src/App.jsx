@@ -4,6 +4,10 @@ import Footer from "./components/Footer";
 import SEOHead from "./components/SEOHead";
 import Breadcrumb from "./components/Breadcrumb";
 import InstallPrompt from "./components/InstallPrompt";
+import SignUpBanner from "./components/SignUpBanner";
+import AuthCallbackHandler from "./components/AuthCallbackHandler";
+import LoginPage from "./pages/LoginPage";
+import ProfilePage from "./pages/ProfilePage";
 import HomePage from "./pages/HomePage";
 import PremiumCalculator from "./pages/PremiumCalculator";
 import MaturityCalculator from "./pages/MaturityCalculator";
@@ -78,8 +82,12 @@ export default function App() {
       <Header />
       {!isHome && <Breadcrumb />}
       <main className="flex-1 max-w-4xl w-full mx-auto px-4 py-6">
+        <SignUpBanner />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/auth/callback" element={<AuthCallbackHandler />} />
           <Route path="/premium-calculator" element={<PremiumCalculator />} />
           <Route path="/maturity-calculator" element={<MaturityCalculator />} />
           <Route path="/plan-comparison" element={<PlanComparison />} />
