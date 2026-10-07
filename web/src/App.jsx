@@ -62,6 +62,8 @@ import RebateCalculator from "./pages/RebateCalculator";
 import SelfMixPresentation from "./pages/SelfMixPresentation";
 import FamilyMixPresentation from "./pages/FamilyMixPresentation";
 import BudgetPresentation from "./pages/BudgetPresentation";
+import ClubQualification from "./pages/ClubQualification";
+import GreetingCardCreator from "./pages/GreetingCardCreator";
 
 export default function App() {
   const { pathname } = useLocation();
@@ -133,6 +135,8 @@ export default function App() {
           <Route path="/self-mix" element={<SelfMixPresentation />} />
           <Route path="/family-mix" element={<FamilyMixPresentation />} />
           <Route path="/budget-presentation" element={<BudgetPresentation />} />
+          <Route path="/club-qualification" element={<ClubQualification />} />
+          <Route path="/greeting-cards" element={<GreetingCardCreator />} />
         </Routes>
       </main>
       <Footer />

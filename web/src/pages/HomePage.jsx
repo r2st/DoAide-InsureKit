@@ -188,6 +188,18 @@ const TOOL_CATEGORIES = [
         desc: "Track policies nearing maturity — countdown, estimated payouts",
         icon: "⏰",
       },
+      {
+        path: "/club-qualification",
+        name: "Club Qualification",
+        desc: "Track progress toward LIC clubs — Branch Manager to Chairman's Club & MDRT",
+        icon: "🏆",
+      },
+      {
+        path: "/greeting-cards",
+        name: "Greeting Card Creator",
+        desc: "Create personalized greetings for clients — birthdays, festivals, anniversaries",
+        icon: "💌",
+      },
     ],
   },
   {
