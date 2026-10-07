@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { getPolicies } from "../utils/policyStore";
+import { usePolicies } from "../hooks/usePolicies";
 import { LIC_PLANS, getSRBRate } from "../data/licPlans";
 import { formatINR } from "../utils/format";
 import FAQ from "../components/FAQ";
@@ -46,11 +46,12 @@ function estimateMaturity(policy) {
 }
 
 export default function PolicyMaturityTracker() {
+  const { policies: rawPolicies, loading } = usePolicies();
   const [filter, setFilter] = useState("all");
   const [sortBy, setSortBy] = useState("date");
 
   const policies = useMemo(() => {
-    return getPolicies()
+    return rawPolicies
       .map((p) => {
         const maturityDate = getMaturityDate(p);
         const estimate = estimateMaturity(p);

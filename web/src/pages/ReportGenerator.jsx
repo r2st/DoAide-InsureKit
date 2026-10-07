@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
-import { getPolicies } from "../utils/policyStore";
-import { getClients } from "../utils/clientStore";
+import { useClients } from "../hooks/useClients";
+import { usePolicies } from "../hooks/usePolicies";
 import { formatINR, formatLakh } from "../utils/format";
 import PrintButton from "../components/PrintButton";
 import FAQ from "../components/FAQ";
@@ -283,8 +283,8 @@ function PerformanceReport({ policies, clients }) {
 export default function ReportGenerator() {
   const [reportType, setReportType] = useState("portfolio");
 
-  const policies = useMemo(() => getPolicies(), []);
-  const clients = useMemo(() => getClients(), []);
+  const { policies } = usePolicies();
+  const { clients } = useClients();
 
   const hasData = policies.length > 0 || clients.length > 0;
 

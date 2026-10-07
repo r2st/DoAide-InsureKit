@@ -22,9 +22,10 @@ const FEATURES = [
   { feature: "Receipt Generator", insurekit: true, competitor: false },
   { feature: "Premium Calendar", insurekit: true, competitor: false },
   { feature: "Individual Plan Detail Pages", insurekit: true, competitor: false },
-  { feature: "100% Free", insurekit: true, competitor: false },
-  { feature: "No Registration / Login", insurekit: true, competitor: false },
-  { feature: "Works Offline", insurekit: true, competitor: false },
+  { feature: "Cloud Sync (Google SSO)", insurekit: true, competitor: true },
+  { feature: "100% Free (No Subscription)", insurekit: true, competitor: false },
+  { feature: "Works Without Login", insurekit: true, competitor: false },
+  { feature: "Works Offline (PWA)", insurekit: true, competitor: false },
   { feature: "Privacy (Data on Device)", insurekit: true, competitor: false },
   { feature: "WhatsApp Sharing", insurekit: true, competitor: true },
 ];
