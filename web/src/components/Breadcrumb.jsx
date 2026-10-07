@@ -23,6 +23,11 @@ const ROUTE_NAMES = {
   "/guides/check-policy-status": "Check Policy Status",
   "/guides/bonus-rates-history": "Bonus Rates History",
   "/guides/revive-lapsed-policy": "Revive Lapsed Policy",
+  "/plans": "LIC Plans",
+  "/compare": "Compare",
+  "/compare/lic-super-sales-saathi": "InsureKit vs Super Sales Saathi",
+  "/compare/perfect-agent-plus": "InsureKit vs Perfect Agent Plus",
+  "/best-lic-agent-tools-2026": "Best LIC Agent Tools 2026",
 };
 
 export default function Breadcrumb() {

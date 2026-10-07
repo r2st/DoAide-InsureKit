@@ -129,10 +129,22 @@ const TOOL_CATEGORIES = [
         icon: "🧾",
       },
       {
+        path: "/plans",
+        name: "All LIC Plans",
+        desc: "Browse 30+ LIC plans with details, eligibility, bonus rates & premium info",
+        icon: "📑",
+      },
+      {
         path: "/guides",
         name: "Guides & Articles",
         desc: "In-depth guides on best plans, bonus history, policy revival, and more",
         icon: "📖",
+      },
+      {
+        path: "/best-lic-agent-tools-2026",
+        name: "Best LIC Agent Tools",
+        desc: "Compare top LIC agent tools — InsureKit vs competitors",
+        icon: "🏆",
       },
     ],
   },

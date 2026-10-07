@@ -193,6 +193,34 @@ const META = {
       { q: "Is LIC bonus guaranteed?", a: "Bonus declared and added to a policy becomes guaranteed. But future bonus rates are not guaranteed and depend on LIC's annual surplus." },
     ],
   },
+  "/plans": {
+    title: "All LIC Plans 2026 — Complete Directory with Details & Premium | DoAide InsureKit",
+    description: "Browse all LIC plans — Endowment, Money Back, Term, Whole Life, Child, Pension, ULIP. Compare features, check eligibility, calculate premium. Free, no login.",
+    keywords: "LIC plans, all LIC plans, LIC plan list, LIC plan directory, LIC endowment plans, LIC term plans",
+    faq: [
+      { q: "How many LIC plans are currently available?", a: "LIC currently offers 30+ plans across categories: Endowment, Money Back, Term, Whole Life, Child, Pension, ULIP, and Government Schemes." },
+      { q: "Which LIC plan is best for savings?", a: "Jeevan Labh (736) and Jeevan Lakshya (833) offer the highest IRR among endowment plans. Use our Plan Recommender for personalized suggestions." },
+    ],
+  },
+  "/compare/lic-super-sales-saathi": {
+    title: "InsureKit vs LIC Super Sales Saathi — Feature Comparison 2026 | DoAide",
+    description: "Compare DoAide InsureKit with LIC Super Sales Saathi. See which LIC agent tool has more calculators, better features, and is truly free.",
+    keywords: "InsureKit vs LIC Super Sales Saathi, LIC agent tools comparison, best LIC agent app",
+  },
+  "/compare/perfect-agent-plus": {
+    title: "InsureKit vs Perfect Agent Plus — Feature Comparison 2026 | DoAide",
+    description: "Compare DoAide InsureKit with Perfect Agent Plus. Free vs paid, feature-by-feature comparison for LIC agents.",
+    keywords: "InsureKit vs Perfect Agent Plus, LIC agent tools comparison, best free LIC calculator",
+  },
+  "/best-lic-agent-tools-2026": {
+    title: "Best LIC Agent Tools 2026 — Top 4 Apps Compared | DoAide InsureKit",
+    description: "Comprehensive comparison of the best LIC agent tools in 2026. InsureKit vs Perfect Agent Plus vs Super Sales Saathi vs LIC MF App.",
+    keywords: "best LIC agent tools 2026, LIC calculator app, LIC agent app, free LIC tools",
+    faq: [
+      { q: "Which is the best free LIC agent tool in 2026?", a: "DoAide InsureKit is the most comprehensive free tool with 22+ features. No registration needed." },
+      { q: "Do I need to pay for LIC agent tools?", a: "Not necessarily. InsureKit offers all essential tools for free." },
+    ],
+  },
   "/guides/revive-lapsed-policy": {
     title: "How to Revive a Lapsed LIC Policy — Complete Guide | DoAide InsureKit",
     description: "Step-by-step guide to reviving a lapsed LIC policy. Eligibility, documents needed, revival amount calculation, online & offline methods, and tips to avoid future lapses.",

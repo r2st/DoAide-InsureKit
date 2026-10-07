@@ -26,6 +26,11 @@ import GuideBestPlans2026 from "./pages/GuideBestPlans2026";
 import GuideCheckPolicyStatus from "./pages/GuideCheckPolicyStatus";
 import GuideBonusRatesHistory from "./pages/GuideBonusRatesHistory";
 import GuideReviveLapsedPolicy from "./pages/GuideReviveLapsedPolicy";
+import PlansDirectoryPage from "./pages/PlansDirectoryPage";
+import PlanDetailPage from "./pages/PlanDetailPage";
+import VsLicSuperSalesSaathi from "./pages/compare/VsLicSuperSalesSaathi";
+import VsPerfectAgentPlus from "./pages/compare/VsPerfectAgentPlus";
+import BestLicTools from "./pages/BestLicTools";
 
 export default function App() {
   const { pathname } = useLocation();
@@ -61,6 +66,11 @@ export default function App() {
           <Route path="/guides/check-policy-status" element={<GuideCheckPolicyStatus />} />
           <Route path="/guides/bonus-rates-history" element={<GuideBonusRatesHistory />} />
           <Route path="/guides/revive-lapsed-policy" element={<GuideReviveLapsedPolicy />} />
+          <Route path="/plans" element={<PlansDirectoryPage />} />
+          <Route path="/plans/:slug" element={<PlanDetailPage />} />
+          <Route path="/compare/lic-super-sales-saathi" element={<VsLicSuperSalesSaathi />} />
+          <Route path="/compare/perfect-agent-plus" element={<VsPerfectAgentPlus />} />
+          <Route path="/best-lic-agent-tools-2026" element={<BestLicTools />} />
         </Routes>
       </main>
       <Footer />

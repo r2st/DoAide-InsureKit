@@ -1,14 +1,15 @@
 import { describe, it, expect } from "vitest";
-import { LIC_PLANS, getPlan, getPlansForComparison, getSRBRate, getFABRate, getSASlabBonus } from "./licPlans";
+import { LIC_PLANS, getPlan, getPlanBySlug, getAllSlugs, getPlansByType, getRelatedPlans, getPlansForComparison, getSRBRate, getFABRate, getSASlabBonus, PLAN_TYPE_LABELS } from "./licPlans";
 
 describe("LIC_PLANS data integrity", () => {
-  it("has at least 15 plans", () => {
-    expect(LIC_PLANS.length).toBeGreaterThanOrEqual(15);
+  it("has at least 25 plans", () => {
+    expect(LIC_PLANS.length).toBeGreaterThanOrEqual(25);
   });
 
-  it("each plan has required fields", () => {
+  it("each plan has required fields including slug", () => {
     for (const plan of LIC_PLANS) {
       expect(plan.id).toBeTruthy();
+      expect(plan.slug).toBeTruthy();
       expect(plan.name).toBeTruthy();
       expect(typeof plan.tableNo).toBe("number");
       expect(plan.type).toBeTruthy();
@@ -117,5 +118,81 @@ describe("getSASlabBonus", () => {
   it("returns 0 for SA below threshold", () => {
     const plan = getPlan("jeevan_labh_736");
     expect(getSASlabBonus(plan, 200000)).toBe(0);
+  });
+});
+
+describe("slug-based functions", () => {
+  it("plan slugs are unique", () => {
+    const slugs = LIC_PLANS.map((p) => p.slug);
+    expect(new Set(slugs).size).toBe(slugs.length);
+  });
+
+  it("getPlanBySlug returns correct plan", () => {
+    expect(getPlanBySlug("jeevan-anand-715")?.name).toBe("New Jeevan Anand");
+    expect(getPlanBySlug("tech-term-854")?.tableNo).toBe(854);
+  });
+
+  it("getPlanBySlug returns undefined for unknown slug", () => {
+    expect(getPlanBySlug("nonexistent")).toBeUndefined();
+  });
+
+  it("getAllSlugs returns all slugs", () => {
+    const slugs = getAllSlugs();
+    expect(slugs.length).toBe(LIC_PLANS.length);
+    expect(slugs).toContain("jeevan-anand-715");
+  });
+
+  it("getPlansByType filters correctly", () => {
+    const termPlans = getPlansByType("term");
+    expect(termPlans.length).toBeGreaterThan(0);
+    expect(termPlans.every((p) => p.type === "term")).toBe(true);
+  });
+
+  it("getRelatedPlans returns same-type plans excluding self", () => {
+    const plan = getPlan("jeevan_anand_715");
+    const related = getRelatedPlans(plan, 3);
+    expect(related.length).toBeLessThanOrEqual(3);
+    expect(related.every((p) => p.type === plan.type && p.id !== plan.id)).toBe(true);
+  });
+});
+
+describe("PLAN_TYPE_LABELS", () => {
+  it("has labels for all plan types", () => {
+    expect(PLAN_TYPE_LABELS.endowment).toBe("Endowment");
+    expect(PLAN_TYPE_LABELS.term).toBe("Term Insurance");
+    expect(PLAN_TYPE_LABELS.ulip).toBe("ULIP");
+  });
+});
+
+describe("new plans added", () => {
+  it("includes Jeevan Azad 868", () => {
+    const plan = getPlan("jeevan_azad_868");
+    expect(plan).toBeTruthy();
+    expect(plan.tableNo).toBe(868);
+    expect(plan.guaranteedAdditions).toBe(55);
+  });
+
+  it("includes New Jeevan Shanti 858", () => {
+    const plan = getPlan("new_jeevan_shanti_858");
+    expect(plan).toBeTruthy();
+    expect(plan.type).toBe("pension");
+  });
+
+  it("includes SIIP 852 as ULIP", () => {
+    const plan = getPlan("siip_852");
+    expect(plan).toBeTruthy();
+    expect(plan.type).toBe("ulip");
+  });
+
+  it("includes Micro Bachat 851", () => {
+    const plan = getPlan("micro_bachat_851");
+    expect(plan).toBeTruthy();
+    expect(plan.maxSA).toBe(50000);
+  });
+
+  it("includes Aam Aadmi Bima Yojana", () => {
+    const plan = getPlan("aam_aadmi_bima_yojana");
+    expect(plan).toBeTruthy();
+    expect(plan.type).toBe("govt");
   });
 });

@@ -6,6 +6,18 @@ export const PLAN_TYPES = {
   CHILD: "child",
   PENSION: "pension",
   GOVT: "govt",
+  ULIP: "ulip",
+};
+
+export const PLAN_TYPE_LABELS = {
+  endowment: "Endowment",
+  money_back: "Money Back",
+  whole_life: "Whole Life",
+  term: "Term Insurance",
+  child: "Child Plan",
+  pension: "Pension / Annuity",
+  govt: "Government Scheme",
+  ulip: "ULIP",
 };
 
 export const MODE_FACTORS = {
@@ -69,6 +81,7 @@ export function getCommissionRates(plan, ppt) {
 export const LIC_PLANS = [
   {
     id: "jeevan_anand_715",
+    slug: "jeevan-anand-715",
     name: "New Jeevan Anand",
     tableNo: 715,
     type: PLAN_TYPES.ENDOWMENT,
@@ -103,6 +116,7 @@ export const LIC_PLANS = [
   },
   {
     id: "new_endowment_714",
+    slug: "new-endowment-714",
     name: "New Endowment Plan",
     tableNo: 714,
     type: PLAN_TYPES.ENDOWMENT,
@@ -137,6 +151,7 @@ export const LIC_PLANS = [
   },
   {
     id: "jeevan_labh_736",
+    slug: "jeevan-labh-736",
     name: "Jeevan Labh",
     tableNo: 736,
     type: PLAN_TYPES.ENDOWMENT,
@@ -173,6 +188,7 @@ export const LIC_PLANS = [
   },
   {
     id: "jeevan_umang_745",
+    slug: "jeevan-umang-745",
     name: "Jeevan Umang",
     tableNo: 745,
     type: PLAN_TYPES.WHOLE_LIFE,
@@ -208,6 +224,7 @@ export const LIC_PLANS = [
   },
   {
     id: "money_back_20_720",
+    slug: "money-back-20-720",
     name: "New Money Back (20 yr)",
     tableNo: 720,
     type: PLAN_TYPES.MONEY_BACK,
@@ -244,6 +261,7 @@ export const LIC_PLANS = [
   },
   {
     id: "money_back_25_721",
+    slug: "money-back-25-721",
     name: "New Money Back (25 yr)",
     tableNo: 721,
     type: PLAN_TYPES.MONEY_BACK,
@@ -280,6 +298,7 @@ export const LIC_PLANS = [
   },
   {
     id: "jeevan_lakshya_733",
+    slug: "jeevan-lakshya-733",
     name: "Jeevan Lakshya",
     tableNo: 733,
     type: PLAN_TYPES.ENDOWMENT,
@@ -312,6 +331,7 @@ export const LIC_PLANS = [
   },
   {
     id: "single_prem_endow_717",
+    slug: "single-prem-endow-717",
     name: "Single Premium Endowment",
     tableNo: 717,
     type: PLAN_TYPES.ENDOWMENT,
@@ -342,6 +362,7 @@ export const LIC_PLANS = [
   },
   {
     id: "tech_term_854",
+    slug: "tech-term-854",
     name: "Tech Term",
     tableNo: 854,
     type: PLAN_TYPES.TERM,
@@ -373,6 +394,7 @@ export const LIC_PLANS = [
   },
   {
     id: "jeevan_kiran_875",
+    slug: "jeevan-kiran-875",
     name: "Jeevan Kiran",
     tableNo: 875,
     type: PLAN_TYPES.TERM,
@@ -404,6 +426,7 @@ export const LIC_PLANS = [
   },
   {
     id: "dhan_sanchay_871",
+    slug: "dhan-sanchay-871",
     name: "Dhan Sanchay",
     tableNo: 871,
     type: PLAN_TYPES.WHOLE_LIFE,
@@ -440,6 +463,7 @@ export const LIC_PLANS = [
   },
   {
     id: "amritbaal_774",
+    slug: "amritbaal-774",
     name: "Amritbaal",
     tableNo: 774,
     type: PLAN_TYPES.CHILD,
@@ -472,6 +496,7 @@ export const LIC_PLANS = [
   },
   {
     id: "saral_pension_862",
+    slug: "saral-pension-862",
     name: "Saral Pension",
     tableNo: 862,
     type: PLAN_TYPES.PENSION,
@@ -495,6 +520,7 @@ export const LIC_PLANS = [
   },
   {
     id: "pmjjby",
+    slug: "pmjjby",
     name: "PMJJBY",
     tableNo: 0,
     type: PLAN_TYPES.GOVT,
@@ -513,6 +539,7 @@ export const LIC_PLANS = [
   },
   {
     id: "jeevan_tarun_734",
+    slug: "jeevan-tarun-734",
     name: "Jeevan Tarun",
     tableNo: 734,
     type: PLAN_TYPES.CHILD,
@@ -553,6 +580,7 @@ export const LIC_PLANS = [
   },
   {
     id: "bima_jyoti_860",
+    slug: "bima-jyoti-860",
     name: "Bima Jyoti",
     tableNo: 860,
     type: PLAN_TYPES.ENDOWMENT,
@@ -587,6 +615,7 @@ export const LIC_PLANS = [
   },
   {
     id: "new_children_money_back_732",
+    slug: "new-children-money-back-732",
     name: "New Children's Money Back",
     tableNo: 732,
     type: PLAN_TYPES.CHILD,
@@ -624,6 +653,7 @@ export const LIC_PLANS = [
   },
   {
     id: "aadhaar_shila_744",
+    slug: "aadhaar-shila-744",
     name: "Aadhaar Shila",
     tableNo: 744,
     type: PLAN_TYPES.ENDOWMENT,
@@ -657,6 +687,7 @@ export const LIC_PLANS = [
   },
   {
     id: "aadhaar_stambh_743",
+    slug: "aadhaar-stambh-743",
     name: "Aadhaar Stambh",
     tableNo: 743,
     type: PLAN_TYPES.ENDOWMENT,
@@ -689,6 +720,7 @@ export const LIC_PLANS = [
   },
   {
     id: "jeevan_amar_855",
+    slug: "jeevan-amar-855",
     name: "Jeevan Amar",
     tableNo: 855,
     type: PLAN_TYPES.TERM,
@@ -720,6 +752,7 @@ export const LIC_PLANS = [
   },
   {
     id: "jeevan_anand_815",
+    slug: "jeevan-anand-815",
     name: "Jeevan Anand",
     tableNo: 815,
     type: PLAN_TYPES.ENDOWMENT,
@@ -754,6 +787,7 @@ export const LIC_PLANS = [
   },
   {
     id: "new_endowment_814",
+    slug: "new-endowment-814",
     name: "New Endowment Plan",
     tableNo: 814,
     type: PLAN_TYPES.ENDOWMENT,
@@ -788,6 +822,7 @@ export const LIC_PLANS = [
   },
   {
     id: "jeevan_lakshya_833",
+    slug: "jeevan-lakshya-833",
     name: "Jeevan Lakshya",
     tableNo: 833,
     type: PLAN_TYPES.ENDOWMENT,
@@ -821,6 +856,7 @@ export const LIC_PLANS = [
   },
   {
     id: "new_children_money_back_832",
+    slug: "new-children-money-back-832",
     name: "New Children's Money Back",
     tableNo: 832,
     type: PLAN_TYPES.CHILD,
@@ -858,6 +894,7 @@ export const LIC_PLANS = [
   },
   {
     id: "pmsby",
+    slug: "pmsby",
     name: "PMSBY",
     tableNo: 0,
     type: PLAN_TYPES.GOVT,
@@ -878,10 +915,201 @@ export const LIC_PLANS = [
     ],
     premiumRates: {},
   },
+  {
+    id: "jeevan_azad_868",
+    slug: "jeevan-azad-868",
+    name: "Jeevan Azad",
+    tableNo: 868,
+    type: PLAN_TYPES.ENDOWMENT,
+    minAge: 18,
+    maxAge: 50,
+    minTerm: 15,
+    maxTerm: 20,
+    minSA: 200000,
+    maxSA: 500000,
+    ppt: "limited",
+    pptOptions: { 15: 10, 20: 15 },
+    srbRate: 0,
+    isNonPar: true,
+    guaranteedAdditions: 55,
+    description: "Non-participating endowment with guaranteed additions and limited premium. SA capped at ₹5 lakh for affordable cover.",
+    features: [
+      "Guaranteed additions ₹55/1000 SA per year",
+      "Limited premium paying (10/15 years)",
+      "SA capped at ₹5,00,000",
+      "Loan facility after 2 policy years",
+      "Tax benefits under 80C and 10(10D)",
+    ],
+    premiumRates: {
+      18: { 15: 72.00, 20: 52.50 },
+      25: { 15: 73.00, 20: 53.50 },
+      30: { 15: 74.50, 20: 55.00 },
+      35: { 15: 76.50, 20: 57.00 },
+      40: { 15: 79.50, 20: 59.50 },
+      45: { 15: 83.50, 20: 63.00 },
+      50: { 15: 89.00 },
+    },
+  },
+  {
+    id: "new_jeevan_shanti_858",
+    slug: "new-jeevan-shanti-858",
+    name: "New Jeevan Shanti",
+    tableNo: 858,
+    type: PLAN_TYPES.PENSION,
+    minAge: 30,
+    maxAge: 79,
+    minTerm: 0,
+    maxTerm: 0,
+    minSA: 0,
+    maxSA: null,
+    ppt: "single",
+    srbRate: 0,
+    isAnnuity: true,
+    annuityRate: 0.0540,
+    description: "Deferred annuity plan with single or regular premium. Choose deferment period and annuity option for guaranteed pension.",
+    features: [
+      "Guaranteed pension after deferment period",
+      "Single or limited premium payment",
+      "Multiple annuity options available",
+      "Return of purchase price on death",
+      "Option of joint life annuity",
+    ],
+    premiumRates: {},
+  },
+  {
+    id: "siip_852",
+    slug: "siip-852",
+    name: "SIIP (Systematic Investment Insurance Plan)",
+    tableNo: 852,
+    type: PLAN_TYPES.ULIP,
+    minAge: 18,
+    maxAge: 55,
+    minTerm: 10,
+    maxTerm: 30,
+    minSA: 0,
+    maxSA: null,
+    ppt: "limited",
+    pptOptions: { 10: 5, 15: 5, 20: 5, 25: 5, 30: 5 },
+    srbRate: 0,
+    description: "Market-linked insurance plan (ULIP) with SIP-style premium payment. Choose from 4 fund options based on risk appetite.",
+    features: [
+      "Market-linked returns with insurance cover",
+      "4 fund options: Bond, Secured, Balanced, Growth",
+      "Free switching between funds (4/year)",
+      "5-year premium paying term",
+      "Partial withdrawal after 5 years",
+      "No guaranteed returns — market-linked",
+    ],
+    premiumRates: {},
+  },
+  {
+    id: "nivesh_plus_849",
+    slug: "nivesh-plus-849",
+    name: "Nivesh Plus",
+    tableNo: 849,
+    type: PLAN_TYPES.ULIP,
+    minAge: 90,
+    maxAge: 60,
+    minTerm: 10,
+    maxTerm: 25,
+    minSA: 0,
+    maxSA: null,
+    ppt: "single",
+    srbRate: 0,
+    description: "Single premium ULIP for lump sum investment. Market-linked returns with life cover and tax benefits.",
+    features: [
+      "Single premium payment",
+      "Market-linked returns",
+      "4 fund options",
+      "Life cover = 1.25× single premium (up to age 45) or 1.10× (46+)",
+      "No premium allocation charge",
+      "Partial withdrawal after 5 years",
+    ],
+    premiumRates: {},
+  },
+  {
+    id: "micro_bachat_851",
+    slug: "micro-bachat-851",
+    name: "Micro Bachat",
+    tableNo: 851,
+    type: PLAN_TYPES.ENDOWMENT,
+    minAge: 18,
+    maxAge: 55,
+    minTerm: 15,
+    maxTerm: 15,
+    minSA: 5000,
+    maxSA: 50000,
+    ppt: "full",
+    srbRate: 0,
+    isNonPar: true,
+    guaranteedAdditions: 60,
+    description: "Micro insurance endowment for low-income segments. Very low SA range (₹5,000 to ₹50,000) with guaranteed additions.",
+    features: [
+      "Designed for low-income groups",
+      "SA range: ₹5,000 to ₹50,000",
+      "Guaranteed additions ₹60/1000 SA",
+      "15-year fixed policy term",
+      "Affordable premiums",
+    ],
+    premiumRates: {
+      18: { 15: 63.00 },
+      25: { 15: 64.00 },
+      30: { 15: 65.50 },
+      35: { 15: 67.50 },
+      40: { 15: 70.50 },
+      45: { 15: 74.50 },
+      50: { 15: 80.00 },
+      55: { 15: 87.00 },
+    },
+  },
+  {
+    id: "aam_aadmi_bima_yojana",
+    slug: "aam-aadmi-bima-yojana",
+    name: "Aam Aadmi Bima Yojana",
+    tableNo: 0,
+    type: PLAN_TYPES.GOVT,
+    minAge: 18,
+    maxAge: 59,
+    minTerm: 1,
+    maxTerm: 1,
+    minSA: 30000,
+    maxSA: 75000,
+    ppt: "full",
+    srbRate: 0,
+    fixedPremium: 200,
+    description: "Government-sponsored group insurance for rural landless households. Covers natural and accidental death plus disability.",
+    features: [
+      "₹200 annual premium (50% subsidy by govt)",
+      "₹30,000 natural death cover",
+      "₹75,000 accidental death cover",
+      "₹37,500 partial disability cover",
+      "Scholarship benefit for children",
+      "For rural landless household heads",
+    ],
+    premiumRates: {},
+  },
 ];
 
 export function getPlan(id) {
   return LIC_PLANS.find((p) => p.id === id);
+}
+
+export function getPlanBySlug(slug) {
+  return LIC_PLANS.find((p) => p.slug === slug);
+}
+
+export function getAllSlugs() {
+  return LIC_PLANS.map((p) => p.slug);
+}
+
+export function getPlansByType(type) {
+  return LIC_PLANS.filter((p) => p.type === type);
+}
+
+export function getRelatedPlans(plan, limit = 4) {
+  return LIC_PLANS.filter(
+    (p) => p.id !== plan.id && p.type === plan.type,
+  ).slice(0, limit);
 }
 
 export function getPlansForComparison() {
