@@ -47,6 +47,7 @@ import PolicyMaturityTracker from "./pages/PolicyMaturityTracker";
 import GuideLicCommissionStructure from "./pages/GuideLicCommissionStructure";
 import GuideHowToBecomeAgent from "./pages/GuideHowToBecomeAgent";
 import GuideBestPlansForTaxSaving from "./pages/GuideBestPlansForTaxSaving";
+import GuideSection80D from "./pages/GuideSection80D";
 import ClaimSettlementRatio from "./pages/ClaimSettlementRatio";
 import SipVsInsurance from "./pages/SipVsInsurance";
 
@@ -105,6 +106,7 @@ export default function App() {
           <Route path="/guides/lic-commission-structure" element={<GuideLicCommissionStructure />} />
           <Route path="/guides/how-to-become-lic-agent" element={<GuideHowToBecomeAgent />} />
           <Route path="/guides/best-plans-for-tax-saving" element={<GuideBestPlansForTaxSaving />} />
+          <Route path="/guides/section-80d-health-insurance" element={<GuideSection80D />} />
           <Route path="/claim-settlement-ratio" element={<ClaimSettlementRatio />} />
           <Route path="/sip-vs-insurance" element={<SipVsInsurance />} />
         </Routes>

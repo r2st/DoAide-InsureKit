@@ -409,6 +409,16 @@ const META = {
       { q: "Is interest charged on revival?", a: "Yes, approximately 9.25% p.a. on unpaid premiums plus GST." },
     ],
   },
+  "/guides/section-80d-health-insurance": {
+    title: "Section 80D Tax Benefits on Health Insurance 2026 | DoAide InsureKit",
+    description: "Complete guide to Section 80D deductions on health insurance — limits for self, family, parents, senior citizens, eligible expenses, examples, and how to claim.",
+    keywords: "Section 80D, 80D health insurance, 80D deduction limit, health insurance tax benefit, 80D senior citizen, preventive health checkup 80D",
+    faq: [
+      { q: "Can I claim 80D under the new tax regime?", a: "No. Section 80D deductions are only available under the old tax regime." },
+      { q: "What is the maximum 80D deduction?", a: "₹1,00,000 — ₹50,000 for self (senior) + ₹50,000 for senior citizen parents." },
+      { q: "Does 80D cover preventive health check-ups?", a: "Yes, up to ₹5,000 per year, included within the overall 80D limit." },
+    ],
+  },
 };
 
 function buildStructuredData(pathname, meta) {

@@ -75,6 +75,12 @@ const CATEGORIES = [
         desc: "Complete history of LIC Simple Reversionary Bonus (SRB) rates from 2024 to 2026. Track bonus trends across all major plans.",
         tag: "Reference",
       },
+      {
+        path: "/guides/section-80d-health-insurance",
+        title: "Section 80D Tax Benefits on Health Insurance 2026",
+        desc: "Deduction limits for self, family, and parents. Senior citizen benefits, eligible expenses, tax saving examples, and common mistakes.",
+        tag: "Tax Guide",
+      },
     ],
   },
   {
