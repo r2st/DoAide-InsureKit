@@ -419,6 +419,16 @@ const META = {
       { q: "Does 80D cover preventive health check-ups?", a: "Yes, up to ₹5,000 per year, included within the overall 80D limit." },
     ],
   },
+  "/guides/ulip-vs-mutual-fund": {
+    title: "ULIP vs Mutual Fund: Which is Better in 2026? | DoAide InsureKit",
+    description: "Detailed comparison of ULIPs and mutual funds — charges, returns, tax benefits, flexibility, and suitability. Make an informed investment choice.",
+    keywords: "ULIP vs mutual fund, ULIP comparison, mutual fund vs ULIP, ULIP charges, ULIP tax benefit, ELSS vs ULIP, best investment option",
+    faq: [
+      { q: "Is ULIP better than mutual fund for tax saving?", a: "Both save tax under 80C. ULIP maturity is tax-free under 10(10D) if annual premium < ₹2.5L, while ELSS has LTCG tax of 12.5% on gains above ₹1.25L." },
+      { q: "What is the lock-in period for ULIP vs ELSS?", a: "ULIPs have a 5-year lock-in, ELSS mutual funds have a 3-year lock-in. ULIPs charge higher fees in early years." },
+      { q: "Which gives better returns — ULIP or mutual fund?", a: "Mutual funds generally deliver 1-2% higher annual returns due to lower charges. The gap narrows over 15+ years." },
+    ],
+  },
 };
 
 function buildStructuredData(pathname, meta) {

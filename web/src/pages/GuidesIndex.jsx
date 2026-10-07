@@ -104,6 +104,12 @@ const CATEGORIES = [
         desc: "LIC Tech Term, Jeevan Amar vs HDFC, ICICI, Max Life. Claim settlement ratios, premium comparison, riders, and buying guide.",
         tag: "Comparison",
       },
+      {
+        path: "/guides/ulip-vs-mutual-fund",
+        title: "ULIP vs Mutual Fund: Which is Better in 2026?",
+        desc: "Detailed comparison of charges, returns, tax treatment, flexibility, and suitability. Term + mutual fund vs ULIP strategy analysis.",
+        tag: "Comparison",
+      },
     ],
   },
   {
