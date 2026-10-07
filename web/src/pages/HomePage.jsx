@@ -81,6 +81,12 @@ const TOOL_CATEGORIES = [
         icon: "📊",
       },
       {
+        path: "/fd-rd-calculator",
+        name: "FD/RD vs Insurance",
+        desc: "Compare FD & RD returns with LIC policy maturity — show tax-free advantage",
+        icon: "🏦",
+      },
+      {
         path: "/paid-up-value",
         name: "Paid-Up Value Calculator",
         desc: "Calculate paid-up SA, bonus, GSV & maturity for policies stopped mid-term",

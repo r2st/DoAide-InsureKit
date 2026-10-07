@@ -14,6 +14,7 @@ const FEATURES = [
   { feature: "Plan Comparison", insurekit: true, competitor: true },
   { feature: "Plan Recommender (AI-based)", insurekit: true, competitor: false },
   { feature: "Claim Estimator", insurekit: true, competitor: false },
+  { feature: "FD/RD vs Insurance Calculator", insurekit: true, competitor: false },
   { feature: "Tax Benefit Calculator", insurekit: true, competitor: false },
   { feature: "Bonus History (10 years)", insurekit: true, competitor: false },
   { feature: "Policy Tracker", insurekit: true, competitor: true },

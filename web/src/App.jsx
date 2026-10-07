@@ -71,6 +71,7 @@ import ClubQualification from "./pages/ClubQualification";
 import GreetingCardCreator from "./pages/GreetingCardCreator";
 import DoctorPanelLocator from "./pages/DoctorPanelLocator";
 import BusinessCardCreator from "./pages/BusinessCardCreator";
+import FdRdCalculator from "./pages/FdRdCalculator";
 
 export default function App() {
   const { pathname } = useLocation();
@@ -150,6 +151,7 @@ export default function App() {
           <Route path="/greeting-cards" element={<GreetingCardCreator />} />
           <Route path="/doctor-panel" element={<DoctorPanelLocator />} />
           <Route path="/business-card" element={<BusinessCardCreator />} />
+          <Route path="/fd-rd-calculator" element={<FdRdCalculator />} />
         </Routes>
       </main>
       <Footer />
