@@ -31,5 +31,9 @@ def test_sitemap_contains_all_tools(client):
         "/guides",
         "/premium-table",
         "/dashboard",
+        "/maturity-tracker",
+        "/guides/lic-commission-structure",
+        "/guides/how-to-become-lic-agent",
+        "/guides/best-plans-for-tax-saving",
     ]:
         assert f"https://insure.doaide.com{path}" in r.text

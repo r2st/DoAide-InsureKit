@@ -36,8 +36,20 @@ function numberToWords(num) {
   return result.trim() + " Rupees Only";
 }
 
+const RECEIPTS_KEY = "insurekit_receipts";
+
+function loadReceipts() {
+  try { return JSON.parse(localStorage.getItem(RECEIPTS_KEY)) || []; } catch { return []; }
+}
+
+function saveReceipts(list) {
+  localStorage.setItem(RECEIPTS_KEY, JSON.stringify(list));
+}
+
 export default function ReceiptGenerator() {
   const receiptRef = useRef(null);
+  const [savedReceipts, setSavedReceipts] = useState(() => loadReceipts());
+  const [showHistory, setShowHistory] = useState(false);
   const [form, setForm] = useState({
     receiptNo: `REC-${Date.now().toString(36).toUpperCase()}`,
     date: new Date().toISOString().slice(0, 10),
@@ -55,6 +67,24 @@ export default function ReceiptGenerator() {
 
   function handlePrint() {
     window.print();
+  }
+
+  function handleSave() {
+    const receipt = { ...form, savedAt: new Date().toISOString() };
+    const updated = [receipt, ...savedReceipts].slice(0, 50);
+    saveReceipts(updated);
+    setSavedReceipts(updated);
+  }
+
+  function loadReceipt(receipt) {
+    setForm({ ...receipt });
+    setShowHistory(false);
+  }
+
+  function deleteReceipt(idx) {
+    const updated = savedReceipts.filter((_, i) => i !== idx);
+    saveReceipts(updated);
+    setSavedReceipts(updated);
   }
 
   return (
@@ -127,10 +157,40 @@ export default function ReceiptGenerator() {
             <input className="input-field" value={form.branchName} onChange={(e) => setForm({ ...form, branchName: e.target.value })} placeholder="e.g. Mumbai DO-1" />
           </div>
         </div>
-        <div className="mt-4 flex justify-end">
+        <div className="mt-4 flex justify-end gap-2">
+          <button onClick={handleSave} className="text-sm py-2 px-4 border border-white/10 rounded text-white/50 hover:text-white/70 transition-colors">
+            Save Receipt
+          </button>
+          {savedReceipts.length > 0 && (
+            <button onClick={() => setShowHistory(!showHistory)} className="text-sm py-2 px-4 border border-white/10 rounded text-white/50 hover:text-white/70 transition-colors">
+              History ({savedReceipts.length})
+            </button>
+          )}
           <button onClick={handlePrint} className="btn-primary text-sm py-2 px-6">Print Receipt</button>
         </div>
       </div>
+
+      {showHistory && savedReceipts.length > 0 && (
+        <div className="panel p-4 mb-6 print:hidden animate-fade-up">
+          <div className="text-sm font-medium text-white mb-3">Saved Receipts</div>
+          <div className="space-y-2 max-h-60 overflow-y-auto">
+            {savedReceipts.map((r, i) => (
+              <div key={i} className="panel-inner p-3 flex items-center justify-between">
+                <div className="min-w-0">
+                  <div className="text-sm text-white/70">{r.holderName || "—"} — {r.receiptNo}</div>
+                  <div className="text-xs text-white/30 mt-0.5">
+                    {r.planName} • {formatINR(r.premium)} • {r.date}
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 shrink-0">
+                  <button onClick={() => loadReceipt(r)} className="text-xs text-signal hover:underline">Load</button>
+                  <button onClick={() => deleteReceipt(i)} className="text-xs text-bad/60 hover:text-bad">Delete</button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       <div ref={receiptRef} className="receipt-preview panel p-6 mb-6 print:shadow-none print:border-none print:bg-white print:text-black print:p-8">
         <div className="text-center mb-6 print:mb-8">

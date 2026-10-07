@@ -52,16 +52,22 @@ const CATEGORIES = [
     label: "Reference & Tax",
     guides: [
       {
-        path: "/guides/lic-surrender-value",
-        title: "LIC Surrender Value: How to Calculate & Rules",
-        desc: "GSV vs SSV formulas, year-wise surrender value table, tax on surrender, and 4 alternatives to surrendering your LIC policy.",
-        tag: "Reference",
+        path: "/guides/best-plans-for-tax-saving",
+        title: "Best LIC Plans for Tax Saving 2026",
+        desc: "Top 5 LIC plans for Section 80C. Compare returns, maturity exemption, and tax-efficient strategies — old vs new regime.",
+        tag: "Tax Guide",
       },
       {
         path: "/guides/lic-tax-benefits",
         title: "LIC Policy Tax Benefits: Section 80C, 10(10D) Complete Guide",
         desc: "Tax deduction on premium (80C), maturity exemption (10(10D)), old vs new regime comparison, and tax planning strategies with LIC.",
         tag: "Tax Guide",
+      },
+      {
+        path: "/guides/lic-surrender-value",
+        title: "LIC Surrender Value: How to Calculate & Rules",
+        desc: "GSV vs SSV formulas, year-wise surrender value table, tax on surrender, and 4 alternatives to surrendering your LIC policy.",
+        tag: "Reference",
       },
       {
         path: "/guides/bonus-rates-history",
@@ -95,8 +101,20 @@ const CATEGORIES = [
     ],
   },
   {
-    label: "Career",
+    label: "Career & Commission",
     guides: [
+      {
+        path: "/guides/how-to-become-lic-agent",
+        title: "How to Become a LIC Agent in 2026: Complete Guide",
+        desc: "Step-by-step process — eligibility, 25-hour training, IC-38 exam, IRDAI license, first steps, and career growth path.",
+        tag: "Career",
+      },
+      {
+        path: "/guides/lic-commission-structure",
+        title: "LIC Agent Commission Structure 2026",
+        desc: "First year (10-40%), renewal (7.5%), bonus commission, Star Club/MDRT/COT/TOT tiers, income scenarios, and tax on commission.",
+        tag: "Agent Guide",
+      },
       {
         path: "/guides/lic-agent-exam-preparation",
         title: "LIC Agent Exam 2026: Syllabus, Preparation Tips & Study Material",

@@ -43,6 +43,10 @@ import VsPerfectAgentPlus from "./pages/compare/VsPerfectAgentPlus";
 import PremiumTable from "./pages/PremiumTable";
 import AgentDashboard from "./pages/AgentDashboard";
 import BestLicTools from "./pages/BestLicTools";
+import PolicyMaturityTracker from "./pages/PolicyMaturityTracker";
+import GuideLicCommissionStructure from "./pages/GuideLicCommissionStructure";
+import GuideHowToBecomeAgent from "./pages/GuideHowToBecomeAgent";
+import GuideBestPlansForTaxSaving from "./pages/GuideBestPlansForTaxSaving";
 
 export default function App() {
   const { pathname } = useLocation();
@@ -95,6 +99,10 @@ export default function App() {
           <Route path="/compare/lic-super-sales-saathi" element={<VsLicSuperSalesSaathi />} />
           <Route path="/compare/perfect-agent-plus" element={<VsPerfectAgentPlus />} />
           <Route path="/best-lic-agent-tools-2026" element={<BestLicTools />} />
+          <Route path="/maturity-tracker" element={<PolicyMaturityTracker />} />
+          <Route path="/guides/lic-commission-structure" element={<GuideLicCommissionStructure />} />
+          <Route path="/guides/how-to-become-lic-agent" element={<GuideHowToBecomeAgent />} />
+          <Route path="/guides/best-plans-for-tax-saving" element={<GuideBestPlansForTaxSaving />} />
         </Routes>
       </main>
       <Footer />

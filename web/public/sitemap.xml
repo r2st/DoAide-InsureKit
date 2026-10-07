@@ -70,4 +70,8 @@
   <url><loc>https://insure.doaide.com/plans/nivesh-plus-849</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://insure.doaide.com/plans/micro-bachat-851</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://insure.doaide.com/plans/aam-aadmi-bima-yojana</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://insure.doaide.com/maturity-tracker</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://insure.doaide.com/guides/lic-commission-structure</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://insure.doaide.com/guides/how-to-become-lic-agent</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://insure.doaide.com/guides/best-plans-for-tax-saving</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>

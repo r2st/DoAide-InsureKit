@@ -340,6 +340,45 @@ const META = {
       { q: "Do I need to pay for LIC agent tools?", a: "Not necessarily. InsureKit offers all essential tools for free." },
     ],
   },
+  "/maturity-tracker": {
+    title: "LIC Policy Maturity Tracker — Countdown & Estimated Payout | DoAide InsureKit",
+    description: "Track LIC policies nearing maturity with countdown timers and estimated payout amounts. Filter by timeline, sort by date or amount. Free tool for LIC agents.",
+    keywords: "LIC maturity tracker, LIC policy maturity date, LIC maturity payout, policy maturity countdown, LIC agent maturity tool",
+    faq: [
+      { q: "How is the maturity date calculated?", a: "Maturity date = Policy start date + Policy term (years). The tracker shows countdown and estimated payout including SA + bonus." },
+      { q: "How accurate is the estimated maturity amount?", a: "Estimates use current SRB bonus rates. Actual maturity may differ based on LIC's declared bonus and FAB." },
+    ],
+  },
+  "/guides/lic-commission-structure": {
+    title: "LIC Agent Commission Structure 2026: FY, Renewal & Bonus Rates | DoAide InsureKit",
+    description: "Complete guide to LIC agent commission structure 2026 — first year rates (10-40%), renewal (7.5%), bonus commission, Star Club, MDRT, COT, TOT qualification, and income scenarios.",
+    keywords: "LIC agent commission structure, LIC commission rates 2026, LIC FY commission, LIC renewal commission, LIC bonus commission, Star Club MDRT COT TOT",
+    faq: [
+      { q: "What is the first year commission rate for LIC agents?", a: "FY commission depends on PPT: 25% for PPT 15+, 20% for PPT 12-14, 15% for PPT 8-11, 10% for PPT 5-7. Term plans get 28-40%." },
+      { q: "What is LIC bonus commission?", a: "LIC rewards agents with FYC ₹3L+ (Star Club 20%), ₹6L+ (MDRT 30%), ₹12L+ (COT 35%), ₹24L+ (TOT 40%) bonus on total FYC." },
+      { q: "How much can a LIC agent earn?", a: "Part-time agents earn ₹1-3L/year, full-time ₹5-15L, and top performers ₹20L+ with club bonuses and growing renewal income." },
+    ],
+  },
+  "/guides/how-to-become-lic-agent": {
+    title: "How to Become a LIC Agent in 2026: Step-by-Step Guide | DoAide InsureKit",
+    description: "Complete guide to becoming a LIC agent — eligibility (10th/12th pass, 18+), 25-hour training, IC-38 exam (50 MCQs, 35% passing), IRDAI license, and career growth path.",
+    keywords: "how to become LIC agent, LIC agent eligibility, IC-38 exam, LIC agent training, IRDAI license, LIC agent career, LIC agent income",
+    faq: [
+      { q: "What is the qualification to become a LIC agent?", a: "Minimum 10th pass (rural) or 12th pass (urban), age 18+, Indian citizen. No upper age limit." },
+      { q: "How long does it take to become a LIC agent?", a: "4-8 weeks total: find a Development Officer, complete 25-hour training, pass IC-38 exam, and get IRDAI license." },
+      { q: "Is there any fee to become a LIC agent?", a: "Total cost under ₹1,000: IC-38 exam fee ₹250-500 + IRDAI license ₹250 for 3 years. Training is free." },
+    ],
+  },
+  "/guides/best-plans-for-tax-saving": {
+    title: "Best LIC Plans for Tax Saving 2026: Section 80C Guide | DoAide InsureKit",
+    description: "Top 5 LIC plans for tax saving under Section 80C — Jeevan Anand, Jeevan Labh, Tech Term, New Endowment compared. Tax-saving strategies, old vs new regime, and common mistakes.",
+    keywords: "best LIC plan for tax saving, LIC 80C plans, LIC tax saving plan, best insurance for tax benefit, LIC Section 80C, tax saving with LIC",
+    faq: [
+      { q: "Which LIC plan gives the best tax saving?", a: "Jeevan Anand (815) and Jeevan Labh (736) offer good returns with 80C deduction. Tech Term (854) gives maximum cover per premium." },
+      { q: "Can I claim 80C deduction under new tax regime?", a: "No, Section 80C is NOT available under the new regime. But Section 10(10D) maturity exemption applies under both regimes." },
+      { q: "What is the maximum tax saving from LIC?", a: "Up to ₹46,800/year (31.2% of ₹1.5L) under old regime. Shared with PPF, ELSS, EPF, home loan principal." },
+    ],
+  },
   "/guides/revive-lapsed-policy": {
     title: "How to Revive a Lapsed LIC Policy — Complete Guide | DoAide InsureKit",
     description: "Step-by-step guide to reviving a lapsed LIC policy. Eligibility, documents needed, revival amount calculation, online & offline methods, and tips to avoid future lapses.",

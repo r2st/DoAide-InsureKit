@@ -151,9 +151,35 @@ export default function PlanComparison() {
                   label="PPT"
                   values={results.map((r) => r.plan.ppt === "limited" ? "Limited" : "Full term")}
                 />
+                <Row
+                  label="Loan Available"
+                  values={results.map((r) => r.plan.type === "term" ? "No" : "Yes (after 3 yrs)")}
+                />
+                <Row
+                  label="Tax Benefit"
+                  values={results.map(() => "80C + 10(10D)")}
+                />
               </tbody>
             </table>
           </div>
+
+          {results.length >= 2 && (() => {
+            const best = [...results].sort((a, b) => {
+              const irrA = a.irr ?? -1;
+              const irrB = b.irr ?? -1;
+              return irrB - irrA;
+            })[0];
+            return best.irr ? (
+              <div className="panel-inner p-4 mt-4 border-l-4 border-l-signal">
+                <div className="text-xs text-signal font-medium uppercase tracking-wide mb-1">Recommended</div>
+                <div className="text-sm text-white/70">
+                  <strong className="text-white">{best.plan.name}</strong> offers the best IRR of{" "}
+                  <strong className="text-signal">{formatPercent(best.irr)}</strong> among the compared plans,
+                  with a maturity value of <strong className="text-signal">{formatINR(best.mat.maturityValue)}</strong>.
+                </div>
+              </div>
+            ) : null;
+          })()}
 
           <div className="mt-6">
             {results.map((r) => (

@@ -116,6 +116,12 @@ const TOOL_CATEGORIES = [
         desc: "Track client policies, renewal dates, and premium due reminders",
         icon: "📄",
       },
+      {
+        path: "/maturity-tracker",
+        name: "Maturity Tracker",
+        desc: "Track policies nearing maturity — countdown, estimated payouts",
+        icon: "⏰",
+      },
     ],
   },
   {

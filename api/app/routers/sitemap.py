@@ -79,6 +79,10 @@ PAGES = [
     ("/compare/lic-super-sales-saathi", "monthly", "0.6"),
     ("/compare/perfect-agent-plus", "monthly", "0.6"),
     ("/best-lic-agent-tools-2026", "monthly", "0.7"),
+    ("/maturity-tracker", "monthly", "0.7"),
+    ("/guides/lic-commission-structure", "monthly", "0.8"),
+    ("/guides/how-to-become-lic-agent", "monthly", "0.8"),
+    ("/guides/best-plans-for-tax-saving", "monthly", "0.8"),
 ]
 
 # Add individual plan pages
