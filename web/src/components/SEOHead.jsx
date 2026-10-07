@@ -51,11 +51,12 @@ const META = {
     ],
   },
   "/tax-calculator": {
-    title: "LIC Tax Benefit Calculator — Section 80C, 10(10D) | DoAide InsureKit",
-    description: "Calculate tax benefits on LIC premiums under Section 80C. Check maturity exemption under 10(10D). Compare old vs new tax regime.",
-    keywords: "LIC tax benefit, Section 80C LIC, LIC 10(10D), LIC tax exemption, insurance tax saving",
+    title: "Insurance Tax Benefit Calculator — Section 80C + 80D | DoAide InsureKit",
+    description: "Calculate tax benefits on life insurance (80C) and health insurance (80D) premiums. Check maturity exemption under 10(10D). Compare old vs new tax regime.",
+    keywords: "LIC tax benefit, Section 80C LIC, Section 80D health insurance, LIC 10(10D), LIC tax exemption, insurance tax saving, health insurance tax benefit",
     faq: [
-      { q: "How much tax can I save with LIC?", a: "Under Section 80C, you can save up to ₹46,800/year in tax (30% slab × ₹1.5L deduction). The actual saving depends on your income tax slab." },
+      { q: "How much tax can I save with LIC?", a: "Under Section 80C, you can save up to ₹46,800/year in tax (30% slab × ₹1.5L deduction). Under 80D, up to ₹1L for health insurance. Total: over ₹75,000/year." },
+      { q: "What is the 80D deduction limit?", a: "₹25,000 for self/family (₹50,000 if senior citizen 60+) + ₹25,000 for parents (₹50,000 if senior). Max combined: ₹1,00,000 per year." },
     ],
   },
   "/policy-tracker": {
@@ -377,6 +378,15 @@ const META = {
       { q: "Which LIC plan gives the best tax saving?", a: "Jeevan Anand (815) and Jeevan Labh (736) offer good returns with 80C deduction. Tech Term (854) gives maximum cover per premium." },
       { q: "Can I claim 80C deduction under new tax regime?", a: "No, Section 80C is NOT available under the new regime. But Section 10(10D) maturity exemption applies under both regimes." },
       { q: "What is the maximum tax saving from LIC?", a: "Up to ₹46,800/year (31.2% of ₹1.5L) under old regime. Shared with PPF, ELSS, EPF, home loan principal." },
+    ],
+  },
+  "/claim-settlement-ratio": {
+    title: "Claim Settlement Ratio 2024 — Compare All Life Insurers | DoAide InsureKit",
+    description: "Compare IRDAI claim settlement ratios for 20+ life insurance companies. Sort by individual/group CSR. LIC, HDFC Life, Max Life, ICICI Pru, SBI Life & more.",
+    keywords: "claim settlement ratio, CSR insurance, IRDAI claim settlement, best insurance company India, LIC claim ratio, insurance comparison India",
+    faq: [
+      { q: "What is Claim Settlement Ratio?", a: "CSR is the percentage of claims settled by an insurer out of total claims received. Higher CSR (above 95%) means better claim reliability." },
+      { q: "Which insurance company has the highest CSR?", a: "Max Life (99.51%), Aegon (99.00%), and Tata AIA (99.06%) have the highest individual CSR. LIC at 98.74% is impressive given its massive volume." },
     ],
   },
   "/guides/revive-lapsed-policy": {

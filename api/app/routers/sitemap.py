@@ -83,6 +83,7 @@ PAGES = [
     ("/guides/lic-commission-structure", "monthly", "0.8"),
     ("/guides/how-to-become-lic-agent", "monthly", "0.8"),
     ("/guides/best-plans-for-tax-saving", "monthly", "0.8"),
+    ("/claim-settlement-ratio", "monthly", "0.8"),
 ]
 
 # Add individual plan pages

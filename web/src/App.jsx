@@ -47,6 +47,7 @@ import PolicyMaturityTracker from "./pages/PolicyMaturityTracker";
 import GuideLicCommissionStructure from "./pages/GuideLicCommissionStructure";
 import GuideHowToBecomeAgent from "./pages/GuideHowToBecomeAgent";
 import GuideBestPlansForTaxSaving from "./pages/GuideBestPlansForTaxSaving";
+import ClaimSettlementRatio from "./pages/ClaimSettlementRatio";
 
 export default function App() {
   const { pathname } = useLocation();
@@ -103,6 +104,7 @@ export default function App() {
           <Route path="/guides/lic-commission-structure" element={<GuideLicCommissionStructure />} />
           <Route path="/guides/how-to-become-lic-agent" element={<GuideHowToBecomeAgent />} />
           <Route path="/guides/best-plans-for-tax-saving" element={<GuideBestPlansForTaxSaving />} />
+          <Route path="/claim-settlement-ratio" element={<ClaimSettlementRatio />} />
         </Routes>
       </main>
       <Footer />

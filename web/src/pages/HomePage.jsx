@@ -41,7 +41,7 @@ const TOOL_CATEGORIES = [
       {
         path: "/tax-calculator",
         name: "Tax Benefit Calculator",
-        desc: "Section 80C deduction & 10(10D) maturity exemption — old vs new regime",
+        desc: "Section 80C + 80D deductions & 10(10D) maturity exemption — old vs new regime",
         icon: "📋",
       },
       {
@@ -157,6 +157,12 @@ const TOOL_CATEGORIES = [
         name: "Guides & Articles",
         desc: "In-depth guides on best plans, bonus history, policy revival, and more",
         icon: "📖",
+      },
+      {
+        path: "/claim-settlement-ratio",
+        name: "Claim Settlement Ratio",
+        desc: "Compare IRDAI claim settlement ratios for 20+ life insurance companies",
+        icon: "📊",
       },
       {
         path: "/best-lic-agent-tools-2026",
