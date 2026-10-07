@@ -80,6 +80,30 @@ const TOOL_CATEGORIES = [
         desc: "Compare endowment returns vs term + SIP strategy — show the wealth gap",
         icon: "📊",
       },
+      {
+        path: "/paid-up-value",
+        name: "Paid-Up Value Calculator",
+        desc: "Calculate paid-up SA, bonus, GSV & maturity for policies stopped mid-term",
+        icon: "📄",
+      },
+      {
+        path: "/insurance-age-calculator",
+        name: "Insurance Age Calculator",
+        desc: "Calculate age nearest birthday — the age LIC uses for premium rates",
+        icon: "🎂",
+      },
+      {
+        path: "/rider-premium-calculator",
+        name: "Rider Premium Calculator",
+        desc: "Calculate ADB, Term Rider, Critical Illness & PWD rider premiums with GST",
+        icon: "🛡️",
+      },
+      {
+        path: "/rebate-calculator",
+        name: "Rebate Calculator",
+        desc: "Calculate SA rebate & mode rebate savings — optimize premium cost",
+        icon: "💡",
+      },
     ],
   },
   {

@@ -55,6 +55,10 @@ import PlanPresentation from "./pages/PlanPresentation";
 import PremiumDueRegister from "./pages/PremiumDueRegister";
 import BranchLocator from "./pages/BranchLocator";
 import ReportGenerator from "./pages/ReportGenerator";
+import PaidUpValueCalculator from "./pages/PaidUpValueCalculator";
+import InsuranceAgeCalculator from "./pages/InsuranceAgeCalculator";
+import RiderPremiumCalculator from "./pages/RiderPremiumCalculator";
+import RebateCalculator from "./pages/RebateCalculator";
 
 export default function App() {
   const { pathname } = useLocation();
@@ -119,6 +123,10 @@ export default function App() {
           <Route path="/premium-due-register" element={<PremiumDueRegister />} />
           <Route path="/branch-locator" element={<BranchLocator />} />
           <Route path="/report-generator" element={<ReportGenerator />} />
+          <Route path="/paid-up-value" element={<PaidUpValueCalculator />} />
+          <Route path="/insurance-age-calculator" element={<InsuranceAgeCalculator />} />
+          <Route path="/rider-premium-calculator" element={<RiderPremiumCalculator />} />
+          <Route path="/rebate-calculator" element={<RebateCalculator />} />
         </Routes>
       </main>
       <Footer />
