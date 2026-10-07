@@ -123,6 +123,24 @@ const TOOL_CATEGORIES = [
         icon: "📄",
       },
       {
+        path: "/plan-presentation",
+        name: "Plan Presentation",
+        desc: "Generate printable plan presentations — premium, maturity, benefits",
+        icon: "📋",
+      },
+      {
+        path: "/premium-due-register",
+        name: "Premium Due Register",
+        desc: "Track upcoming premium dues — filter, sort, and send reminders",
+        icon: "📅",
+      },
+      {
+        path: "/report-generator",
+        name: "Business Reports",
+        desc: "Generate portfolio, renewal, client, and performance reports",
+        icon: "📊",
+      },
+      {
         path: "/maturity-tracker",
         name: "Maturity Tracker",
         desc: "Track policies nearing maturity — countdown, estimated payouts",
@@ -169,6 +187,12 @@ const TOOL_CATEGORIES = [
         name: "Claim Settlement Ratio",
         desc: "Compare IRDAI claim settlement ratios for 20+ life insurance companies",
         icon: "📊",
+      },
+      {
+        path: "/branch-locator",
+        name: "LIC Branch Locator",
+        desc: "Find LIC zonal, divisional & branch offices across India",
+        icon: "📍",
       },
       {
         path: "/best-lic-agent-tools-2026",

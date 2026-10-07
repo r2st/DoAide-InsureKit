@@ -419,6 +419,43 @@ const META = {
       { q: "Does 80D cover preventive health check-ups?", a: "Yes, up to ₹5,000 per year, included within the overall 80D limit." },
     ],
   },
+  "/plan-presentation": {
+    title: "LIC Plan Presentation Generator — Printable Client Proposal | DoAide InsureKit",
+    description: "Generate professional, printable plan presentations for any LIC plan. Show premium, maturity benefits, death benefits, and payment mode comparisons. Share via WhatsApp or PDF.",
+    keywords: "LIC plan presentation, LIC client proposal, LIC plan PDF, LIC agent presentation, LIC premium proposal, printable LIC plan",
+    faq: [
+      { q: "What is a plan presentation?", a: "A printable summary of an LIC plan's premium, maturity, death benefits and features — ready to share with clients during meetings." },
+      { q: "Can I share this with clients?", a: "Yes! Use the Print/PDF button to save as PDF and share via email or WhatsApp." },
+      { q: "Are the premium figures accurate?", a: "Premiums are based on LIC's published tabular rates. Always verify with LIC before finalising a proposal." },
+    ],
+  },
+  "/premium-due-register": {
+    title: "Premium Due Register — Track Upcoming LIC Premium Dues | DoAide InsureKit",
+    description: "Track all upcoming LIC premium dues in one place. Filter by client, status (overdue, due soon, upcoming), export as PDF, and send WhatsApp reminders to clients.",
+    keywords: "LIC premium due register, LIC premium tracker, LIC renewal register, LIC premium reminder, premium due list, LIC agent register",
+    faq: [
+      { q: "Where does the data come from?", a: "The register uses policies added in the Policy Tracker. Add policies there first, then view upcoming dues here." },
+      { q: "Can I export the register?", a: "Yes! Use Print/PDF to save the filtered list. You can also send individual WhatsApp reminders." },
+    ],
+  },
+  "/branch-locator": {
+    title: "LIC Branch & Office Locator — Find Nearest LIC Office | DoAide InsureKit",
+    description: "Find LIC zonal, divisional, and branch offices across India. Search by state, city, or office name. Get address, phone number, and Google Maps directions.",
+    keywords: "LIC branch locator, LIC office near me, LIC divisional office, LIC zonal office, find LIC branch, LIC office address",
+    faq: [
+      { q: "How do I find my nearest LIC branch?", a: "Select your state and city. Click 'Directions' to open the location in Google Maps." },
+      { q: "Can I visit any LIC branch for my policy?", a: "Yes, most services are available at any branch. For policy-specific queries, your servicing branch may be more helpful." },
+    ],
+  },
+  "/report-generator": {
+    title: "LIC Business Report Generator — Portfolio & Performance Reports | DoAide InsureKit",
+    description: "Generate portfolio summary, renewal reports, client reports, and performance reports for your LIC insurance business. Print-ready PDF export. Free for LIC agents.",
+    keywords: "LIC business report, LIC agent report, LIC portfolio report, LIC renewal report, insurance business report, LIC performance metrics",
+    faq: [
+      { q: "Where does the report data come from?", a: "Reports use your Policy Tracker and Client Reminders data stored in your browser. Add more data for richer reports." },
+      { q: "Can I export reports?", a: "Yes, use Print/PDF to save any report. You can print or email them." },
+    ],
+  },
   "/guides/ulip-vs-mutual-fund": {
     title: "ULIP vs Mutual Fund: Which is Better in 2026? | DoAide InsureKit",
     description: "Detailed comparison of ULIPs and mutual funds — charges, returns, tax benefits, flexibility, and suitability. Make an informed investment choice.",

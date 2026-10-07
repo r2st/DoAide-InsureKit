@@ -51,6 +51,10 @@ import GuideSection80D from "./pages/GuideSection80D";
 import GuideUlipVsMutualFund from "./pages/GuideUlipVsMutualFund";
 import ClaimSettlementRatio from "./pages/ClaimSettlementRatio";
 import SipVsInsurance from "./pages/SipVsInsurance";
+import PlanPresentation from "./pages/PlanPresentation";
+import PremiumDueRegister from "./pages/PremiumDueRegister";
+import BranchLocator from "./pages/BranchLocator";
+import ReportGenerator from "./pages/ReportGenerator";
 
 export default function App() {
   const { pathname } = useLocation();
@@ -111,6 +115,10 @@ export default function App() {
           <Route path="/guides/ulip-vs-mutual-fund" element={<GuideUlipVsMutualFund />} />
           <Route path="/claim-settlement-ratio" element={<ClaimSettlementRatio />} />
           <Route path="/sip-vs-insurance" element={<SipVsInsurance />} />
+          <Route path="/plan-presentation" element={<PlanPresentation />} />
+          <Route path="/premium-due-register" element={<PremiumDueRegister />} />
+          <Route path="/branch-locator" element={<BranchLocator />} />
+          <Route path="/report-generator" element={<ReportGenerator />} />
         </Routes>
       </main>
       <Footer />
