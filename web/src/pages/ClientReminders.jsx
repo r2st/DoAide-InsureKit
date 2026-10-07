@@ -64,8 +64,12 @@ export default function ClientReminders() {
   return (
     <div className="animate-fade-up">
       <h1 className="text-2xl font-bold text-white mb-1">Client Reminders</h1>
-      <p className="text-white/40 text-sm mb-6">
+      <p className="text-white/40 text-sm mb-2">
         Track client birthdays and anniversaries — never miss a greeting
+      </p>
+      <p className="text-white/30 text-xs mb-6 flex items-center gap-1.5">
+        <span className="inline-block w-3.5 h-3.5">💾</span>
+        Your reminders are saved in this browser. Sign in to sync across devices.
       </p>
 
       <HowItWorks steps={HOW_IT_WORKS} />

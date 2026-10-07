@@ -1,0 +1,33 @@
+import xml.etree.ElementTree as ET
+
+
+def test_sitemap_returns_xml(client):
+    r = client.get("/sitemap.xml")
+    assert r.status_code == 200
+    assert "application/xml" in r.headers["content-type"]
+
+
+def test_sitemap_valid_xml(client):
+    r = client.get("/sitemap.xml")
+    root = ET.fromstring(r.text)
+    ns = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+    urls = root.findall("s:url", ns)
+    assert len(urls) == 23
+
+
+def test_sitemap_contains_homepage(client):
+    r = client.get("/sitemap.xml")
+    assert "https://insure.doaide.com/" in r.text
+
+
+def test_sitemap_contains_all_tools(client):
+    r = client.get("/sitemap.xml")
+    for path in [
+        "/premium-calculator",
+        "/maturity-calculator",
+        "/commission-calculator",
+        "/plan-comparison",
+        "/client-reminders",
+        "/guides",
+    ]:
+        assert f"https://insure.doaide.com{path}" in r.text
