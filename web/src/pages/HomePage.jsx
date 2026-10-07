@@ -200,6 +200,12 @@ const TOOL_CATEGORIES = [
         desc: "Create personalized greetings for clients — birthdays, festivals, anniversaries",
         icon: "💌",
       },
+      {
+        path: "/business-card",
+        name: "Business Card Creator",
+        desc: "Create professional digital business cards — 6 themes, share on WhatsApp",
+        icon: "🪪",
+      },
     ],
   },
   {
@@ -247,6 +253,12 @@ const TOOL_CATEGORIES = [
         name: "LIC Branch Locator",
         desc: "Find LIC zonal, divisional & branch offices across India",
         icon: "📍",
+      },
+      {
+        path: "/doctor-panel",
+        name: "Doctor & Hospital Panel",
+        desc: "Find LIC-approved panel doctors and hospitals for medical examinations",
+        icon: "🏥",
       },
       {
         path: "/best-lic-agent-tools-2026",

@@ -64,6 +64,8 @@ import FamilyMixPresentation from "./pages/FamilyMixPresentation";
 import BudgetPresentation from "./pages/BudgetPresentation";
 import ClubQualification from "./pages/ClubQualification";
 import GreetingCardCreator from "./pages/GreetingCardCreator";
+import DoctorPanelLocator from "./pages/DoctorPanelLocator";
+import BusinessCardCreator from "./pages/BusinessCardCreator";
 
 export default function App() {
   const { pathname } = useLocation();
@@ -137,6 +139,8 @@ export default function App() {
           <Route path="/budget-presentation" element={<BudgetPresentation />} />
           <Route path="/club-qualification" element={<ClubQualification />} />
           <Route path="/greeting-cards" element={<GreetingCardCreator />} />
+          <Route path="/doctor-panel" element={<DoctorPanelLocator />} />
+          <Route path="/business-card" element={<BusinessCardCreator />} />
         </Routes>
       </main>
       <Footer />
