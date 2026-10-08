@@ -292,9 +292,23 @@ export default function HomePage() {
         <h1 className="text-3xl sm:text-4xl font-bold text-white mb-2">
           Free LIC Agent Tools
         </h1>
-        <p className="text-white/40 text-sm sm:text-base max-w-xl mx-auto">
-          Premium calculators, maturity estimates, commission tools, and client management — everything an LIC agent needs, no login required
+        <p className="text-white/40 text-sm sm:text-base max-w-xl mx-auto mb-4">
+          Premium calculators, maturity estimates, commission tools, and client management — everything an LIC agent needs.
         </p>
+        <div className="flex items-center justify-center gap-4 flex-wrap">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-green-500/10 text-green-400 text-xs font-semibold">
+            <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
+            No Login Required
+          </span>
+          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-green-500/10 text-green-400 text-xs font-semibold">
+            <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
+            40+ Free Tools
+          </span>
+          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-green-500/10 text-green-400 text-xs font-semibold">
+            <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
+            Works Offline
+          </span>
+        </div>
       </div>
 
       <section className="mb-10">
@@ -332,9 +346,14 @@ export default function HomePage() {
                   <div className="w-10 h-10 rounded-lg bg-signal/10 flex items-center justify-center text-lg shrink-0 group-hover:bg-signal/20 transition-colors">
                     {tool.icon}
                   </div>
-                  <div className="min-w-0">
-                    <div className="text-sm font-semibold text-white group-hover:text-signal transition-colors">
-                      {tool.name}
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center justify-between">
+                      <div className="text-sm font-semibold text-white group-hover:text-signal transition-colors">
+                        {tool.name}
+                      </div>
+                      <span className="text-xs font-bold text-signal opacity-0 group-hover:opacity-100 transition-opacity shrink-0 ml-2">
+                        Use Now →
+                      </span>
                     </div>
                     <div className="text-xs text-white/35 mt-0.5 leading-relaxed">
                       {tool.desc}
