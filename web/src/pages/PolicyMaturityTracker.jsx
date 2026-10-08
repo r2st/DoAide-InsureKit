@@ -5,7 +5,7 @@ import { formatINR } from "../utils/format";
 import FAQ from "../components/FAQ";
 import HowItWorks from "../components/HowItWorks";
 import PrintButton from "../components/PrintButton";
-import WhatsAppShare from "../components/WhatsAppShare";
+import ShareButtons from "../components/ShareButtons";
 
 const HOW_IT_WORKS = [
   { title: "Add policies", desc: "Use Policy Tracker to add policies with start date and term" },
@@ -154,7 +154,7 @@ export default function PolicyMaturityTracker() {
             </select>
             <div className="flex-1" />
             <PrintButton />
-            <WhatsAppShare text={shareText} />
+            <ShareButtons text={shareText} />
           </div>
 
           <div className="space-y-3">

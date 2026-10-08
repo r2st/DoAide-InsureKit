@@ -3,7 +3,7 @@ import { LIC_PLANS, MODE_LABELS } from "../data/licPlans";
 import { validatePolicy } from "../utils/policyStore";
 import { usePolicies } from "../hooks/usePolicies";
 import { formatINR } from "../utils/format";
-import WhatsAppShare from "../components/WhatsAppShare";
+import ShareButtons from "../components/ShareButtons";
 import FAQ from "../components/FAQ";
 import PrintButton from "../components/PrintButton";
 import HowItWorks from "../components/HowItWorks";
@@ -259,7 +259,7 @@ export default function PolicyTracker() {
                 Export CSV
               </button>
               <PrintButton />
-              {upcoming.length > 0 && <WhatsAppShare text={shareText} />}
+              {upcoming.length > 0 && <ShareButtons text={shareText} />}
             </>
           )}
           <button onClick={() => { showForm ? cancelForm() : setShowForm(true); }} className="btn-primary text-sm py-2 px-4">

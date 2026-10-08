@@ -4,7 +4,7 @@ import { calculatePremium } from "../utils/calcPremium";
 import { calculateCommission, calculateCommissionByYear, BONUS_COMMISSION_SLABS, getBonusCommissionRate, calculatePortfolioCommission } from "../utils/calcCommission";
 import { formatINR, formatPercent } from "../utils/format";
 import ResultCard from "../components/ResultCard";
-import WhatsAppShare from "../components/WhatsAppShare";
+import ShareButtons from "../components/ShareButtons";
 import PrintButton from "../components/PrintButton";
 import FAQ from "../components/FAQ";
 import HowItWorks from "../components/HowItWorks";
@@ -209,7 +209,7 @@ export default function CommissionCalculator() {
 
           <div className="flex justify-end gap-2 mb-6">
             <PrintButton />
-            <WhatsAppShare text={shareText} />
+            <ShareButtons text={shareText} />
           </div>
         </div>
       ) : (

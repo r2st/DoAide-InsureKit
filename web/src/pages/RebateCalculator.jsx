@@ -2,7 +2,7 @@ import { useState, useMemo } from "react";
 import { LIC_PLANS, SA_REBATES, MODE_FACTORS, MODE_LABELS, MODE_REBATES, GST_RATES } from "../data/licPlans";
 import { formatINR } from "../utils/format";
 import ResultCard from "../components/ResultCard";
-import WhatsAppShare from "../components/WhatsAppShare";
+import ShareButtons from "../components/ShareButtons";
 import PrintButton from "../components/PrintButton";
 import FAQ from "../components/FAQ";
 import HowItWorks from "../components/HowItWorks";
@@ -273,7 +273,7 @@ export default function RebateCalculator() {
           </div>
 
           <div className="flex flex-wrap gap-3 mb-6">
-            <WhatsAppShare text={shareText} />
+            <ShareButtons text={shareText} />
             <PrintButton />
           </div>
         </>

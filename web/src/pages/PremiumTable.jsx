@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import { LIC_PLANS, MODE_LABELS, MODE_FACTORS, MODE_REBATES, GST_RATES, SA_REBATES } from "../data/licPlans";
 import { formatINR } from "../utils/format";
-import WhatsAppShare from "../components/WhatsAppShare";
+import ShareButtons from "../components/ShareButtons";
 import PrintButton from "../components/PrintButton";
 import FAQ from "../components/FAQ";
 import HowItWorks from "../components/HowItWorks";
@@ -179,7 +179,7 @@ export default function PremiumTable() {
 
           <div className="flex justify-end gap-2">
             <PrintButton />
-            <WhatsAppShare text={shareText} />
+            <ShareButtons text={shareText} />
           </div>
         </div>
       )}

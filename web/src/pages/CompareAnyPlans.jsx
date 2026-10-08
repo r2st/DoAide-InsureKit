@@ -3,7 +3,7 @@ import { LIC_PLANS, PLAN_TYPES, getSRBRate } from "../data/licPlans";
 import { calculatePremium } from "../utils/calcPremium";
 import { calculateMaturity, calculateTotalPremiumsPaid, calculateIRR } from "../utils/calcMaturity";
 import { formatINR, formatPercent } from "../utils/format";
-import WhatsAppShare from "../components/WhatsAppShare";
+import ShareButtons from "../components/ShareButtons";
 import PrintButton from "../components/PrintButton";
 import HowItWorks from "../components/HowItWorks";
 import FAQ from "../components/FAQ";
@@ -152,7 +152,7 @@ export default function CompareAnyPlans() {
 
           <div className="flex justify-end gap-2 mt-4">
             <PrintButton />
-            <WhatsAppShare text={shareText} />
+            <ShareButtons text={shareText} />
           </div>
         </div>
       )}

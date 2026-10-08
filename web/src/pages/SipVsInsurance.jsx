@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import { formatINR, formatLakh } from "../utils/format";
 import ResultCard from "../components/ResultCard";
-import WhatsAppShare from "../components/WhatsAppShare";
+import ShareButtons from "../components/ShareButtons";
 import PrintButton from "../components/PrintButton";
 import FAQ from "../components/FAQ";
 import HowItWorks from "../components/HowItWorks";
@@ -248,7 +248,7 @@ Calculated on insure.doaide.com/sip-vs-insurance`;
           </div>
 
           <div className="flex gap-3 mb-6">
-            <WhatsAppShare text={whatsappText} />
+            <ShareButtons text={whatsappText} />
             <PrintButton />
           </div>
         </>

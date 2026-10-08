@@ -4,7 +4,7 @@ import { calculatePremium } from "../utils/calcPremium";
 import { calculateLoanAgainstPolicy } from "../utils/calcLoan";
 import { formatINR, formatPercent } from "../utils/format";
 import ResultCard from "../components/ResultCard";
-import WhatsAppShare from "../components/WhatsAppShare";
+import ShareButtons from "../components/ShareButtons";
 import PrintButton from "../components/PrintButton";
 import HowItWorks from "../components/HowItWorks";
 import FAQ from "../components/FAQ";
@@ -149,7 +149,7 @@ export default function LoanCalculator() {
 
           <div className="flex justify-end gap-2">
             <PrintButton />
-            <WhatsAppShare text={shareText} />
+            <ShareButtons text={shareText} />
           </div>
         </div>
       )}

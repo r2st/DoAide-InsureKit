@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { getPlanBySlug, getRelatedPlans, PLAN_TYPE_LABELS } from "../data/licPlans";
 import { BONUS_HISTORY } from "../data/bonusHistory";
 import FAQ from "../components/FAQ";
-import WhatsAppShare from "../components/WhatsAppShare";
+import ShareButtons from "../components/ShareButtons";
 import PrintButton from "../components/PrintButton";
 
 const SITE_URL = "https://insure.doaide.com";
@@ -483,7 +483,7 @@ export default function PlanDetailPage() {
 
       {/* Share & Print */}
       <div className="flex flex-wrap gap-3 mb-8 print:hidden">
-        <WhatsAppShare text={shareText} />
+        <ShareButtons text={shareText} />
         <PrintButton />
       </div>
 

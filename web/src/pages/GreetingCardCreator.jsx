@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import WhatsAppShare from "../components/WhatsAppShare";
+import ShareButtons from "../components/ShareButtons";
 import FAQ from "../components/FAQ";
 import HowItWorks from "../components/HowItWorks";
 
@@ -165,7 +165,7 @@ export default function GreetingCardCreator() {
       </div>
 
       <div className="flex flex-wrap gap-3 mb-6">
-        <WhatsAppShare text={fullMessage} />
+        <ShareButtons text={fullMessage} />
         <button
           onClick={() => {
             if (navigator.clipboard) {

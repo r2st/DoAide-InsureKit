@@ -2,7 +2,7 @@ import { useState, useMemo } from "react";
 import { usePolicies } from "../hooks/usePolicies";
 import { formatINR } from "../utils/format";
 import PrintButton from "../components/PrintButton";
-import WhatsAppShare from "../components/WhatsAppShare";
+import ShareButtons from "../components/ShareButtons";
 import FAQ from "../components/FAQ";
 import HowItWorks from "../components/HowItWorks";
 
@@ -182,7 +182,7 @@ export default function PremiumDueRegister() {
 
           <div className="flex items-center gap-3 print:hidden">
             <PrintButton />
-            <WhatsAppShare text={shareText} />
+            <ShareButtons text={shareText} />
           </div>
         </>
       )}

@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import { calculateFD, calculateRD, compareWithInsurance } from "../utils/calcFdRd";
 import { formatINR } from "../utils/format";
-import WhatsAppShare from "../components/WhatsAppShare";
+import ShareButtons from "../components/ShareButtons";
 import PrintButton from "../components/PrintButton";
 import FAQ from "../components/FAQ";
 import HowItWorks from "../components/HowItWorks";
@@ -258,7 +258,7 @@ export default function FdRdCalculator() {
 
           <div className="flex items-center gap-3 print:hidden mb-6">
             <PrintButton />
-            {shareText && <WhatsAppShare text={shareText} />}
+            {shareText && <ShareButtons text={shareText} />}
           </div>
         </>
       )}

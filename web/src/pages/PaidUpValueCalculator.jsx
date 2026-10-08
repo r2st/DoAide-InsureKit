@@ -3,7 +3,7 @@ import { LIC_PLANS, PLAN_TYPES } from "../data/licPlans";
 import { calculatePaidUpValue } from "../utils/calcPaidUp";
 import { formatINR, formatPercent, formatLakh } from "../utils/format";
 import ResultCard from "../components/ResultCard";
-import WhatsAppShare from "../components/WhatsAppShare";
+import ShareButtons from "../components/ShareButtons";
 import PrintButton from "../components/PrintButton";
 import FAQ from "../components/FAQ";
 import HowItWorks from "../components/HowItWorks";
@@ -162,7 +162,7 @@ export default function PaidUpValueCalculator() {
           </div>
 
           <div className="flex flex-wrap gap-3 mb-6">
-            <WhatsAppShare text={shareText} />
+            <ShareButtons text={shareText} />
             <PrintButton />
           </div>
         </>

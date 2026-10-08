@@ -3,7 +3,7 @@ import { MODE_LABELS } from "../data/licPlans";
 import { calculateRevival } from "../utils/calcRevival";
 import { formatINR, formatPercent } from "../utils/format";
 import ResultCard from "../components/ResultCard";
-import WhatsAppShare from "../components/WhatsAppShare";
+import ShareButtons from "../components/ShareButtons";
 import PrintButton from "../components/PrintButton";
 import FAQ from "../components/FAQ";
 import HowItWorks from "../components/HowItWorks";
@@ -173,7 +173,7 @@ export default function RevivalCalculator() {
 
           <div className="flex justify-end gap-2">
             <PrintButton />
-            <WhatsAppShare text={shareText} />
+            <ShareButtons text={shareText} />
           </div>
         </div>
       )}
