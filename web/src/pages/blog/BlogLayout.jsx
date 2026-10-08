@@ -21,6 +21,21 @@ const ARTICLES = [
     title: "LIC Bonus Rates 2026 — Complete Plan-Wise List",
     description: "Latest LIC bonus rates for 2026 — Simple Reversionary Bonus, Final Additional Bonus, and Loyalty Addition for all active plans with historical trends.",
   },
+  {
+    slug: "best-lic-plans-child-education-2026",
+    title: "Best LIC Plans for Child Education 2026 — Top 5 with Returns",
+    description: "Compare the best LIC plans for child education — Jeevan Labh, Amritbaal, Jeevan Tarun. Premium examples, maturity projections, and education cost planning.",
+  },
+  {
+    slug: "lic-maturity-claim-online",
+    title: "How to Claim LIC Maturity Amount Online — Step-by-Step Guide",
+    description: "Complete guide on how to claim LIC maturity amount online. Documents needed, NEFT registration, Discharge Voucher process, TDS rules, and timeline.",
+  },
+  {
+    slug: "lic-surrender-value-calculator-guide",
+    title: "LIC Plan Surrender Value Calculator — How to Calculate GSV & SSV",
+    description: "Learn how to calculate LIC policy surrender value. GSV vs SSV formulas, year-wise factors, and better alternatives to surrendering your policy.",
+  },
 ];
 
 export { ARTICLES };

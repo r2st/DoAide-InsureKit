@@ -75,11 +75,18 @@ import BusinessCardCreator from "./pages/BusinessCardCreator";
 import FdRdCalculator from "./pages/FdRdCalculator";
 import EmbedPremiumCalculator from "./pages/EmbedPremiumCalculator";
 import PortfolioImport from "./pages/PortfolioImport";
+import LicVsSbiLife from "./pages/compare/LicVsSbiLife";
+import TermVsEndowment from "./pages/compare/TermVsEndowment";
+import InsuranceNeedsCalculator from "./pages/InsuranceNeedsCalculator";
+import PremiumComparisonWidget from "./pages/PremiumComparisonWidget";
 import BlogLayout, { BlogIndex } from "./pages/blog/BlogLayout";
 import BlogBestLicPlans2026 from "./pages/blog/BestLicPlans2026";
 import BlogLicPremiumCalculatorGuide from "./pages/blog/LicPremiumCalculatorGuide";
 import BlogFdVsRdVsLic from "./pages/blog/FdVsRdVsLic";
 import BlogLicBonusRates2026 from "./pages/blog/LicBonusRates2026";
+import BlogBestLicPlansChildEducation2026 from "./pages/blog/BestLicPlansChildEducation2026";
+import BlogLicMaturityClaimOnline from "./pages/blog/LicMaturityClaimOnline";
+import BlogLicSurrenderValueCalculatorGuide from "./pages/blog/LicSurrenderValueCalculatorGuide";
 import ToolTracker from "./components/ToolTracker";
 import SocialProofBar from "./components/SocialProofBar";
 import ReferralBanner from "./components/ReferralBanner";
@@ -176,12 +183,19 @@ export default function App() {
           <Route path="/business-card" element={<BusinessCardCreator />} />
           <Route path="/portfolio-import" element={<PortfolioImport />} />
           <Route path="/fd-rd-calculator" element={<FdRdCalculator />} />
+          <Route path="/compare/lic-vs-sbi-life" element={<LicVsSbiLife />} />
+          <Route path="/compare/term-vs-endowment" element={<TermVsEndowment />} />
+          <Route path="/insurance-needs-calculator" element={<InsuranceNeedsCalculator />} />
+          <Route path="/premium-comparison" element={<PremiumComparisonWidget />} />
           <Route path="/blog" element={<BlogLayout />}>
             <Route index element={<BlogIndex />} />
             <Route path="best-lic-plans-2026-comparison-guide" element={<BlogBestLicPlans2026 />} />
             <Route path="lic-premium-calculator-guide" element={<BlogLicPremiumCalculatorGuide />} />
             <Route path="fd-vs-rd-vs-lic-comparison" element={<BlogFdVsRdVsLic />} />
             <Route path="lic-bonus-rates-2026" element={<BlogLicBonusRates2026 />} />
+            <Route path="best-lic-plans-child-education-2026" element={<BlogBestLicPlansChildEducation2026 />} />
+            <Route path="lic-maturity-claim-online" element={<BlogLicMaturityClaimOnline />} />
+            <Route path="lic-surrender-value-calculator-guide" element={<BlogLicSurrenderValueCalculatorGuide />} />
           </Route>
         </Routes>
       </main>
