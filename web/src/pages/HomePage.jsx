@@ -155,6 +155,12 @@ const TOOL_CATEGORIES = [
         icon: "📄",
       },
       {
+        path: "/portfolio-import",
+        name: "Import Portfolio",
+        desc: "Import your policy portfolio from CSV — bulk upload from spreadsheets",
+        icon: "📥",
+      },
+      {
         path: "/plan-presentation",
         name: "Plan Presentation",
         desc: "Generate printable plan presentations — premium, maturity, benefits",

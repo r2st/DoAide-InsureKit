@@ -21,6 +21,7 @@ const QUICK_LINKS = [
   { path: "/client-reminders", name: "Client Reminders", icon: "🎂" },
   { path: "/plan-recommender", name: "Plan Recommender", icon: "🎯" },
   { path: "/marketing", name: "Marketing Templates", icon: "📣" },
+  { path: "/portfolio-import", name: "Import Portfolio", icon: "📥" },
 ];
 
 function computeUpcomingEvents(clients, daysAhead) {

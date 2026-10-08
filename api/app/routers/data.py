@@ -1,9 +1,11 @@
 """CRUD endpoints for syncing clients and policies."""
+import csv
+import io
 from uuid import UUID
 
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile
 from pydantic import BaseModel
-from sqlalchemy import select
+from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
 from app.core.auth import get_current_user
@@ -158,3 +160,164 @@ def migrate_local_data(body: MigratePayload, user: User = Depends(get_current_us
 
     db.commit()
     return {"clients_added": clients_added, "policies_added": policies_added}
+
+
+# ── Portfolio Import (CSV) ──────────────────────────────────────────
+
+PORTFOLIO_FIELDS = {
+    "policy_number", "holder_name", "plan_name", "premium",
+    "sum_assured", "start_date", "maturity_date", "status",
+}
+
+
+@router.post("/portfolio/import")
+async def import_portfolio(
+    file: UploadFile = File(...),
+    column_map: str = Form(...),
+    user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+):
+    if not file.filename or not file.filename.lower().endswith(".csv"):
+        raise HTTPException(status_code=400, detail="Only CSV files are accepted")
+
+    import json
+    try:
+        mapping = json.loads(column_map)
+    except (json.JSONDecodeError, TypeError):
+        raise HTTPException(status_code=400, detail="Invalid column_map JSON")
+
+    contents = await file.read()
+    try:
+        text = contents.decode("utf-8-sig")
+    except UnicodeDecodeError:
+        text = contents.decode("latin-1")
+
+    reader = csv.DictReader(io.StringIO(text))
+    rows_added = 0
+    errors = []
+    for i, row in enumerate(reader, start=2):
+        try:
+            mapped = {}
+            for target_field, csv_col in mapping.items():
+                if target_field in PORTFOLIO_FIELDS and csv_col and csv_col in row:
+                    mapped[target_field] = row[csv_col].strip()
+
+            if not mapped.get("policy_number") or not mapped.get("holder_name"):
+                errors.append({"row": i, "error": "Missing policy_number or holder_name"})
+                continue
+
+            premium_val = 0.0
+            if mapped.get("premium"):
+                premium_str = mapped["premium"].replace(",", "").replace("₹", "").strip()
+                if premium_str:
+                    premium_val = float(premium_str)
+
+            sa_val = 0.0
+            if mapped.get("sum_assured"):
+                sa_str = mapped["sum_assured"].replace(",", "").replace("₹", "").strip()
+                if sa_str:
+                    sa_val = float(sa_str)
+
+            status_raw = (mapped.get("status") or "active").lower().strip()
+            status_map = {
+                "active": "active", "inforce": "active", "in force": "active", "in-force": "active",
+                "lapsed": "lapsed", "matured": "matured", "surrendered": "surrendered",
+                "paid-up": "paid-up", "paid up": "paid-up", "paidup": "paid-up",
+            }
+            status_val = status_map.get(status_raw, "active")
+
+            start_date = mapped.get("start_date") or None
+            maturity_date = mapped.get("maturity_date") or None
+
+            term_val = None
+            if start_date and maturity_date:
+                try:
+                    from datetime import datetime
+                    fmt_opts = ["%Y-%m-%d", "%d-%m-%Y", "%d/%m/%Y", "%m/%d/%Y"]
+                    sd = md = None
+                    for fmt in fmt_opts:
+                        try:
+                            sd = datetime.strptime(start_date, fmt)
+                            break
+                        except ValueError:
+                            pass
+                    for fmt in fmt_opts:
+                        try:
+                            md = datetime.strptime(maturity_date, fmt)
+                            break
+                        except ValueError:
+                            pass
+                    if sd and md:
+                        term_val = str(max(1, round((md - sd).days / 365.25)))
+                except Exception:
+                    pass
+
+            policy = Policy(
+                user_id=user.id,
+                policy_number=mapped["policy_number"],
+                holder_name=mapped["holder_name"],
+                plan_name=mapped.get("plan_name") or "",
+                sum_assured=sa_val,
+                premium=premium_val,
+                start_date=start_date,
+                term=term_val,
+                status=status_val,
+            )
+            db.add(policy)
+            rows_added += 1
+        except Exception as e:
+            errors.append({"row": i, "error": str(e)})
+
+    db.commit()
+    return {"imported": rows_added, "errors": errors}
+
+
+@router.get("/portfolio")
+def list_portfolio(user: User = Depends(get_current_user), db: Session = Depends(get_db)):
+    rows = db.execute(
+        select(Policy).where(Policy.user_id == user.id).order_by(Policy.created_at.desc())
+    ).scalars().all()
+    return [
+        {
+            "id": str(p.id),
+            "policy_number": p.policy_number,
+            "holder_name": p.holder_name,
+            "plan_name": p.plan_name,
+            "premium": p.premium,
+            "sum_assured": p.sum_assured,
+            "start_date": p.start_date,
+            "term": p.term,
+            "status": p.status,
+            "mode": p.mode,
+            "next_due_date": p.next_due_date,
+        }
+        for p in rows
+    ]
+
+
+@router.get("/portfolio/analytics")
+def portfolio_analytics(user: User = Depends(get_current_user), db: Session = Depends(get_db)):
+    rows = db.execute(select(Policy).where(Policy.user_id == user.id)).scalars().all()
+
+    total = len(rows)
+    by_status = {}
+    total_premium = 0.0
+    total_sa = 0.0
+    by_plan = {}
+
+    for p in rows:
+        st = p.status or "active"
+        by_status[st] = by_status.get(st, 0) + 1
+        if st == "active":
+            total_premium += p.premium or 0
+            total_sa += p.sum_assured or 0
+        plan = p.plan_name or "Unknown"
+        by_plan[plan] = by_plan.get(plan, 0) + 1
+
+    return {
+        "total_policies": total,
+        "by_status": by_status,
+        "total_annual_premium": round(total_premium, 2),
+        "total_sum_assured": round(total_sa, 2),
+        "by_plan": by_plan,
+    }

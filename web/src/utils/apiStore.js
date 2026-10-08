@@ -77,3 +77,27 @@ export async function updatePolicyApi(id, data) {
 export async function deletePolicyApi(id) {
   return apiFetch(`/api/policies/${id}`, { method: "DELETE" });
 }
+
+export async function importPortfolioCsv(file, columnMap) {
+  const form = new FormData();
+  form.append("file", file);
+  form.append("column_map", JSON.stringify(columnMap));
+  const res = await fetch("/api/portfolio/import", {
+    method: "POST",
+    credentials: "include",
+    body: form,
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.detail || `API ${res.status}`);
+  }
+  return res.json();
+}
+
+export async function fetchPortfolio() {
+  return apiFetch("/api/portfolio");
+}
+
+export async function fetchPortfolioAnalytics() {
+  return apiFetch("/api/portfolio/analytics");
+}

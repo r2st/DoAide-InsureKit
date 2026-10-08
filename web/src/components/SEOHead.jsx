@@ -322,6 +322,15 @@ const META = {
       { q: "What are LIC club targets?", a: "LIC rewards agents based on First Year Commission: Star Club (₹3L+), MDRT (₹6L+), COT (₹12L+), TOT (₹24L+)." },
     ],
   },
+  "/portfolio-import": {
+    title: "Import Portfolio CSV — Bulk Policy Upload for LIC Agents | DoAide InsureKit",
+    description: "Import your LIC policy portfolio from CSV. Drag-and-drop upload, automatic column mapping, preview before import. Track your entire book of business.",
+    keywords: "LIC portfolio import, CSV import policies, LIC agent portfolio, bulk policy upload, LIC agent tool",
+    faq: [
+      { q: "What format should my CSV be in?", a: "Any CSV with a header row works. Common columns: Policy Number, Name, Plan, Premium, Sum Assured, Start Date, Maturity Date, Status." },
+      { q: "Is my data secure?", a: "Yes. Portfolio data is stored securely and linked only to your account." },
+    ],
+  },
   "/compare/lic-super-sales-saathi": {
     title: "InsureKit vs LIC Super Sales Saathi — Feature Comparison 2026 | DoAide",
     description: "Compare DoAide InsureKit with LIC Super Sales Saathi. See which LIC agent tool has more calculators, better features, and is truly free.",

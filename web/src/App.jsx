@@ -74,6 +74,7 @@ import DoctorPanelLocator from "./pages/DoctorPanelLocator";
 import BusinessCardCreator from "./pages/BusinessCardCreator";
 import FdRdCalculator from "./pages/FdRdCalculator";
 import EmbedPremiumCalculator from "./pages/EmbedPremiumCalculator";
+import PortfolioImport from "./pages/PortfolioImport";
 import BlogLayout, { BlogIndex } from "./pages/blog/BlogLayout";
 import BlogBestLicPlans2026 from "./pages/blog/BestLicPlans2026";
 import BlogLicPremiumCalculatorGuide from "./pages/blog/LicPremiumCalculatorGuide";
@@ -172,6 +173,7 @@ export default function App() {
           <Route path="/greeting-cards" element={<GreetingCardCreator />} />
           <Route path="/doctor-panel" element={<DoctorPanelLocator />} />
           <Route path="/business-card" element={<BusinessCardCreator />} />
+          <Route path="/portfolio-import" element={<PortfolioImport />} />
           <Route path="/fd-rd-calculator" element={<FdRdCalculator />} />
           <Route path="/blog" element={<BlogLayout />}>
             <Route index element={<BlogIndex />} />
