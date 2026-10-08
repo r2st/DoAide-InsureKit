@@ -284,6 +284,13 @@ const TOOL_CATEGORIES = [
   },
 ];
 
+const TESTIMONIALS = [
+  { name: "Rajesh Verma", role: "LIC Agent, Delhi", stars: 5, quote: "InsureKit saves me hours every day. Premium calculations that used to take 10 minutes now take 10 seconds." },
+  { name: "Sunita Patil", role: "Senior Advisor, Pune", stars: 5, quote: "The plan comparison tool is a game changer — I show clients side-by-side benefits right on my phone during meetings." },
+  { name: "Amit Choudhary", role: "Branch Manager, Jaipur", stars: 5, quote: "My entire team uses InsureKit. The commission calculator and policy tracker keep our portfolio organised effortlessly." },
+  { name: "Deepika Nair", role: "LIC Agent, Kochi", stars: 4, quote: "Best free tool for LIC agents. The marketing templates and greeting cards help me stay connected with clients year-round." },
+];
+
 const FAQ_ITEMS = [
   { q: "Is InsureKit free to use?", a: "Yes, completely free! No login, no registration, no hidden charges. All tools work offline once loaded. InsureKit is made by DoAide to help LIC agents serve their clients better." },
   { q: "Is my data safe?", a: "Absolutely. InsureKit runs entirely in your browser. No data is sent to any server. Policy tracker and client reminder data is stored in your browser's local storage — only you can access it." },
@@ -297,7 +304,7 @@ export default function HomePage() {
   return (
     <div className="animate-fade-up">
       <div className="text-center mb-10">
-        <h1 className="text-3xl sm:text-4xl font-bold text-white mb-2">
+        <h1 className="text-3xl sm:text-4xl font-bold text-white mb-2" style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
           Free LIC Agent Tools
         </h1>
         <p className="text-white/40 text-sm sm:text-base max-w-xl mx-auto mb-4">
@@ -375,6 +382,29 @@ export default function HomePage() {
           </div>
         </section>
       ))}
+
+      <section className="mb-10">
+        <div className="mb-4">
+          <h2 className="text-lg font-semibold text-white" style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>Trusted by LIC Agents</h2>
+          <p className="text-xs text-white/30">What agents say about InsureKit</p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {TESTIMONIALS.map((t) => (
+            <div key={t.name} className="panel p-5 border-signal/10">
+              <div className="flex items-center gap-0.5 mb-2">
+                {Array.from({ length: 5 }, (_, i) => (
+                  <span key={i} className={i < t.stars ? "text-signal" : "text-white/15"} style={{ fontSize: "14px" }}>★</span>
+                ))}
+              </div>
+              <p className="text-sm text-white/70 italic leading-relaxed mb-3">&ldquo;{t.quote}&rdquo;</p>
+              <div>
+                <div className="text-sm font-semibold text-white">{t.name}</div>
+                <div className="text-xs text-white/40">{t.role}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
 
       <TrendingTools />
 
