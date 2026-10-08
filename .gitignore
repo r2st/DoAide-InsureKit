@@ -10,3 +10,7 @@ __pycache__/
 coverage/
 keys/
 .venv/
+
+# Environment
+.env*
+!.env.example
