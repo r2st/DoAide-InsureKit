@@ -27,7 +27,7 @@ export default function ProfilePage() {
       <div className="bg-white/5 border border-white/10 rounded-xl p-6 space-y-4">
         <div className="flex items-center gap-4">
           {user.picture ? (
-            <img src={user.picture} alt="" className="w-14 h-14 rounded-full" referrerPolicy="no-referrer" />
+            <img src={user.picture} alt="User profile photo" className="w-14 h-14 rounded-full" referrerPolicy="no-referrer" loading="lazy" />
           ) : (
             <div className="w-14 h-14 rounded-full bg-signal/20 flex items-center justify-center text-signal font-bold text-xl">
               {user.name?.[0]?.toUpperCase() || "?"}

@@ -37,7 +37,7 @@ function CardPreview({ data, theme }) {
         <div className="px-5 pt-4 pb-2 flex items-center gap-3" style={{ background: t.primary }}>
           <div className="flex-shrink-0">
             {data.photoUrl ? (
-              <img src={data.photoUrl} alt="" className="w-12 h-12 rounded-full object-cover border-2" style={{ borderColor: t.accent }} />
+              <img src={data.photoUrl} alt="Agent photo" className="w-12 h-12 rounded-full object-cover border-2" style={{ borderColor: t.accent }} loading="lazy" />
             ) : (
               <div className="w-12 h-12 rounded-full flex items-center justify-center text-lg font-bold" style={{ background: t.accent, color: "#fff" }}>
                 {data.name ? data.name.charAt(0).toUpperCase() : "A"}

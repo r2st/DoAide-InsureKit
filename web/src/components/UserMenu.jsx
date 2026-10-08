@@ -16,7 +16,7 @@ export default function UserMenu() {
   return (
     <a href="/profile" className="flex items-center gap-2 no-underline">
       {user.picture ? (
-        <img src={user.picture} alt="" className="w-7 h-7 rounded-full" referrerPolicy="no-referrer" />
+        <img src={user.picture} alt="User profile photo" className="w-7 h-7 rounded-full" referrerPolicy="no-referrer" loading="lazy" />
       ) : (
         <div className="w-7 h-7 rounded-full bg-signal/20 flex items-center justify-center text-signal font-semibold text-xs">
           {user.name?.[0]?.toUpperCase() || "?"}
