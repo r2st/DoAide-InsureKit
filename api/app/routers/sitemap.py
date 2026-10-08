@@ -111,8 +111,12 @@ for slug in PLAN_SLUGS:
 
 
 def _build_sitemap_xml() -> str:
+    from datetime import date
+
+    today = date.today().isoformat()
     urls = "\n".join(
         f"  <url><loc>{SITE_URL}{path}</loc>"
+        f"<lastmod>{today}</lastmod>"
         f"<changefreq>{freq}</changefreq>"
         f"<priority>{prio}</priority></url>"
         for path, freq, prio in PAGES
