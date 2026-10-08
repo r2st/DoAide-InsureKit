@@ -74,6 +74,11 @@ import DoctorPanelLocator from "./pages/DoctorPanelLocator";
 import BusinessCardCreator from "./pages/BusinessCardCreator";
 import FdRdCalculator from "./pages/FdRdCalculator";
 import EmbedPremiumCalculator from "./pages/EmbedPremiumCalculator";
+import BlogLayout, { BlogIndex } from "./pages/blog/BlogLayout";
+import BlogBestLicPlans2026 from "./pages/blog/BestLicPlans2026";
+import BlogLicPremiumCalculatorGuide from "./pages/blog/LicPremiumCalculatorGuide";
+import BlogFdVsRdVsLic from "./pages/blog/FdVsRdVsLic";
+import BlogLicBonusRates2026 from "./pages/blog/LicBonusRates2026";
 import ToolTracker from "./components/ToolTracker";
 import SocialProofBar from "./components/SocialProofBar";
 
@@ -168,6 +173,13 @@ export default function App() {
           <Route path="/doctor-panel" element={<DoctorPanelLocator />} />
           <Route path="/business-card" element={<BusinessCardCreator />} />
           <Route path="/fd-rd-calculator" element={<FdRdCalculator />} />
+          <Route path="/blog" element={<BlogLayout />}>
+            <Route index element={<BlogIndex />} />
+            <Route path="best-lic-plans-2026-comparison-guide" element={<BlogBestLicPlans2026 />} />
+            <Route path="lic-premium-calculator-guide" element={<BlogLicPremiumCalculatorGuide />} />
+            <Route path="fd-vs-rd-vs-lic-comparison" element={<BlogFdVsRdVsLic />} />
+            <Route path="lic-bonus-rates-2026" element={<BlogLicBonusRates2026 />} />
+          </Route>
         </Routes>
       </main>
       <Footer />

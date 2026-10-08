@@ -1,0 +1,66 @@
+import { Link, Outlet, useLocation } from "react-router-dom";
+
+const ARTICLES = [
+  {
+    slug: "best-lic-plans-2026-comparison-guide",
+    title: "Best LIC Plans 2026 — Comparison Guide",
+    description: "Compare endowment, term, ULIP, and pension plans from LIC. Find the best plan for savings, protection, retirement, and child's future with premium and maturity details.",
+  },
+  {
+    slug: "lic-premium-calculator-guide",
+    title: "LIC Premium Calculator Guide — How to Calculate Premium for Any Plan",
+    description: "Complete guide to LIC premium calculation. Understand premium factors, GST, mode rebates, SA rebates, and how to use the premium calculator for accurate quotes.",
+  },
+  {
+    slug: "fd-vs-rd-vs-lic-comparison",
+    title: "FD vs RD vs LIC Comparison — Which Gives Better Returns?",
+    description: "Detailed comparison of Fixed Deposits, Recurring Deposits, and LIC plans. Compare returns, tax benefits, liquidity, risk, and lock-in period to choose the best savings option.",
+  },
+  {
+    slug: "lic-bonus-rates-2026",
+    title: "LIC Bonus Rates 2026 — Complete Plan-Wise List",
+    description: "Latest LIC bonus rates for 2026 — Simple Reversionary Bonus, Final Additional Bonus, and Loyalty Addition for all active plans with historical trends.",
+  },
+];
+
+export { ARTICLES };
+
+export default function BlogLayout() {
+  const { pathname } = useLocation();
+  const isIndex = pathname === "/blog" || pathname === "/blog/";
+
+  return (
+    <div className="animate-fade-up">
+      <div className="flex items-center gap-3 mb-6">
+        <Link to="/" className="text-xs text-white/30 hover:text-white/60 transition-colors">
+          ← Back to InsureKit
+        </Link>
+      </div>
+      {isIndex && (
+        <>
+          <h1 className="text-2xl font-bold text-white mb-1">InsureKit Blog</h1>
+          <p className="text-white/40 text-sm mb-8">Guides and resources for LIC agents and policyholders</p>
+        </>
+      )}
+      <Outlet />
+    </div>
+  );
+}
+
+export function BlogIndex() {
+  return (
+    <div className="space-y-4">
+      {ARTICLES.map((a) => (
+        <Link
+          key={a.slug}
+          to={`/blog/${a.slug}`}
+          className="block panel-inner p-5 hover:bg-white/[0.04] transition-colors"
+        >
+          <h2 className="text-base font-semibold text-white mb-1">{a.title}</h2>
+          <p className="text-sm text-white/40 leading-relaxed">{a.description}</p>
+          <span className="inline-block mt-2 text-xs text-signal font-medium">Read more →</span>
+        </Link>
+      ))}
+    </div>
+  );
+}
