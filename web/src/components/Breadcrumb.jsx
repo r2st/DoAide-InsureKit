@@ -63,6 +63,7 @@ const ROUTE_NAMES = {
   "/greeting-cards": "Greeting Card Creator",
   "/doctor-panel": "Doctor & Hospital Panel",
   "/business-card": "Business Card Creator",
+  "/fd-rd-calculator": "FD/RD vs Insurance",
 };
 
 export default function Breadcrumb() {

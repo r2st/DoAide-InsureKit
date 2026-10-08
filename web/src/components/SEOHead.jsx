@@ -555,6 +555,16 @@ const META = {
       { q: "Can I print these cards?", a: "Yes! Download the card image and print at any shop. Standard size: 3.5 × 2 inches on 300 GSM paper." },
     ],
   },
+  "/fd-rd-calculator": {
+    title: "FD/RD vs Insurance Calculator — Compare Returns | DoAide InsureKit",
+    description: "Compare FD and RD returns with LIC policy maturity value. See the tax-free advantage of life insurance over fixed deposits. Free FD vs insurance comparison tool.",
+    keywords: "FD vs insurance, RD vs insurance, FD vs LIC, fixed deposit vs insurance, insurance vs FD returns, LIC vs FD comparison, tax-free insurance maturity",
+    faq: [
+      { q: "Is LIC better than FD?", a: "LIC maturity is tax-free under Section 10(10D) if premium is less than 10% of SA. FD interest is fully taxable at your slab rate, reducing effective returns significantly for high earners." },
+      { q: "What is the return on FD vs LIC?", a: "FDs offer 6-7.5% pre-tax returns. After 30% tax, effective return drops to ~4.5-5.2%. LIC endowment plans return 4.5-6% IRR but the maturity is completely tax-free." },
+      { q: "Should I invest in FD or insurance?", a: "It depends on your goal. FDs are better for short-term liquidity. Insurance provides life cover + tax-free maturity for long-term savings. A combination of both is often ideal." },
+    ],
+  },
   "/guides/ulip-vs-mutual-fund": {
     title: "ULIP vs Mutual Fund: Which is Better in 2026? | DoAide InsureKit",
     description: "Detailed comparison of ULIPs and mutual funds — charges, returns, tax benefits, flexibility, and suitability. Make an informed investment choice.",
