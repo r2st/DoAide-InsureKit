@@ -16,7 +16,7 @@ const FAQ_ITEMS = [
   { q: "Why compare FD with insurance?", a: "Many clients think FD gives better returns. This tool shows that after tax, LIC policies often match or beat FD returns — plus you get life cover and tax benefits under 80C/10(10D)." },
   { q: "Is FD interest taxable?", a: "Yes, FD interest is fully taxable at your income tax slab rate. If interest exceeds ₹40,000/year (₹50,000 for senior citizens), TDS is deducted at 10%." },
   { q: "Is LIC maturity tax-free?", a: "Yes, LIC maturity proceeds are tax-free under Section 10(10D) if the annual premium does not exceed 10% of Sum Assured (20% for policies before 01-Apr-2012)." },
-  { q: "What bonus rate is used?", a: "We use LIC's current Simple Reversionary Bonus (SRB) rate of ₹45 per 1000 SA. Actual rates vary by plan and are declared annually." },
+  { q: "What bonus rate is used?", a: "We use LIC's current Simple Reversionary Bonus (SRB) rate of ₹44 per 1000 SA (Jeevan Anand 2025-26 declared rate). Actual rates vary by plan and are declared annually." },
   { q: "How is RD interest calculated?", a: "RD interest is calculated on quarterly compounding basis, similar to how banks calculate it. Each monthly deposit earns interest for the remaining tenure." },
 ];
 
@@ -43,7 +43,7 @@ export default function FdRdCalculator() {
   const [insuranceForm, setInsuranceForm] = useState({
     sumAssured: 500000,
     premium: 25000,
-    bonusRate: 45,
+    bonusRate: 44,
   });
   const [showComparison, setShowComparison] = useState(false);
 

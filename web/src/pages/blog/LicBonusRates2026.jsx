@@ -5,8 +5,8 @@ import FAQ from "../../components/FAQ";
 const FAQ_ITEMS = [
   { q: "What is LIC bonus?", a: "LIC bonus is a share of the profits declared by LIC on participating (with-profits) policies. It's added to the Sum Assured and paid at maturity or death. LIC declares bonuses annually based on its investment returns. There are three types: Simple Reversionary Bonus (SRB), Final Additional Bonus (FAB), and Loyalty Addition." },
   { q: "Are LIC bonuses guaranteed?", a: "No, bonuses are not guaranteed. They depend on LIC's investment performance and are declared by LIC's Board of Directors annually. However, once declared, a bonus is 'vested' — it becomes part of the guaranteed payout. Historically, LIC has declared bonuses every year without exception since 1956." },
-  { q: "How is LIC bonus calculated?", a: "SRB is calculated as (bonus rate per ₹1,000 SA) × (SA ÷ 1,000) per year. For example, ₹52 per ₹1,000 SA for Jeevan Labh means ₹52,000 annual bonus for ₹10 lakh SA. Over 16 years, that's ₹8,32,000 in bonuses alone." },
-  { q: "Which LIC plan has the highest bonus?", a: "Jeevan Labh (836) has the highest SRB at ₹52 per ₹1,000 SA. Jeevan Lakshya (833) and Jeevan Anand (815) follow at ₹45-46 per ₹1,000 SA. Limited premium plans generally have higher bonus rates than regular premium plans because the premium paying term is shorter than the policy term." },
+  { q: "How is LIC bonus calculated?", a: "SRB is calculated as (bonus rate per ₹1,000 SA) × (SA ÷ 1,000) per year. For example, ₹51 per ₹1,000 SA for Jeevan Labh means ₹51,000 annual bonus for ₹10 lakh SA. Over 16 years, that's ₹8,16,000 in bonuses alone." },
+  { q: "Which LIC plan has the highest bonus?", a: "Jeevan Labh (836) has the highest SRB at ₹51 per ₹1,000 SA. Jeevan Lakshya (833) and Jeevan Anand (815) follow at ₹44-49 per ₹1,000 SA. Limited premium plans generally have higher bonus rates than regular premium plans because the premium paying term is shorter than the policy term." },
   { q: "When does LIC declare bonuses?", a: "LIC typically declares bonuses in February-March each year at its Board meeting after reviewing the financial year's performance. The bonus rates are then published on licindia.in and communicated to policyholders via their next premium receipt or online statement." },
 ];
 
@@ -86,12 +86,12 @@ export default function LicBonusRates2026() {
               </tr>
             </thead>
             <tbody className="text-white/60">
-              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">Jeevan Labh</td><td className="py-2 px-3 text-right">836</td><td className="py-2 px-3 text-right text-signal">₹52</td><td className="py-2 px-3 text-right">₹52,000/yr</td></tr>
-              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">Jeevan Lakshya</td><td className="py-2 px-3 text-right">833</td><td className="py-2 px-3 text-right text-signal">₹46</td><td className="py-2 px-3 text-right">₹46,000/yr</td></tr>
-              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">Jeevan Anand</td><td className="py-2 px-3 text-right">815</td><td className="py-2 px-3 text-right text-signal">₹45-46</td><td className="py-2 px-3 text-right">₹45,000-46,000/yr</td></tr>
-              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">New Endowment</td><td className="py-2 px-3 text-right">814</td><td className="py-2 px-3 text-right text-signal">₹42-43</td><td className="py-2 px-3 text-right">₹42,000-43,000/yr</td></tr>
-              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">Jeevan Azad</td><td className="py-2 px-3 text-right">868</td><td className="py-2 px-3 text-right text-signal">₹50</td><td className="py-2 px-3 text-right">₹50,000/yr</td></tr>
-              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">Amritbaal</td><td className="py-2 px-3 text-right">874</td><td className="py-2 px-3 text-right text-signal">₹58</td><td className="py-2 px-3 text-right">₹58,000/yr</td></tr>
+              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">Jeevan Labh</td><td className="py-2 px-3 text-right">836</td><td className="py-2 px-3 text-right text-signal">₹51</td><td className="py-2 px-3 text-right">₹51,000/yr</td></tr>
+              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">Jeevan Lakshya</td><td className="py-2 px-3 text-right">833</td><td className="py-2 px-3 text-right text-signal">₹49</td><td className="py-2 px-3 text-right">₹49,000/yr</td></tr>
+              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">Jeevan Anand</td><td className="py-2 px-3 text-right">815</td><td className="py-2 px-3 text-right text-signal">₹44-45</td><td className="py-2 px-3 text-right">₹44,000-45,000/yr</td></tr>
+              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">New Endowment</td><td className="py-2 px-3 text-right">814</td><td className="py-2 px-3 text-right text-signal">₹41-42</td><td className="py-2 px-3 text-right">₹41,000-42,000/yr</td></tr>
+              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">Jeevan Azad</td><td className="py-2 px-3 text-right">868</td><td className="py-2 px-3 text-right text-signal">₹55</td><td className="py-2 px-3 text-right">₹55,000/yr</td></tr>
+              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">Amritbaal</td><td className="py-2 px-3 text-right">874</td><td className="py-2 px-3 text-right text-signal">₹57</td><td className="py-2 px-3 text-right">₹57,000/yr</td></tr>
             </tbody>
           </table>
         </div>
@@ -109,11 +109,11 @@ export default function LicBonusRates2026() {
               </tr>
             </thead>
             <tbody className="text-white/60">
-              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">Jeevan Umang</td><td className="py-2 px-3 text-right">845</td><td className="py-2 px-3 text-right text-signal">₹42</td></tr>
-              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">New Money Back 25yr</td><td className="py-2 px-3 text-right">821</td><td className="py-2 px-3 text-right text-signal">₹40</td></tr>
-              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">New Money Back 20yr</td><td className="py-2 px-3 text-right">820</td><td className="py-2 px-3 text-right text-signal">₹38</td></tr>
-              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">Jeevan Tarun (Child)</td><td className="py-2 px-3 text-right">834</td><td className="py-2 px-3 text-right text-signal">₹44</td></tr>
-              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">Child Money Back</td><td className="py-2 px-3 text-right">832</td><td className="py-2 px-3 text-right text-signal">₹40</td></tr>
+              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">Jeevan Umang</td><td className="py-2 px-3 text-right">845</td><td className="py-2 px-3 text-right text-signal">₹49</td></tr>
+              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">New Money Back 25yr</td><td className="py-2 px-3 text-right">821</td><td className="py-2 px-3 text-right text-signal">₹41</td></tr>
+              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">New Money Back 20yr</td><td className="py-2 px-3 text-right">820</td><td className="py-2 px-3 text-right text-signal">₹43</td></tr>
+              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">Jeevan Tarun (Child)</td><td className="py-2 px-3 text-right">834</td><td className="py-2 px-3 text-right text-signal">₹54</td></tr>
+              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">Child Money Back</td><td className="py-2 px-3 text-right">832</td><td className="py-2 px-3 text-right text-signal">₹52</td></tr>
             </tbody>
           </table>
         </div>
@@ -132,7 +132,7 @@ export default function LicBonusRates2026() {
               </tr>
             </thead>
             <tbody className="text-white/60">
-              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">Jeevan Umang (Whole Life)</td><td className="py-2 px-3 text-right">845</td><td className="py-2 px-3 text-right text-signal">₹42</td></tr>
+              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">Jeevan Umang (Whole Life)</td><td className="py-2 px-3 text-right">845</td><td className="py-2 px-3 text-right text-signal">₹49</td></tr>
               <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">Jeevan Anand (post-maturity)</td><td className="py-2 px-3 text-right">815</td><td className="py-2 px-3 text-right text-signal">SA continues</td></tr>
             </tbody>
           </table>
@@ -143,12 +143,12 @@ export default function LicBonusRates2026() {
         <h2 className="text-lg font-semibold text-white mb-3">How Bonuses Impact Maturity Value</h2>
         <div className="panel-inner p-4 text-sm text-white/60 leading-relaxed space-y-3">
           <p className="text-white/70 font-medium">Worked Example: Jeevan Labh (836)</p>
-          <p>SA: ₹10,00,000 | Term: 16 years | PPT: 10 years | SRB: ₹52/1000 SA</p>
+          <p>SA: ₹10,00,000 | Term: 16 years | PPT: 10 years | SRB: ₹51/1000 SA</p>
           <ol className="list-decimal pl-5 space-y-1">
-            <li><strong className="text-white/80">Annual bonus:</strong> ₹52 × 1,000 = ₹52,000 per year</li>
-            <li><strong className="text-white/80">Total SRB (16 years):</strong> ₹52,000 × 16 = ₹8,32,000</li>
+            <li><strong className="text-white/80">Annual bonus:</strong> ₹51 × 1,000 = ₹51,000 per year</li>
+            <li><strong className="text-white/80">Total SRB (16 years):</strong> ₹51,000 × 16 = ₹8,16,000</li>
             <li><strong className="text-white/80">FAB (estimated):</strong> ~₹1,50,000 (for 16-year term)</li>
-            <li><strong className="text-white/80">Maturity value:</strong> SA + Total SRB + FAB = ₹10,00,000 + ₹8,32,000 + ₹1,50,000 = <strong className="text-signal">₹19,82,000</strong></li>
+            <li><strong className="text-white/80">Maturity value:</strong> SA + Total SRB + FAB = ₹10,00,000 + ₹8,16,000 + ₹1,50,000 = <strong className="text-signal">₹19,66,000</strong></li>
           </ol>
           <p>Against total premium paid of ~₹11,00,000 (approximate), this gives an IRR of approximately 5.5-6%.</p>
           <p>Get exact projections for your age and SA using our <Link to="/maturity-calculator" className="text-signal">Maturity Calculator</Link>.</p>
@@ -162,9 +162,8 @@ export default function LicBonusRates2026() {
           <ul className="list-disc pl-5 space-y-1">
             <li><strong className="text-white/80">2022-23:</strong> SRB rates maintained or slightly increased for most plans</li>
             <li><strong className="text-white/80">2023-24:</strong> No major changes — LIC maintained rates post-IPO</li>
-            <li><strong className="text-white/80">2024-25:</strong> Marginal increase in SRB for Jeevan Labh and Amritbaal</li>
-            <li><strong className="text-white/80">2025-26:</strong> Stable — LIC&apos;s investment corpus exceeded ₹50 lakh crore</li>
-            <li><strong className="text-white/80">2026-27:</strong> Current rates as listed above</li>
+            <li><strong className="text-white/80">2024-25:</strong> Marginal reduction across most plans as LIC adjusted for market conditions</li>
+            <li><strong className="text-white/80">2025-26:</strong> Rates reduced by ₹1/1000 SA across most plans — LIC&apos;s bonus allocation at record ₹59,725 crore in FY26</li>
           </ul>
           <p>LIC&apos;s massive investment corpus (largest institutional investor in India) provides stability in bonus declarations even during market downturns. The corporation has never missed declaring a bonus since its establishment in 1956.</p>
           <p>View year-by-year bonus data with charts on our <Link to="/bonus-history" className="text-signal">Bonus History</Link> page.</p>

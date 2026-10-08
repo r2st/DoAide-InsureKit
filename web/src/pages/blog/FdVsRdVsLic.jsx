@@ -125,7 +125,7 @@ export default function FdVsRdVsLic() {
         <div className="panel-inner p-4 text-sm text-white/60 leading-relaxed space-y-3">
           <p className="text-white/70 font-medium">Pros:</p>
           <ul className="list-disc pl-5 space-y-1">
-            <li>Highest guaranteed returns among the three (7-8.5% in 2026)</li>
+            <li>Highest guaranteed returns among the three (6.5-8.5% in 2026)</li>
             <li>Flexible tenure — 7 days to 10 years</li>
             <li>Easy premature withdrawal (with 0.5-1% penalty)</li>
             <li>Loan available against FD (up to 90% of FD value)</li>
@@ -217,10 +217,10 @@ export default function FdVsRdVsLic() {
               </tr>
             </thead>
             <tbody className="text-white/60">
-              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">SBI</td><td className="py-2 px-3 text-right">6.80%</td><td className="py-2 px-3 text-right">7.00%</td><td className="py-2 px-3 text-right">6.50%</td><td className="py-2 px-3 text-right text-signal">+0.50%</td></tr>
-              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">HDFC Bank</td><td className="py-2 px-3 text-right">7.00%</td><td className="py-2 px-3 text-right">7.25%</td><td className="py-2 px-3 text-right">7.00%</td><td className="py-2 px-3 text-right text-signal">+0.50%</td></tr>
-              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">ICICI Bank</td><td className="py-2 px-3 text-right">7.00%</td><td className="py-2 px-3 text-right">7.25%</td><td className="py-2 px-3 text-right">7.00%</td><td className="py-2 px-3 text-right text-signal">+0.50%</td></tr>
-              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">Post Office</td><td className="py-2 px-3 text-right">6.90%</td><td className="py-2 px-3 text-right">7.00%</td><td className="py-2 px-3 text-right">7.50%</td><td className="py-2 px-3 text-right text-signal">—</td></tr>
+              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">SBI</td><td className="py-2 px-3 text-right">6.80%</td><td className="py-2 px-3 text-right">6.75%</td><td className="py-2 px-3 text-right">6.50%</td><td className="py-2 px-3 text-right text-signal">+0.50%</td></tr>
+              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">HDFC Bank</td><td className="py-2 px-3 text-right">6.25%</td><td className="py-2 px-3 text-right">6.45%</td><td className="py-2 px-3 text-right">6.40%</td><td className="py-2 px-3 text-right text-signal">+0.50%</td></tr>
+              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">ICICI Bank</td><td className="py-2 px-3 text-right">6.25%</td><td className="py-2 px-3 text-right">6.45%</td><td className="py-2 px-3 text-right">6.50%</td><td className="py-2 px-3 text-right text-signal">+0.50%</td></tr>
+              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">Post Office</td><td className="py-2 px-3 text-right">6.90%</td><td className="py-2 px-3 text-right">7.10%</td><td className="py-2 px-3 text-right">7.50%</td><td className="py-2 px-3 text-right text-signal">—</td></tr>
               <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">Small Finance Banks</td><td className="py-2 px-3 text-right">7.50-8.50%</td><td className="py-2 px-3 text-right">7.75-8.25%</td><td className="py-2 px-3 text-right">7.50-8.00%</td><td className="py-2 px-3 text-right text-signal">+0.50%</td></tr>
             </tbody>
           </table>

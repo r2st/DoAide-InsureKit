@@ -92,9 +92,9 @@ export default function BestLicPlans2026() {
               </tr>
             </thead>
             <tbody className="text-white/60">
-              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">Jeevan Anand</td><td className="py-2 px-3 text-right">815</td><td className="py-2 px-3 text-right">15-35yr</td><td className="py-2 px-3 text-right">₹45-46/1000</td><td className="py-2 px-3 text-right text-signal">4.5-5.5%</td></tr>
-              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">New Endowment</td><td className="py-2 px-3 text-right">814</td><td className="py-2 px-3 text-right">12-35yr</td><td className="py-2 px-3 text-right">₹42-43/1000</td><td className="py-2 px-3 text-right text-signal">4-5%</td></tr>
-              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">Jeevan Lakshya</td><td className="py-2 px-3 text-right">833</td><td className="py-2 px-3 text-right">13-25yr</td><td className="py-2 px-3 text-right">₹46/1000</td><td className="py-2 px-3 text-right text-signal">5-6%</td></tr>
+              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">Jeevan Anand</td><td className="py-2 px-3 text-right">815</td><td className="py-2 px-3 text-right">15-35yr</td><td className="py-2 px-3 text-right">₹44-45/1000</td><td className="py-2 px-3 text-right text-signal">4.5-5.5%</td></tr>
+              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">New Endowment</td><td className="py-2 px-3 text-right">814</td><td className="py-2 px-3 text-right">12-35yr</td><td className="py-2 px-3 text-right">₹41-42/1000</td><td className="py-2 px-3 text-right text-signal">4-5%</td></tr>
+              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">Jeevan Lakshya</td><td className="py-2 px-3 text-right">833</td><td className="py-2 px-3 text-right">13-25yr</td><td className="py-2 px-3 text-right">₹49/1000</td><td className="py-2 px-3 text-right text-signal">5-6%</td></tr>
             </tbody>
           </table>
         </div>
@@ -118,14 +118,14 @@ export default function BestLicPlans2026() {
               </tr>
             </thead>
             <tbody className="text-white/60">
-              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">Jeevan Labh</td><td className="py-2 px-3 text-right">836</td><td className="py-2 px-3 text-right">10/16yr</td><td className="py-2 px-3 text-right">₹52/1000</td><td className="py-2 px-3 text-right text-signal">5.5-6%</td></tr>
-              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">Amritbaal</td><td className="py-2 px-3 text-right">874</td><td className="py-2 px-3 text-right">7-10/25yr</td><td className="py-2 px-3 text-right">₹58/1000</td><td className="py-2 px-3 text-right text-signal">5-5.5%</td></tr>
-              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">Jeevan Azad</td><td className="py-2 px-3 text-right">868</td><td className="py-2 px-3 text-right">5-10/15-20yr</td><td className="py-2 px-3 text-right">₹50/1000</td><td className="py-2 px-3 text-right text-signal">5-5.5%</td></tr>
+              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">Jeevan Labh</td><td className="py-2 px-3 text-right">836</td><td className="py-2 px-3 text-right">10/16yr</td><td className="py-2 px-3 text-right">₹51/1000</td><td className="py-2 px-3 text-right text-signal">5.5-6%</td></tr>
+              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">Amritbaal</td><td className="py-2 px-3 text-right">874</td><td className="py-2 px-3 text-right">7-10/25yr</td><td className="py-2 px-3 text-right">₹57/1000</td><td className="py-2 px-3 text-right text-signal">5-5.5%</td></tr>
+              <tr className="border-b border-white/5"><td className="py-2 px-3 text-white/80">Jeevan Azad</td><td className="py-2 px-3 text-right">868</td><td className="py-2 px-3 text-right">5-10/15-20yr</td><td className="py-2 px-3 text-right">₹55/1000</td><td className="py-2 px-3 text-right text-signal">5-5.5%</td></tr>
             </tbody>
           </table>
         </div>
         <div className="panel-inner p-4 mt-3 text-sm text-white/50 leading-relaxed">
-          <strong className="text-white/70">Top pick — Jeevan Labh (836):</strong> Highest bonus rates among all LIC plans. With the 10-pay/16-year term option, you pay premiums for just 10 years and get maturity after 16 years. The SRB of ₹52 per ₹1,000 SA is the highest in LIC&apos;s portfolio, making it the best for pure returns.
+          <strong className="text-white/70">Top pick — Jeevan Labh (836):</strong> Highest bonus rates among all LIC plans. With the 10-pay/16-year term option, you pay premiums for just 10 years and get maturity after 16 years. The SRB of ₹51 per ₹1,000 SA is the highest in LIC&apos;s portfolio, making it the best for pure returns.
         </div>
       </section>
 
