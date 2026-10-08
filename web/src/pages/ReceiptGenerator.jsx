@@ -3,6 +3,7 @@ import { LIC_PLANS, MODE_LABELS } from "../data/licPlans";
 import { formatINR } from "../utils/format";
 import FAQ from "../components/FAQ";
 import HowItWorks from "../components/HowItWorks";
+import ShareButtons from "../components/ShareButtons";
 
 
 const HOW_IT_WORKS = [
@@ -231,6 +232,10 @@ export default function ReceiptGenerator() {
         <div className="text-[10px] text-white/20 print:text-gray-400 text-center mt-6 pt-4 border-t border-white/5 print:border-gray-200">
           This is an unofficial reference receipt generated on DoAide InsureKit. For official receipts, please contact LIC of India.
         </div>
+      </div>
+
+      <div className="flex flex-wrap gap-2 mt-4 mb-6 no-print">
+        <ShareButtons text="Generate LIC premium receipts — free tool on DoAide InsureKit" toolName="Premium Receipt Generator" />
       </div>
 
       <FAQ items={FAQ_ITEMS} />

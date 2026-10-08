@@ -3,6 +3,7 @@ import { formatINR, formatLakh } from "../utils/format";
 import ResultCard from "../components/ResultCard";
 import FAQ from "../components/FAQ";
 import HowItWorks from "../components/HowItWorks";
+import ShareButtons from "../components/ShareButtons";
 
 const CLUBS = [
   {
@@ -217,6 +218,10 @@ export default function ClubQualification() {
           </div>
         </div>
       )}
+
+      <div className="flex flex-wrap gap-2 mt-4 mb-6">
+        <ShareButtons text="Check your LIC club qualification status — free tracker on DoAide InsureKit" toolName="Club Qualification Tracker" />
+      </div>
 
       <FAQ items={FAQ_ITEMS} />
     </div>

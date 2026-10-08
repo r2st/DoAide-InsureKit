@@ -74,6 +74,8 @@ import DoctorPanelLocator from "./pages/DoctorPanelLocator";
 import BusinessCardCreator from "./pages/BusinessCardCreator";
 import FdRdCalculator from "./pages/FdRdCalculator";
 import EmbedPremiumCalculator from "./pages/EmbedPremiumCalculator";
+import ToolTracker from "./components/ToolTracker";
+import SocialProofBar from "./components/SocialProofBar";
 
 export default function App() {
   const { pathname } = useLocation();
@@ -93,7 +95,9 @@ export default function App() {
       <SEOHead />
       <Header />
       {!isHome && <Breadcrumb />}
+      <ToolTracker />
       <main className="flex-1 max-w-4xl w-full mx-auto px-4 py-6">
+        <SocialProofBar />
         <SignUpBanner />
         <Routes>
           <Route path="/" element={<HomePage />} />

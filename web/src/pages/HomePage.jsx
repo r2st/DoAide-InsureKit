@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import FAQ from "../components/FAQ";
+import RecentTools from "../components/RecentTools";
+import TrendingTools from "../components/TrendingTools";
 
 const POPULAR_TOOLS = [
   { path: "/dashboard", name: "Agent Dashboard", icon: "📋" },
@@ -311,6 +313,8 @@ export default function HomePage() {
         </div>
       </div>
 
+      <RecentTools />
+
       <section className="mb-10">
         <div className="mb-3">
           <h2 className="text-sm font-medium text-signal uppercase tracking-wide">Popular Tools</h2>
@@ -365,6 +369,8 @@ export default function HomePage() {
           </div>
         </section>
       ))}
+
+      <TrendingTools />
 
       <FAQ items={FAQ_ITEMS} />
     </div>

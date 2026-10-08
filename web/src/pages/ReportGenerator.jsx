@@ -5,6 +5,7 @@ import { formatINR, formatLakh } from "../utils/format";
 import PrintButton from "../components/PrintButton";
 import FAQ from "../components/FAQ";
 import HowItWorks from "../components/HowItWorks";
+import ShareButtons from "../components/ShareButtons";
 
 const HOW_IT_WORKS = [
   { title: "Select report", desc: "Choose the type of business report" },
@@ -347,6 +348,9 @@ export default function ReportGenerator() {
 
           <div className="flex items-center gap-3 print:hidden">
             <PrintButton />
+          </div>
+          <div className="flex flex-wrap gap-2 mt-4 no-print">
+            <ShareButtons text="Generate LIC business reports — free tool on DoAide InsureKit" toolName="Business Report Generator" />
           </div>
         </>
       )}

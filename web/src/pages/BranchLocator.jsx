@@ -1,6 +1,7 @@
 import { useState, useMemo } from "react";
 import FAQ from "../components/FAQ";
 import HowItWorks from "../components/HowItWorks";
+import ShareButtons from "../components/ShareButtons";
 
 const HOW_IT_WORKS = [
   { title: "Select state", desc: "Choose your state from the dropdown" },
@@ -180,6 +181,10 @@ export default function BranchLocator() {
             <span className="text-white/70">licindia.in/pay-premium</span>
           </div>
         </div>
+      </div>
+
+      <div className="flex flex-wrap gap-2 mt-4 mb-6">
+        <ShareButtons text="Find your nearest LIC branch office — free tool on DoAide InsureKit" toolName="LIC Branch Locator" />
       </div>
 
       <FAQ items={FAQ_ITEMS} />

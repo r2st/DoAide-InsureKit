@@ -1,6 +1,7 @@
 import { useState, useMemo } from "react";
 import FAQ from "../components/FAQ";
 import HowItWorks from "../components/HowItWorks";
+import ShareButtons from "../components/ShareButtons";
 
 const SPECIALIZATIONS = [
   "General Physician",
@@ -237,6 +238,10 @@ export default function DoctorPanelLocator() {
           </table>
         </div>
         <p className="text-[10px] text-white/30 mt-2">GPE = General Physical Exam. Blood = CBC, Sugar, Lipid, Liver, Kidney. Full = GPE + ECG + Blood + Urine + Chest X-ray. TMT = Treadmill Test.</p>
+      </div>
+
+      <div className="flex flex-wrap gap-2 mt-4 mb-6">
+        <ShareButtons text="Find LIC panel doctors near you — free tool on DoAide InsureKit" toolName="Doctor Panel Locator" />
       </div>
 
       <FAQ items={FAQ_ITEMS} />
