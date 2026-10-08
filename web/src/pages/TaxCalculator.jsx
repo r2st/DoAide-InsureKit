@@ -17,7 +17,7 @@ const HOW_IT_WORKS = [
 const FAQ_ITEMS = [
   { q: "How much tax can I save with LIC?", a: "Under Section 80C of the Income Tax Act (old regime), you can claim deduction up to ₹1,50,000/year on life insurance premiums. The actual tax saved depends on your income tax slab — up to 30% of the deduction amount." },
   { q: "What is Section 80D?", a: "Section 80D allows deductions for health insurance premiums. You can claim up to ₹25,000 for self/family (₹50,000 if senior citizen aged 60+) and an additional ₹25,000 for parents (₹50,000 if parents are senior citizens). Maximum combined deduction: ₹1,00,000." },
-  { q: "Is Section 80C available in the new tax regime?", a: "No. The new tax regime (FY 2025-26) does not allow Section 80C or 80D deductions. However, the new regime has lower base tax rates and higher exemption limits. Section 10(10D) maturity exemption still applies in both regimes." },
+  { q: "Is Section 80C available in the new tax regime?", a: "No. The new tax regime (FY 2026-27) does not allow Section 80C or 80D deductions. However, the new regime has lower base tax rates and higher exemption limits. Section 10(10D) maturity exemption still applies in both regimes." },
   { q: "What is Section 10(10D)?", a: "Section 10(10D) exempts maturity proceeds from income tax, provided the annual premium does not exceed 10% of the Sum Assured. If premium > 10% SA, the maturity amount may be partially or fully taxable." },
   { q: "Are LIC premiums eligible for 80C if paid for family?", a: "Yes, premiums paid for self, spouse, and children are eligible for 80C deduction. However, the total 80C limit of ₹1.5 lakh includes all eligible investments (PPF, ELSS, NSC, etc.)." },
   { q: "Can I claim both 80C and 80D together?", a: "Yes, 80C and 80D are separate sections with separate limits. You can claim up to ₹1.5 lakh under 80C (life insurance) and up to ₹1 lakh under 80D (health insurance) in the same year under the old regime." },
@@ -134,7 +134,7 @@ export default function TaxCalculator() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
         <RegimeCard title="Old Tax Regime" result={oldResult} result80D={old80D} recommended />
-        <RegimeCard title="New Tax Regime (FY 2025-26)" result={newResult} result80D={new80D} />
+        <RegimeCard title="New Tax Regime (FY 2026-27)" result={newResult} result80D={new80D} />
       </div>
 
       <div className={`panel p-4 mb-6 border-l-4 ${oldResult.maturityExempt ? "border-l-good" : "border-l-warn"}`}>

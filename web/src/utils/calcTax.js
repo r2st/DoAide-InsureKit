@@ -89,7 +89,7 @@ export function calculateTaxBenefit(annualPremium, sumAssured, income, isNewRegi
       : "Premium > 10% of SA — maturity proceeds may be taxable",
     taxWithout: taxWithout.total,
     taxWith: taxWith.total,
-    regime: isNewRegime ? "New Regime (FY 2025-26)" : "Old Regime",
+    regime: isNewRegime ? "New Regime (FY 2026-27)" : "Old Regime",
     note: isNewRegime
       ? "New regime: Sec 80C deduction not available. Sec 10(10D) exemption still applies."
       : "Old regime: Sec 80C deduction up to ₹1.5 lakh on life insurance premiums.",

@@ -4,6 +4,7 @@ export const BONUS_HISTORY = [
     planName: "New Jeevan Anand",
     tableNo: 715,
     history: [
+      { year: "2025-26", rate: 44 },
       { year: "2024-25", rate: 45 },
       { year: "2023-24", rate: 45 },
       { year: "2022-23", rate: 45 },
@@ -13,7 +14,6 @@ export const BONUS_HISTORY = [
       { year: "2018-19", rate: 48 },
       { year: "2017-18", rate: 50 },
       { year: "2016-17", rate: 50 },
-      { year: "2015-16", rate: 50 },
     ],
   },
   {
@@ -21,6 +21,7 @@ export const BONUS_HISTORY = [
     planName: "New Endowment Plan",
     tableNo: 714,
     history: [
+      { year: "2025-26", rate: 41 },
       { year: "2024-25", rate: 42 },
       { year: "2023-24", rate: 42 },
       { year: "2022-23", rate: 42 },
@@ -30,7 +31,6 @@ export const BONUS_HISTORY = [
       { year: "2018-19", rate: 46 },
       { year: "2017-18", rate: 48 },
       { year: "2016-17", rate: 48 },
-      { year: "2015-16", rate: 48 },
     ],
   },
   {
@@ -38,6 +38,7 @@ export const BONUS_HISTORY = [
     planName: "Jeevan Labh",
     tableNo: 736,
     history: [
+      { year: "2025-26", rate: 36 },
       { year: "2024-25", rate: 37 },
       { year: "2023-24", rate: 37 },
       { year: "2022-23", rate: 37 },
@@ -53,6 +54,7 @@ export const BONUS_HISTORY = [
     planName: "Jeevan Umang",
     tableNo: 745,
     history: [
+      { year: "2025-26", rate: 49 },
       { year: "2024-25", rate: 50 },
       { year: "2023-24", rate: 50 },
       { year: "2022-23", rate: 50 },
@@ -68,6 +70,7 @@ export const BONUS_HISTORY = [
     planName: "New Money Back (20 yr)",
     tableNo: 720,
     history: [
+      { year: "2025-26", rate: 43 },
       { year: "2024-25", rate: 44 },
       { year: "2023-24", rate: 44 },
       { year: "2022-23", rate: 44 },
@@ -77,7 +80,6 @@ export const BONUS_HISTORY = [
       { year: "2018-19", rate: 48 },
       { year: "2017-18", rate: 49 },
       { year: "2016-17", rate: 49 },
-      { year: "2015-16", rate: 50 },
     ],
   },
   {
@@ -85,6 +87,7 @@ export const BONUS_HISTORY = [
     planName: "New Money Back (25 yr)",
     tableNo: 721,
     history: [
+      { year: "2025-26", rate: 41 },
       { year: "2024-25", rate: 42 },
       { year: "2023-24", rate: 42 },
       { year: "2022-23", rate: 42 },
@@ -94,7 +97,6 @@ export const BONUS_HISTORY = [
       { year: "2018-19", rate: 45 },
       { year: "2017-18", rate: 46 },
       { year: "2016-17", rate: 46 },
-      { year: "2015-16", rate: 47 },
     ],
   },
   {
@@ -102,6 +104,7 @@ export const BONUS_HISTORY = [
     planName: "Jeevan Lakshya",
     tableNo: 733,
     history: [
+      { year: "2025-26", rate: 48 },
       { year: "2024-25", rate: 49 },
       { year: "2023-24", rate: 49 },
       { year: "2022-23", rate: 49 },
@@ -111,7 +114,6 @@ export const BONUS_HISTORY = [
       { year: "2018-19", rate: 51 },
       { year: "2017-18", rate: 52 },
       { year: "2016-17", rate: 52 },
-      { year: "2015-16", rate: 53 },
     ],
   },
   {
@@ -119,6 +121,7 @@ export const BONUS_HISTORY = [
     planName: "Single Premium Endowment",
     tableNo: 717,
     history: [
+      { year: "2025-26", rate: 41 },
       { year: "2024-25", rate: 42 },
       { year: "2023-24", rate: 42 },
       { year: "2022-23", rate: 42 },
@@ -128,7 +131,6 @@ export const BONUS_HISTORY = [
       { year: "2018-19", rate: 46 },
       { year: "2017-18", rate: 48 },
       { year: "2016-17", rate: 48 },
-      { year: "2015-16", rate: 48 },
     ],
   },
   {
@@ -136,6 +138,7 @@ export const BONUS_HISTORY = [
     planName: "Amritbaal",
     tableNo: 774,
     history: [
+      { year: "2025-26", rate: 57 },
       { year: "2024-25", rate: 58 },
       { year: "2023-24", rate: 58 },
       { year: "2022-23", rate: 58 },
@@ -148,6 +151,7 @@ export const BONUS_HISTORY = [
     planName: "Jeevan Tarun",
     tableNo: 734,
     history: [
+      { year: "2025-26", rate: 54 },
       { year: "2024-25", rate: 55 },
       { year: "2023-24", rate: 55 },
       { year: "2022-23", rate: 55 },
@@ -157,7 +161,6 @@ export const BONUS_HISTORY = [
       { year: "2018-19", rate: 58 },
       { year: "2017-18", rate: 60 },
       { year: "2016-17", rate: 60 },
-      { year: "2015-16", rate: 62 },
     ],
   },
   {
@@ -165,6 +168,7 @@ export const BONUS_HISTORY = [
     planName: "Bima Jyoti",
     tableNo: 860,
     history: [
+      { year: "2025-26", rate: 45 },
       { year: "2024-25", rate: 46 },
       { year: "2023-24", rate: 46 },
       { year: "2022-23", rate: 46 },
@@ -177,6 +181,7 @@ export const BONUS_HISTORY = [
     planName: "Jeevan Anand",
     tableNo: 815,
     history: [
+      { year: "2025-26", rate: 45 },
       { year: "2024-25", rate: 46 },
       { year: "2023-24", rate: 46 },
       { year: "2022-23", rate: 46 },
@@ -187,6 +192,7 @@ export const BONUS_HISTORY = [
     planName: "New Endowment Plan",
     tableNo: 814,
     history: [
+      { year: "2025-26", rate: 42 },
       { year: "2024-25", rate: 43 },
       { year: "2023-24", rate: 43 },
       { year: "2022-23", rate: 43 },
@@ -197,6 +203,7 @@ export const BONUS_HISTORY = [
     planName: "Jeevan Lakshya",
     tableNo: 833,
     history: [
+      { year: "2025-26", rate: 49 },
       { year: "2024-25", rate: 50 },
       { year: "2023-24", rate: 50 },
       { year: "2022-23", rate: 50 },
@@ -207,6 +214,7 @@ export const BONUS_HISTORY = [
     planName: "New Children's Money Back",
     tableNo: 832,
     history: [
+      { year: "2025-26", rate: 52 },
       { year: "2024-25", rate: 53 },
       { year: "2023-24", rate: 53 },
       { year: "2022-23", rate: 53 },

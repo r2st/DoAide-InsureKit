@@ -31,13 +31,13 @@ export default function FdRdCalculator() {
   const [mode, setMode] = useState("fd");
   const [fdForm, setFdForm] = useState({
     principal: 500000,
-    ratePercent: 7.1,
+    ratePercent: 7.0,
     years: 10,
     compounding: "quarterly",
   });
   const [rdForm, setRdForm] = useState({
     monthly: 5000,
-    ratePercent: 6.7,
+    ratePercent: 6.5,
     years: 10,
   });
   const [insuranceForm, setInsuranceForm] = useState({
