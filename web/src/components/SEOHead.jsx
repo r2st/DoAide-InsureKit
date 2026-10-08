@@ -589,7 +589,7 @@ const META = {
 function buildStructuredData(pathname, meta) {
   const base = {
     "@context": "https://schema.org",
-    "@type": "WebApplication",
+    "@type": "SoftwareApplication",
     name: SITE_NAME,
     url: SITE_URL,
     description: "Free LIC insurance calculators and agent tools",

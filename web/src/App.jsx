@@ -90,6 +90,7 @@ import BlogLicSurrenderValueCalculatorGuide from "./pages/blog/LicSurrenderValue
 import ToolTracker from "./components/ToolTracker";
 import SocialProofBar from "./components/SocialProofBar";
 import ReferralBanner from "./components/ReferralBanner";
+import FloatingPremiumWidget from "./components/FloatingPremiumWidget";
 
 export default function App() {
   const { pathname } = useLocation();
@@ -202,6 +203,7 @@ export default function App() {
       <Footer />
       <InstallPrompt />
       <ReferralBanner />
+      <FloatingPremiumWidget />
     </div>
   );
 }

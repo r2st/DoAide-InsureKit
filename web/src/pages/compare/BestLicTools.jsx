@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import FAQ from "../../components/FAQ";
+import WhatsAppShare from "../../components/WhatsAppShare";
 
 const SITE_URL = "https://insure.doaide.com";
 
@@ -178,6 +179,10 @@ export default function BestLicTools() {
       </section>
 
       <FAQ items={FAQ_ITEMS} />
+
+      <div className="flex flex-wrap gap-3 my-6">
+        <WhatsAppShare text={"Best LIC Agent Tools 2026 — compare InsureKit, Perfect Agent Plus & more\n\ninsure.doaide.com/compare/best-lic-tools"} />
+      </div>
 
       <div className="panel p-6 text-center my-8">
         <h2 className="text-lg font-bold text-white mb-2">Try India's Best Free LIC Calculator</h2>

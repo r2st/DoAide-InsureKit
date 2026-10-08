@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import FAQ from "../../components/FAQ";
+import WhatsAppShare from "../../components/WhatsAppShare";
 
 const SITE_URL = "https://insure.doaide.com";
 
@@ -143,6 +144,10 @@ export default function VsPerfectAgentPlus() {
       </section>
 
       <FAQ items={FAQ_ITEMS} />
+
+      <div className="flex flex-wrap gap-3 mb-8">
+        <WhatsAppShare text={"InsureKit vs Perfect Agent Plus — free LIC calculator with 24+ features, no signup needed\n\ninsure.doaide.com/compare/perfect-agent-plus"} />
+      </div>
 
       <div className="panel p-6 text-center mb-8">
         <p className="text-white/50 text-sm mb-4">Try InsureKit free — no signup needed</p>

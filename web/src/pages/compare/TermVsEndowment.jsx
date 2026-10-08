@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import FAQ from "../../components/FAQ";
+import WhatsAppShare from "../../components/WhatsAppShare";
 
 const SITE_URL = "https://insure.doaide.com";
 
@@ -269,6 +270,10 @@ export default function TermVsEndowment() {
       </section>
 
       <FAQ items={FAQ_ITEMS} />
+
+      <div className="flex flex-wrap gap-3 my-6">
+        <WhatsAppShare text={"Term vs Endowment — which insurance type is right for you?\n\ninsure.doaide.com/compare/term-vs-endowment"} />
+      </div>
 
       <div className="panel-inner p-6 text-center my-8">
         <p className="text-white/50 text-sm mb-3">Calculate premiums and maturity for any LIC plan</p>

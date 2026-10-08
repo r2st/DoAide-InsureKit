@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import FAQ from "../../components/FAQ";
+import WhatsAppShare from "../../components/WhatsAppShare";
 
 const SITE_URL = "https://insure.doaide.com";
 
@@ -256,6 +257,10 @@ export default function LicVsSbiLife() {
       </section>
 
       <FAQ items={FAQ_ITEMS} />
+
+      <div className="flex flex-wrap gap-3 my-6">
+        <WhatsAppShare text={"LIC vs SBI Life — detailed comparison of claim ratios, premiums & plans\n\ninsure.doaide.com/compare/lic-vs-sbi-life"} />
+      </div>
 
       <div className="panel-inner p-6 text-center my-8">
         <p className="text-white/50 text-sm mb-3">Compare LIC plan premiums and maturity values</p>

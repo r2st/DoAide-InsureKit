@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import FAQ from "../../components/FAQ";
+import WhatsAppShare from "../../components/WhatsAppShare";
 
 const SITE_URL = "https://insure.doaide.com";
 
@@ -158,7 +159,10 @@ export default function VsLicSuperSalesSaathi() {
 
       <FAQ items={FAQ_ITEMS} />
 
-      {/* CTA */}
+      <div className="flex flex-wrap gap-3 mb-8">
+        <WhatsAppShare text={"InsureKit vs LIC Super Sales Saathi — free LIC tools with no subscription\n\ninsure.doaide.com/compare/lic-super-sales-saathi"} />
+      </div>
+
       <div className="panel p-6 text-center mb-8">
         <p className="text-white/50 text-sm mb-4">Ready to try InsureKit?</p>
         <div className="flex flex-wrap justify-center gap-3">
