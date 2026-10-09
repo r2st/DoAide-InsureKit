@@ -93,6 +93,7 @@ import SocialProofBar from "./components/SocialProofBar";
 import ReferralBanner from "./components/ReferralBanner";
 import FloatingPremiumWidget from "./components/FloatingPremiumWidget";
 import FeedbackWidget from "./components/FeedbackWidget";
+import AiAdvisor from "./components/AiAdvisor";
 
 export default function App() {
   const { pathname } = useLocation();
@@ -208,6 +209,7 @@ export default function App() {
       <ReferralBanner />
       <FloatingPremiumWidget />
       <FeedbackWidget />
+      <AiAdvisor />
     </div>
   );
 }
