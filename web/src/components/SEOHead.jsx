@@ -665,9 +665,13 @@ export default function SEOHead() {
     setMeta("property", "og:site_name", SITE_NAME);
     setMeta("property", "og:locale", "en_IN");
 
-    setMeta("name", "twitter:card", "summary");
+    setMeta("property", "og:image", "https://insure.doaide.com/og-image.png");
+    setMeta("property", "og:image:alt", meta.title);
+
+    setMeta("name", "twitter:card", "summary_large_image");
     setMeta("name", "twitter:title", meta.title);
     setMeta("name", "twitter:description", meta.description);
+    setMeta("name", "twitter:image", "https://insure.doaide.com/og-image.png");
 
     const schemas = buildStructuredData(pathname, meta);
 
