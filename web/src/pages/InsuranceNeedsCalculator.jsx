@@ -306,6 +306,39 @@ export default function InsuranceNeedsCalculator() {
             </div>
           </div>
 
+          <div className="panel-inner p-4">
+            <h3 className="text-sm font-semibold text-white mb-2">Health Insurance Recommendation</h3>
+            <div className="text-sm text-white/60 space-y-2">
+              <div className="flex items-start gap-2">
+                <span className="text-signal mt-0.5">1.</span>
+                <div>
+                  <strong className="text-white/80">Family Floater</strong> — {dependents <= 2 ? "5-10L" : "10-15L"} cover
+                  <div className="text-xs text-white/40">Covers hospitalization for self, spouse &amp; children</div>
+                </div>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-signal mt-0.5">2.</span>
+                <div>
+                  <strong className="text-white/80">Super Top-up</strong> — 25-50L cover
+                  <div className="text-xs text-white/40">Kicks in when base policy exhausts — very low premium</div>
+                </div>
+              </div>
+              {age >= 35 && (
+                <div className="flex items-start gap-2">
+                  <span className="text-signal mt-0.5">3.</span>
+                  <div>
+                    <strong className="text-white/80">Critical Illness</strong> — 10-25L cover
+                    <div className="text-xs text-white/40">Lump sum on diagnosis of cancer, heart attack, stroke</div>
+                  </div>
+                </div>
+              )}
+              <div className="text-xs text-white/40 mt-2 pt-2 border-t border-white/5">
+                Health premiums qualify for Section 80D deduction up to 1L/year.{" "}
+                <Link to="/guides/section-80d-health-insurance" className="text-signal">Learn more &rarr;</Link>
+              </div>
+            </div>
+          </div>
+
           <div className="flex flex-wrap gap-3">
             <WhatsAppShare text={shareText} />
             <button onClick={handleDownloadPDF} className="btn-secondary text-sm inline-flex items-center gap-2">

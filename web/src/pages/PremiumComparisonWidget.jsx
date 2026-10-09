@@ -58,7 +58,7 @@ export default function PremiumComparisonWidget() {
         Compare premiums across multiple LIC plans for the same age, sum assured, and term.
       </p>
 
-      <div className="grid sm:grid-cols-4 gap-3 mb-6">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
         <div>
           <label className="block text-xs text-white/40 uppercase tracking-wide mb-1">Age</label>
           <input type="number" min={18} max={65} value={age} onChange={(e) => setAge(+e.target.value)} className="input-field" style={{ fontSize: "16px", minHeight: "44px" }} />

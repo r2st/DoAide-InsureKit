@@ -36,6 +36,21 @@ const ARTICLES = [
     title: "LIC Plan Surrender Value Calculator — How to Calculate GSV & SSV",
     description: "Learn how to calculate LIC policy surrender value. GSV vs SSV formulas, year-wise factors, and better alternatives to surrendering your policy.",
   },
+  {
+    slug: "how-much-life-insurance",
+    title: "How Much Life Insurance Do You Really Need in 2026?",
+    description: "Calculate the right life insurance cover using income multiplier, HLV, and expense methods. Practical examples for different income levels in India.",
+  },
+  {
+    slug: "term-vs-whole-life-insurance",
+    title: "Term vs Whole Life Insurance: Which is Right for You in 2026?",
+    description: "Compare term insurance vs whole life plans in India. LIC Tech Term vs Jeevan Umang — premiums, benefits, returns, and which is right for your needs.",
+  },
+  {
+    slug: "insurance-planning-newlyweds",
+    title: "Insurance Planning for Newlyweds in India — A Complete Guide",
+    description: "Complete insurance planning guide for newly married couples in India. Term insurance, health cover, savings plans, and budget allocation for newlyweds.",
+  },
 ];
 
 export { ARTICLES };

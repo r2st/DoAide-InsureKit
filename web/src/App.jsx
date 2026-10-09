@@ -88,6 +88,9 @@ import BlogLicBonusRates2026 from "./pages/blog/LicBonusRates2026";
 import BlogBestLicPlansChildEducation2026 from "./pages/blog/BestLicPlansChildEducation2026";
 import BlogLicMaturityClaimOnline from "./pages/blog/LicMaturityClaimOnline";
 import BlogLicSurrenderValueCalculatorGuide from "./pages/blog/LicSurrenderValueCalculatorGuide";
+import BlogHowMuchLifeInsurance from "./pages/blog/HowMuchLifeInsurance";
+import BlogTermVsWholeLife from "./pages/blog/TermVsWholeLife";
+import BlogInsurancePlanningNewlyweds from "./pages/blog/InsurancePlanningNewlyweds";
 import ToolTracker from "./components/ToolTracker";
 import SocialProofBar from "./components/SocialProofBar";
 import ReferralBanner from "./components/ReferralBanner";
@@ -201,6 +204,9 @@ export default function App() {
             <Route path="best-lic-plans-child-education-2026" element={<BlogBestLicPlansChildEducation2026 />} />
             <Route path="lic-maturity-claim-online" element={<BlogLicMaturityClaimOnline />} />
             <Route path="lic-surrender-value-calculator-guide" element={<BlogLicSurrenderValueCalculatorGuide />} />
+            <Route path="how-much-life-insurance" element={<BlogHowMuchLifeInsurance />} />
+            <Route path="term-vs-whole-life-insurance" element={<BlogTermVsWholeLife />} />
+            <Route path="insurance-planning-newlyweds" element={<BlogInsurancePlanningNewlyweds />} />
           </Route>
         </Routes>
       </main>

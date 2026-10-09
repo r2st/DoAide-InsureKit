@@ -77,4 +77,37 @@ describe("calculatePremium", () => {
     expect(result).not.toBeNull();
     expect(result.ratePerThousand).toBe(3.65);
   });
+
+  it("total premium equals base + GST", () => {
+    const plan = getPlan("jeevan_anand_715");
+    const result = calculatePremium(plan, 30, 500000, 20, "yearly");
+    expect(result.totalPremium).toBe(result.basePremium + result.gst);
+  });
+
+  it("quarterly mode factor is 0.2615", () => {
+    const plan = getPlan("jeevan_anand_715");
+    const result = calculatePremium(plan, 30, 500000, 20, "quarterly");
+    expect(result.modeFactor).toBe(0.2615);
+    expect(result.modeRebate).toBe(0);
+  });
+
+  it("monthly mode factor is 0.0875", () => {
+    const plan = getPlan("jeevan_anand_715");
+    const result = calculatePremium(plan, 30, 500000, 20, "monthly");
+    expect(result.modeFactor).toBe(0.0875);
+    expect(result.modeRebate).toBe(0);
+  });
+
+  it("higher SA produces lower effective rate due to rebate", () => {
+    const plan = getPlan("jeevan_anand_715");
+    const low = calculatePremium(plan, 30, 300000, 20, "yearly");
+    const high = calculatePremium(plan, 30, 1000000, 20, "yearly");
+    expect(high.effectiveRate).toBeLessThan(low.effectiveRate);
+  });
+
+  it("returns null for plan with empty premium rates", () => {
+    const fakePlan = { premiumRates: {} };
+    const result = calculatePremium(fakePlan, 30, 500000, 20, "yearly");
+    expect(result).toBeNull();
+  });
 });

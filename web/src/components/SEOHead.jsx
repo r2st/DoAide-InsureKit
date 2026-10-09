@@ -630,6 +630,41 @@ const META = {
       { q: "Does term insurance have any maturity benefit?", a: "Pure term insurance pays nothing at maturity — it only pays on death during the term. For maturity benefits, choose TROP (Term Return of Premium) at a higher premium." },
     ],
   },
+  "/blog": {
+    title: "InsureKit Blog — Insurance Guides & Planning Articles | DoAide",
+    description: "Expert articles on insurance planning in India. LIC plan guides, term vs whole life comparisons, insurance needs analysis, and financial planning tips for agents and policyholders.",
+    keywords: "insurance blog, LIC blog, insurance planning guide, life insurance articles, LIC agent blog, insurance tips India",
+    faq: [
+      { q: "What topics does the InsureKit blog cover?", a: "Our blog covers LIC plan comparisons, insurance planning guides, premium calculation tutorials, term vs endowment analysis, tax-saving strategies, and practical tips for LIC agents." },
+    ],
+  },
+  "/blog/how-much-life-insurance": {
+    title: "How Much Life Insurance Do You Really Need in 2026? | InsureKit",
+    description: "Calculate the right life insurance cover using income multiplier, HLV, and expense methods. Practical examples for different income levels in India.",
+    keywords: "how much life insurance, life insurance calculator, HLV calculator, insurance cover needed, life insurance India, income multiplier insurance",
+    faq: [
+      { q: "What is the thumb rule for life insurance?", a: "The simplest rule is 10-15 times your annual income. A 30-year-old earning ₹10 lakh/year should have at least ₹1-1.5 crore cover. Use the HLV method for a more accurate calculation." },
+      { q: "How do I calculate Human Life Value?", a: "HLV = Annual Income × (1 - Personal Expense Ratio) × Years to Retirement. Assuming 30% personal expenses: a 30-year-old earning ₹10L/year has an HLV of approximately ₹1.46 crore." },
+    ],
+  },
+  "/blog/term-vs-whole-life-insurance": {
+    title: "Term vs Whole Life Insurance: Which is Right for You? | InsureKit",
+    description: "Compare term insurance vs whole life plans in India. LIC Tech Term vs Jeevan Umang — premiums, benefits, returns, and which is right for your needs.",
+    keywords: "term vs whole life, term insurance comparison, whole life insurance India, LIC Tech Term, Jeevan Umang, term plan vs whole life plan",
+    faq: [
+      { q: "Is term insurance a waste if I survive?", a: "No. Term insurance is pure protection at the lowest cost. The premium saved vs an endowment plan can be invested in SIPs to create 3-5× more wealth. Think of it like car insurance — you pay for protection, not returns." },
+      { q: "Which is better for a 30-year-old?", a: "For most 30-year-olds, a large term plan (₹1 Cr+) is essential. Add a smaller whole life or endowment plan for savings. The combination approach gives the best of both worlds." },
+    ],
+  },
+  "/blog/insurance-planning-newlyweds": {
+    title: "Insurance Planning for Newlyweds in India — Complete Guide | InsureKit",
+    description: "Complete insurance planning guide for newly married couples in India. Term insurance, health cover, savings plans, and budget allocation for newlyweds.",
+    keywords: "insurance for newlyweds, newly married insurance, couple insurance plan, newlywed financial planning, health insurance newlyweds, term insurance couple",
+    faq: [
+      { q: "What insurance should newlyweds buy first?", a: "1. Term insurance (10-15x each earning spouse's income). 2. Health insurance (family floater, minimum ₹5 lakh). 3. Optional: endowment plan for savings. Buy term and health cover within the first month of marriage." },
+      { q: "How much should a couple spend on insurance?", a: "3-5% of combined income on term + health insurance is the minimum. Total insurance spend including savings plans should not exceed 15-20% of household income." },
+    ],
+  },
   "/guides/ulip-vs-mutual-fund": {
     title: "ULIP vs Mutual Fund: Which is Better in 2026? | DoAide InsureKit",
     description: "Detailed comparison of ULIPs and mutual funds — charges, returns, tax benefits, flexibility, and suitability. Make an informed investment choice.",

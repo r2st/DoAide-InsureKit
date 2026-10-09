@@ -10,7 +10,7 @@ git push origin main
 
 echo ""
 echo "=== Deploying to Hetzner ==="
-SSH_KEY="/Users/dev/projects/Hackathons/keys/hetzner_deploy_ed25519"
+SSH_KEY="/Users/dev/projects/keys/hetzner_deploy_ed25519"
 if [ ! -f "$SSH_KEY" ]; then
   echo "SSH key not found at $SSH_KEY"
   echo "Trying default SSH..."
