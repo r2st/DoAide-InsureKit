@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import settings
-from app.routers import auth, data, freshness, health, sitemap
+from app.routers import auth, data, feedback, freshness, health, sitemap
 
 app = FastAPI(
     title=settings.app_name,
@@ -23,4 +23,5 @@ app.include_router(health.router)
 app.include_router(sitemap.router)
 app.include_router(auth.router)
 app.include_router(data.router)
+app.include_router(feedback.router)
 app.include_router(freshness.router)

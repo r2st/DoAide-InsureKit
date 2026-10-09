@@ -92,6 +92,7 @@ import ToolTracker from "./components/ToolTracker";
 import SocialProofBar from "./components/SocialProofBar";
 import ReferralBanner from "./components/ReferralBanner";
 import FloatingPremiumWidget from "./components/FloatingPremiumWidget";
+import FeedbackWidget from "./components/FeedbackWidget";
 
 export default function App() {
   const { pathname } = useLocation();
@@ -206,6 +207,7 @@ export default function App() {
       <InstallPrompt />
       <ReferralBanner />
       <FloatingPremiumWidget />
+      <FeedbackWidget />
     </div>
   );
 }
