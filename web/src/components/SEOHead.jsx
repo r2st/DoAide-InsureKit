@@ -6,13 +6,15 @@ const SITE_NAME = "DoAide InsureKit";
 
 const META = {
   "/": {
-    title: "DoAide InsureKit — Free LIC Insurance Calculators & Agent Tools",
-    description: "Free LIC premium calculator, maturity calculator, plan comparison, commission calculator, tax benefit tools, revival & surrender calculators for LIC agents and policyholders.",
-    keywords: "LIC calculator, LIC premium calculator, LIC agent tools, LIC maturity calculator, LIC commission calculator, insurance calculator India, free LIC tools",
+    title: "DoAide InsureKit — Free LIC Insurance Calculators & Agent Tools 2026",
+    description: "Free LIC premium calculator, maturity calculator, plan comparison, commission calculator, tax benefit tools, revival & surrender calculators for LIC agents and policyholders. Updated for 2026.",
+    keywords: "LIC calculator, LIC premium calculator, LIC agent tools, LIC maturity calculator, LIC commission calculator, insurance calculator India, free LIC tools, LIC tools 2026",
     faq: [
-      { q: "Is InsureKit free to use?", a: "Yes, completely free. No login, no registration, no hidden charges." },
-      { q: "Are the calculations accurate?", a: "Calculations are based on LIC's published premium rates and bonus rates. Always verify with LIC before making financial decisions." },
-      { q: "Which LIC plans are supported?", a: "InsureKit supports 24+ LIC plans including Jeevan Anand, New Endowment, Jeevan Labh, Jeevan Lakshya, Tech Term, and more." },
+      { q: "Is InsureKit free to use?", a: "Yes, completely free. No login, no registration, no hidden charges. All 40+ tools work offline once loaded." },
+      { q: "Are the calculations accurate?", a: "Calculations are based on LIC's published premium rates and bonus rates, updated for 2026. Always verify with LIC before making financial decisions." },
+      { q: "Which LIC plans are supported?", a: "InsureKit supports 30+ LIC plans including Jeevan Anand (815), New Endowment (814), Jeevan Labh (836), Jeevan Lakshya (833), Tech Term (854), Dhan Sanchay (871), Amritbaal (774), and more." },
+      { q: "How are LIC premium rates calculated?", a: "LIC premium is based on tabular rate per ₹1,000 SA, which varies by plan, age, and term. Rebates are applied for higher SA and yearly payment mode. GST of 4.5% (first year) and 2.25% (renewal) is added." },
+      { q: "What tax benefits can I get from LIC policies?", a: "LIC premiums qualify for Section 80C deduction up to ₹1.5 lakh/year under the old regime. Maturity proceeds are tax-free under Section 10(10D) if annual premium is less than 10% of Sum Assured." },
     ],
   },
   "/premium-calculator": {
@@ -167,6 +169,10 @@ const META = {
     title: "LIC Insurance Guides & Articles — DoAide InsureKit",
     description: "In-depth guides on LIC plans, bonus rates, policy revival, and more. Expert articles for LIC agents and policyholders.",
     keywords: "LIC guides, LIC articles, LIC plan guide, LIC bonus rates guide, LIC revival guide",
+    faq: [
+      { q: "What topics do InsureKit guides cover?", a: "Guides cover best LIC plans, bonus rate history, policy revival, premium payment, tax benefits, how to become an LIC agent, claim process, child plans, term insurance, and more." },
+      { q: "Are the guides updated for 2026?", a: "Yes, all guides are updated with the latest LIC bonus rates, premium tables, commission structures, and plan details for 2026." },
+    ],
   },
   "/guides/best-lic-plans-2026": {
     title: "Best LIC Plans 2026 — Complete Comparison Guide | DoAide InsureKit",
@@ -335,11 +341,17 @@ const META = {
     title: "InsureKit vs LIC Super Sales Saathi — Feature Comparison 2026 | DoAide",
     description: "Compare DoAide InsureKit with LIC Super Sales Saathi. See which LIC agent tool has more calculators, better features, and is truly free.",
     keywords: "InsureKit vs LIC Super Sales Saathi, LIC agent tools comparison, best LIC agent app",
+    faq: [
+      { q: "Is InsureKit better than LIC Super Sales Saathi?", a: "InsureKit offers 40+ free tools with no login, compared to limited features in Super Sales Saathi. InsureKit includes plan presentations, business cards, and AI advisor — features not found elsewhere." },
+    ],
   },
   "/compare/perfect-agent-plus": {
     title: "InsureKit vs Perfect Agent Plus — Feature Comparison 2026 | DoAide",
     description: "Compare DoAide InsureKit with Perfect Agent Plus. Free vs paid, feature-by-feature comparison for LIC agents.",
     keywords: "InsureKit vs Perfect Agent Plus, LIC agent tools comparison, best free LIC calculator",
+    faq: [
+      { q: "Is InsureKit free compared to Perfect Agent Plus?", a: "Yes, InsureKit is 100% free with all features. Perfect Agent Plus charges for premium features. InsureKit offers more tools at zero cost." },
+    ],
   },
   "/best-lic-agent-tools-2026": {
     title: "Best LIC Agent Tools 2026 — Top 4 Apps Compared | DoAide InsureKit",
@@ -572,6 +584,50 @@ const META = {
       { q: "Is LIC better than FD?", a: "LIC maturity is tax-free under Section 10(10D) if premium is less than 10% of SA. FD interest is fully taxable at your slab rate, reducing effective returns significantly for high earners." },
       { q: "What is the return on FD vs LIC?", a: "FDs offer 6-7.5% pre-tax returns. After 30% tax, effective return drops to ~4.5-5.2%. LIC endowment plans return 4.5-6% IRR but the maturity is completely tax-free." },
       { q: "Should I invest in FD or insurance?", a: "It depends on your goal. FDs are better for short-term liquidity. Insurance provides life cover + tax-free maturity for long-term savings. A combination of both is often ideal." },
+    ],
+  },
+  "/insurance-needs-calculator": {
+    title: "Insurance Needs Calculator 2026 — How Much Cover Do You Need? | DoAide InsureKit",
+    description: "Calculate how much life insurance you need based on income, expenses, loans, and future goals. Free human life value (HLV) calculator for accurate cover assessment.",
+    keywords: "insurance needs calculator, how much life insurance, HLV calculator, life insurance cover, insurance requirement calculator, human life value",
+    faq: [
+      { q: "How much life insurance do I need?", a: "Standard rule: 10-15× annual income. The calculator factors in debts, future expenses (children's education, marriage), existing cover, and investments to give a precise number." },
+      { q: "What is Human Life Value?", a: "HLV is the present value of your future income, minus personal expenses. It represents the economic loss your family would face and is used to determine adequate life insurance cover." },
+    ],
+  },
+  "/premium-comparison": {
+    title: "LIC Premium Comparison Widget — Embed on Your Website | DoAide InsureKit",
+    description: "Compare LIC plan premiums across age, term, and sum assured. Embeddable widget for insurance blogs and websites. Free LIC premium comparison tool.",
+    keywords: "LIC premium comparison, compare LIC premiums, LIC premium widget, premium comparison tool, LIC plan premium compare",
+    faq: [
+      { q: "What is the premium comparison tool?", a: "It lets you compare premiums for multiple LIC plans side-by-side with the same or different parameters — helping clients choose the most affordable option." },
+    ],
+  },
+  "/tools/term-insurance-compare": {
+    title: "Term Insurance Comparison 2026 — LIC vs HDFC vs Max Life vs ICICI | DoAide InsureKit",
+    description: "Compare term insurance plans from LIC, HDFC Life, Max Life, ICICI Prudential, SBI Life, and Tata AIA. Premium, claim ratio, riders, and coverage analysis.",
+    keywords: "term insurance comparison, best term plan India, compare term insurance, LIC term vs private, cheapest term plan, term plan comparison 2026",
+    faq: [
+      { q: "Which term insurance is cheapest?", a: "Private insurers like HDFC Click2Protect and Max Life Smart Secure offer the lowest premiums. LIC Tech Term is competitive while offering the trust of LIC." },
+      { q: "Is LIC term plan better than private?", a: "LIC has a higher claim settlement ratio (98.6%) and brand trust. Private insurers offer lower premiums and more rider options. Both are IRDAI-regulated." },
+      { q: "At what age should I buy term insurance?", a: "The earlier the better — premiums increase with age. Buying at 25 vs 35 can save 40-50% on premiums over the policy term." },
+    ],
+  },
+  "/compare/lic-vs-sbi-life": {
+    title: "LIC vs SBI Life Insurance — Complete Comparison 2026 | DoAide InsureKit",
+    description: "Compare LIC and SBI Life Insurance — plans, premiums, claim settlement ratio, returns, and agent support. Which insurer is better for you?",
+    keywords: "LIC vs SBI Life, LIC comparison, SBI Life comparison, best life insurance India, LIC or SBI Life, insurance company comparison",
+    faq: [
+      { q: "Is LIC better than SBI Life?", a: "LIC has a higher claim ratio (98.6% vs 97.3%) and wider branch network. SBI Life offers competitive ULIPs and online plans. Choice depends on your priority: trust or product variety." },
+    ],
+  },
+  "/compare/term-vs-endowment": {
+    title: "Term Insurance vs Endowment Plan — Which is Better? | DoAide InsureKit",
+    description: "Detailed comparison of term insurance and endowment plans — coverage, premium, returns, tax benefits. Use the calculator to see the wealth gap between the two approaches.",
+    keywords: "term vs endowment, term insurance vs endowment, endowment vs term plan, which is better term or endowment, LIC term plan vs endowment",
+    faq: [
+      { q: "Is term insurance better than endowment?", a: "Term insurance provides 10× more coverage at the same premium. The saved amount invested in SIP can create 3-5× more wealth than an endowment plan's maturity." },
+      { q: "Does term insurance have any maturity benefit?", a: "Pure term insurance pays nothing at maturity — it only pays on death during the term. For maturity benefits, choose TROP (Term Return of Premium) at a higher premium." },
     ],
   },
   "/guides/ulip-vs-mutual-fund": {

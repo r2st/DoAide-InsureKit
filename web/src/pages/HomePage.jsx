@@ -334,9 +334,11 @@ const FAQ_ITEMS = [
   { q: "Is InsureKit free to use?", a: "Yes, completely free! No login, no registration, no hidden charges. All tools work offline once loaded. InsureKit is made by DoAide to help LIC agents serve their clients better." },
   { q: "Is my data safe?", a: "Absolutely. InsureKit runs entirely in your browser. No data is sent to any server. Policy tracker and client reminder data is stored in your browser's local storage — only you can access it." },
   { q: "Are the calculations accurate?", a: "Calculations are based on LIC's published premium rates, bonus rates, and commission structures. However, always verify with LIC before making financial decisions. Actual values may vary slightly." },
-  { q: "Which LIC plans are supported?", a: "InsureKit supports 24+ LIC plans including Jeevan Anand (715/815), New Endowment (714/814), Jeevan Labh (736), Jeevan Lakshya (733/833), Jeevan Umang (745), Money Back (720/721), Tech Term (854), Jeevan Amar (855), and more." },
-  { q: "Can I use this on my phone?", a: "Yes! InsureKit is fully mobile-friendly. Use it on your phone to show clients premium quotes, maturity estimates, and plan comparisons on the go." },
+  { q: "Which LIC plans are supported?", a: "InsureKit supports 30+ LIC plans including Jeevan Anand (715/815), New Endowment (714/814), Jeevan Labh (736/836), Jeevan Lakshya (733/833), Jeevan Umang (745/845), Money Back (720/721), Tech Term (854), Jeevan Amar (855), Dhan Sanchay (871), Amritbaal (774), and more." },
+  { q: "Can I use this on my phone?", a: "Yes! InsureKit is fully mobile-friendly and works as a PWA (Progressive Web App). Install it on your phone's home screen for app-like experience. Show clients premium quotes and plan comparisons during meetings." },
   { q: "How do I share results with clients?", a: "Every calculator has a 'Share on WhatsApp' button that creates a pre-formatted message with the calculation results. You can also use 'Print/PDF' to save or print results." },
+  { q: "How are LIC premium rates calculated?", a: "LIC premium is based on tabular rate per ₹1,000 SA, which varies by plan, age, and term. Rebates are applied for higher SA (₹2.50/1000 for ≥5L, ₹4/1000 for ≥10L) and yearly mode (2%). GST of 4.5% (first year) and 2.25% (renewal) is then added." },
+  { q: "What tax benefits can I get from LIC policies?", a: "LIC premiums qualify for Section 80C deduction up to ₹1.5 lakh/year under the old regime. Maturity proceeds are tax-free under Section 10(10D) if annual premium is less than 10% of Sum Assured. Health insurance premiums qualify for additional 80D deduction up to ₹1 lakh." },
 ];
 
 export default function HomePage() {
