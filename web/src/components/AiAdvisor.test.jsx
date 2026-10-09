@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { SUGGESTED_QUESTIONS, SYSTEM_PROMPT } from "./AiAdvisor";
+import { SUGGESTED_QUESTIONS } from "./AiAdvisor";
 
 describe("AiAdvisor", () => {
   beforeEach(() => {
@@ -14,83 +14,69 @@ describe("AiAdvisor", () => {
     expect(SUGGESTED_QUESTIONS).toContain("Best plan for child education?");
   });
 
-  it("system prompt mentions LIC", () => {
-    expect(SYSTEM_PROMPT).toContain("LIC");
-    expect(SYSTEM_PROMPT).toContain("80C");
-    expect(SYSTEM_PROMPT).toContain("bonus rates");
-  });
-
-  it("sends correct payload to Gemini API", async () => {
+  it("sends correct payload to backend proxy", async () => {
     const mockFetch = vi.fn().mockResolvedValue({
       ok: true,
-      json: () =>
-        Promise.resolve({
-          candidates: [{ content: { parts: [{ text: "Test reply" }] } }],
-        }),
+      json: () => Promise.resolve({ reply: "Test reply" }),
     });
     vi.stubGlobal("fetch", mockFetch);
 
-    const { sendToGemini } = await import("./AiAdvisor");
-    const reply = await sendToGemini([{ role: "user", text: "Hello" }]);
+    const { askAdvisor } = await import("./AiAdvisor");
+    const reply = await askAdvisor("Hello", []);
 
     expect(reply).toBe("Test reply");
     expect(mockFetch).toHaveBeenCalledOnce();
 
     const [url, opts] = mockFetch.mock.calls[0];
-    expect(url).toContain("generativelanguage.googleapis.com");
-    expect(url).toContain("gemini-3.8-flash");
+    expect(url).toBe("/api/advisor/ask");
     expect(opts.method).toBe("POST");
 
     const body = JSON.parse(opts.body);
-    expect(body.systemInstruction.parts[0].text).toContain("LIC");
-    expect(body.contents[0].role).toBe("user");
-    expect(body.contents[0].parts[0].text).toBe("Hello");
+    expect(body.message).toBe("Hello");
+    expect(body.history).toEqual([]);
+  });
+
+  it("passes conversation history", async () => {
+    const mockFetch = vi.fn().mockResolvedValue({
+      ok: true,
+      json: () => Promise.resolve({ reply: "OK" }),
+    });
+    vi.stubGlobal("fetch", mockFetch);
+
+    const history = [
+      { role: "user", text: "Q1" },
+      { role: "assistant", text: "A1" },
+    ];
+
+    const { askAdvisor } = await import("./AiAdvisor");
+    await askAdvisor("Q2", history);
+
+    const body = JSON.parse(mockFetch.mock.calls[0][1].body);
+    expect(body.message).toBe("Q2");
+    expect(body.history).toEqual(history);
   });
 
   it("handles API error gracefully", async () => {
     const mockFetch = vi.fn().mockResolvedValue({
       ok: false,
-      status: 500,
-      text: () => Promise.resolve("Internal error"),
+      status: 502,
+      text: () => Promise.resolve("Bad Gateway"),
     });
     vi.stubGlobal("fetch", mockFetch);
 
-    const { sendToGemini } = await import("./AiAdvisor");
-    await expect(sendToGemini([{ role: "user", text: "Hi" }])).rejects.toThrow("Gemini API error 500");
+    const { askAdvisor } = await import("./AiAdvisor");
+    await expect(askAdvisor("Hi", [])).rejects.toThrow("Advisor API error 502");
   });
 
-  it("maps assistant role to model for Gemini", async () => {
+  it("returns fallback when reply is empty", async () => {
     const mockFetch = vi.fn().mockResolvedValue({
       ok: true,
-      json: () =>
-        Promise.resolve({
-          candidates: [{ content: { parts: [{ text: "OK" }] } }],
-        }),
+      json: () => Promise.resolve({ reply: "" }),
     });
     vi.stubGlobal("fetch", mockFetch);
 
-    const { sendToGemini } = await import("./AiAdvisor");
-    await sendToGemini([
-      { role: "user", text: "Q1" },
-      { role: "assistant", text: "A1" },
-      { role: "user", text: "Q2" },
-    ]);
-
-    const body = JSON.parse(mockFetch.mock.calls[0][1].body);
-    expect(body.contents[0].role).toBe("user");
-    expect(body.contents[1].role).toBe("model");
-    expect(body.contents[2].role).toBe("user");
-  });
-
-  it("returns fallback when response has no candidates", async () => {
-    const mockFetch = vi.fn().mockResolvedValue({
-      ok: true,
-      json: () => Promise.resolve({ candidates: [] }),
-    });
-    vi.stubGlobal("fetch", mockFetch);
-
-    const { sendToGemini } = await import("./AiAdvisor");
-    const reply = await sendToGemini([{ role: "user", text: "Test" }]);
+    const { askAdvisor } = await import("./AiAdvisor");
+    const reply = await askAdvisor("Test", []);
     expect(reply).toBe("Sorry, I couldn't generate a response.");
   });
 });

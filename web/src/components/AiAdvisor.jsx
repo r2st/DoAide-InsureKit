@@ -1,11 +1,5 @@
 import { useState, useRef, useEffect } from "react";
 
-const API_KEY = import.meta.env.VITE_GEMINI_API_KEY || "";
-const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=${API_KEY}`;
-
-const SYSTEM_PROMPT =
-  "You are an expert LIC insurance advisor for Indian agents and policyholders. Help with LIC plan selection, premium calculations, policy revival, maturity claims, tax benefits under 80C/80D/10(10D), bonus rates, and commission structures. Give practical, actionable advice specific to LIC of India.";
-
 const SUGGESTED_QUESTIONS = [
   "Which LIC plan has highest bonus?",
   "How to revive lapsed policy?",
@@ -13,28 +7,20 @@ const SUGGESTED_QUESTIONS = [
   "Best plan for child education?",
 ];
 
-async function sendToGemini(messages) {
-  const contents = messages.map((m) => ({
-    role: m.role === "user" ? "user" : "model",
-    parts: [{ text: m.text }],
-  }));
-
-  const res = await fetch(API_URL, {
+async function askAdvisor(message, history) {
+  const res = await fetch("/api/advisor/ask", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
-      contents,
-    }),
+    body: JSON.stringify({ message, history }),
   });
 
   if (!res.ok) {
     const err = await res.text().catch(() => "");
-    throw new Error(`Gemini API error ${res.status}: ${err}`);
+    throw new Error(`Advisor API error ${res.status}: ${err}`);
   }
 
   const data = await res.json();
-  return data.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I couldn't generate a response.";
+  return data.reply || "Sorry, I couldn't generate a response.";
 }
 
 export default function AiAdvisor() {
@@ -57,7 +43,7 @@ export default function AiAdvisor() {
     setLoading(true);
 
     try {
-      const reply = await sendToGemini(next);
+      const reply = await askAdvisor(userMsg.text, messages);
       setMessages((prev) => [...prev, { role: "assistant", text: reply }]);
     } catch {
       setMessages((prev) => [...prev, { role: "assistant", text: "Something went wrong. Please try again." }]);
@@ -310,4 +296,4 @@ export default function AiAdvisor() {
   );
 }
 
-export { sendToGemini, SUGGESTED_QUESTIONS, SYSTEM_PROMPT };
+export { askAdvisor, SUGGESTED_QUESTIONS };
