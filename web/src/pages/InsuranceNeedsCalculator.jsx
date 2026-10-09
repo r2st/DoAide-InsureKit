@@ -1,7 +1,8 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import SEOHead from "../components/SEOHead";
 import FAQ from "../components/FAQ";
+import WhatsAppShare from "../components/WhatsAppShare";
 import { calculateInsuranceNeeds } from "../utils/calcInsuranceNeeds";
 
 const FAQ_ITEMS = [
@@ -34,6 +35,9 @@ export default function InsuranceNeedsCalculator() {
   const [existingCover, setExistingCover] = useState(0);
   const [savings, setSavings] = useState(0);
   const [retirementAge, setRetirementAge] = useState(60);
+  const [email, setEmail] = useState("");
+  const [emailSubmitted, setEmailSubmitted] = useState(false);
+  const resultRef = useRef(null);
 
   const result = useMemo(() => calculateInsuranceNeeds({
     age, income, dependents, childrenCount, outstandingLoans, existingCover, savings, retirementAge,
@@ -47,6 +51,113 @@ export default function InsuranceNeedsCalculator() {
   useEffect(() => {
     document.title = "Insurance Needs Calculator — How Much Cover Do You Need? | InsureKit";
   }, []);
+
+  const shareText = `My Insurance Needs Analysis (InsureKit):\n\n` +
+    `Age: ${age} | Income: ${fmt(income)}/yr\n` +
+    `Dependents: ${dependents} | Children: ${childrenCount}\n\n` +
+    `Recommended Cover: ${fmt(roundedCover)} (${multiplier}x income)\n\n` +
+    `Breakdown:\n` +
+    `• Income Replacement: ${fmt(incomeReplacement)}\n` +
+    (childrenCount > 0 ? `• Child Education: ${fmt(childEducation)}\n• Child Marriage: ${fmt(childMarriage)}\n` : "") +
+    `• Emergency Fund: ${fmt(emergencyFund)}\n` +
+    `• Funeral & Settlement: ${fmt(funeralAndSettlement)}\n` +
+    `• Total Needs: ${fmt(totalNeeds)}\n` +
+    (existingCover > 0 ? `• Existing Cover: -${fmt(existingCover)}\n` : "") +
+    (savings > 0 ? `• Savings: -${fmt(savings)}\n` : "") +
+    `\nCalculate yours free: https://insure.doaide.com/insurance-needs-calculator`;
+
+  function handleDownloadPDF() {
+    const printContent = resultRef.current;
+    if (!printContent) return;
+
+    const printWindow = window.open("", "_blank");
+    if (!printWindow) return;
+
+    printWindow.document.write(`<!DOCTYPE html><html><head>
+      <title>Insurance Needs Analysis — InsureKit</title>
+      <style>
+        body { font-family: Arial, sans-serif; max-width: 700px; margin: 40px auto; color: #1a1a1d; padding: 0 20px; }
+        h1 { color: #b8860b; font-size: 22px; margin-bottom: 4px; }
+        .subtitle { color: #666; font-size: 13px; margin-bottom: 24px; }
+        .cover-box { background: #f8f4e8; border: 2px solid #d4af37; border-radius: 12px; padding: 24px; text-align: center; margin-bottom: 24px; }
+        .cover-amount { font-size: 36px; font-weight: bold; color: #b8860b; }
+        .cover-sub { color: #888; font-size: 13px; margin-top: 4px; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        th { text-align: left; padding: 8px 12px; background: #f5f5f5; border-bottom: 1px solid #ddd; font-size: 13px; color: #666; text-transform: uppercase; }
+        td { padding: 8px 12px; border-bottom: 1px solid #eee; font-size: 14px; }
+        td:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+        .total td { font-weight: bold; border-top: 2px solid #d4af37; }
+        .deduct td { color: #c0392b; }
+        .final td { font-weight: bold; color: #b8860b; font-size: 16px; border-top: 2px solid #d4af37; }
+        .params { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; margin-bottom: 24px; font-size: 13px; }
+        .params div { display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px solid #f0f0f0; }
+        .params .label { color: #888; }
+        .disclaimer { color: #999; font-size: 11px; margin-top: 24px; text-align: center; border-top: 1px solid #eee; padding-top: 12px; }
+        .branding { text-align: center; color: #b8860b; font-weight: bold; margin-top: 16px; font-size: 13px; }
+        @media print { body { margin: 20px; } }
+      </style>
+    </head><body>
+      <h1>Insurance Needs Analysis</h1>
+      <div class="subtitle">Generated on ${new Date().toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" })} | insure.doaide.com</div>
+
+      <div class="cover-box">
+        <div style="font-size: 12px; color: #888; text-transform: uppercase;">Recommended Cover</div>
+        <div class="cover-amount">${fmt(roundedCover)}</div>
+        <div class="cover-sub">${multiplier}x annual income</div>
+      </div>
+
+      <div class="params">
+        <div><span class="label">Age</span><span>${age} years</span></div>
+        <div><span class="label">Annual Income</span><span>${fmt(income)}</span></div>
+        <div><span class="label">Dependents</span><span>${dependents}</span></div>
+        <div><span class="label">Children</span><span>${childrenCount}</span></div>
+        <div><span class="label">Retirement Age</span><span>${retirementAge}</span></div>
+        <div><span class="label">Years to Retire</span><span>${yearsToRetire}</span></div>
+        ${outstandingLoans > 0 ? `<div><span class="label">Outstanding Loans</span><span>${fmt(outstandingLoans)}</span></div>` : ""}
+        ${existingCover > 0 ? `<div><span class="label">Existing Cover</span><span>${fmt(existingCover)}</span></div>` : ""}
+        ${savings > 0 ? `<div><span class="label">Savings</span><span>${fmt(savings)}</span></div>` : ""}
+      </div>
+
+      <table>
+        <thead><tr><th>Component</th><th style="text-align:right">Amount</th></tr></thead>
+        <tbody>
+          <tr><td>Income Replacement (${yearsToRetire} yrs × 70%)</td><td>${fmt(incomeReplacement)}</td></tr>
+          ${childrenCount > 0 ? `<tr><td>Child Education (${childrenCount} × ₹25L)</td><td>${fmt(childEducation)}</td></tr>
+          <tr><td>Child Marriage (${childrenCount} × ₹15L)</td><td>${fmt(childMarriage)}</td></tr>` : ""}
+          ${outstandingLoans > 0 ? `<tr><td>Outstanding Loans</td><td>${fmt(outstandingLoans)}</td></tr>` : ""}
+          <tr><td>Emergency Fund (2yr income)</td><td>${fmt(emergencyFund)}</td></tr>
+          <tr><td>Funeral & Settlement</td><td>${fmt(funeralAndSettlement)}</td></tr>
+          <tr class="total"><td>Total Needs</td><td>${fmt(totalNeeds)}</td></tr>
+          ${existingCover > 0 ? `<tr class="deduct"><td>− Existing Cover</td><td>${fmt(existingCover)}</td></tr>` : ""}
+          ${savings > 0 ? `<tr class="deduct"><td>− Savings / Investments</td><td>${fmt(savings)}</td></tr>` : ""}
+          <tr class="final"><td>Additional Cover Needed</td><td>${fmt(roundedCover)}</td></tr>
+        </tbody>
+      </table>
+
+      <div class="disclaimer">This is an indicative estimate. Consult a financial advisor before making insurance decisions.</div>
+      <div class="branding">DoAide InsureKit — insure.doaide.com</div>
+    </body></html>`);
+    printWindow.document.close();
+    printWindow.print();
+  }
+
+  function handleEmailSubmit(e) {
+    e.preventDefault();
+    if (!email) return;
+    try {
+      const leads = JSON.parse(localStorage.getItem("insurekit_leads") || "[]");
+      leads.push({
+        email,
+        source: "insurance-needs-calculator",
+        recommendedCover: roundedCover,
+        age,
+        income,
+        timestamp: new Date().toISOString(),
+      });
+      localStorage.setItem("insurekit_leads", JSON.stringify(leads));
+    } catch {}
+    setEmailSubmitted(true);
+  }
 
   return (
     <div className="animate-fade-up">
@@ -97,7 +208,7 @@ export default function InsuranceNeedsCalculator() {
           </div>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-4" ref={resultRef}>
           <div className="panel p-6 text-center">
             <div className="text-xs text-white/40 uppercase tracking-wide mb-1">Recommended Cover</div>
             <div className="text-signal text-3xl font-bold">{fmt(roundedCover)}</div>
@@ -196,11 +307,54 @@ export default function InsuranceNeedsCalculator() {
           </div>
 
           <div className="flex flex-wrap gap-3">
+            <WhatsAppShare text={shareText} />
+            <button onClick={handleDownloadPDF} className="btn-secondary text-sm inline-flex items-center gap-2">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
+              </svg>
+              Download PDF
+            </button>
+          </div>
+
+          {!emailSubmitted ? (
+            <div className="panel p-4 border-signal/30 border">
+              <h3 className="text-sm font-semibold text-signal mb-1">Get Personalized Recommendations</h3>
+              <p className="text-xs text-white/40 mb-3">
+                Enter your email and we'll send you a detailed plan comparison tailored to your needs.
+              </p>
+              <form onSubmit={handleEmailSubmit} className="flex gap-2">
+                <input
+                  type="email"
+                  placeholder="your@email.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  className="input-field flex-1"
+                  style={{ fontSize: "16px", minHeight: "44px" }}
+                />
+                <button type="submit" className="btn-primary text-sm whitespace-nowrap">
+                  Get Recommendations
+                </button>
+              </form>
+            </div>
+          ) : (
+            <div className="panel p-4 border-green-500/30 border text-center">
+              <div className="text-green-400 font-semibold text-sm mb-1">Thank you!</div>
+              <p className="text-xs text-white/40">
+                We'll send personalized plan recommendations to your email shortly.
+              </p>
+            </div>
+          )}
+
+          <div className="flex flex-wrap gap-3">
             <Link to="/premium-calculator" className="btn-primary no-underline text-sm">
               Calculate Premium
             </Link>
             <Link to="/plan-recommender" className="btn-secondary no-underline text-sm">
               Get Plan Recommendations
+            </Link>
+            <Link to="/tools/term-insurance-compare" className="btn-secondary no-underline text-sm">
+              Compare Term Plans
             </Link>
           </div>
         </div>

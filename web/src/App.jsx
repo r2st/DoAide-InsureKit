@@ -79,6 +79,7 @@ import LicVsSbiLife from "./pages/compare/LicVsSbiLife";
 import TermVsEndowment from "./pages/compare/TermVsEndowment";
 import InsuranceNeedsCalculator from "./pages/InsuranceNeedsCalculator";
 import PremiumComparisonWidget from "./pages/PremiumComparisonWidget";
+import TermInsuranceCompare from "./pages/TermInsuranceCompare";
 import BlogLayout, { BlogIndex } from "./pages/blog/BlogLayout";
 import BlogBestLicPlans2026 from "./pages/blog/BestLicPlans2026";
 import BlogLicPremiumCalculatorGuide from "./pages/blog/LicPremiumCalculatorGuide";
@@ -188,6 +189,7 @@ export default function App() {
           <Route path="/compare/term-vs-endowment" element={<TermVsEndowment />} />
           <Route path="/insurance-needs-calculator" element={<InsuranceNeedsCalculator />} />
           <Route path="/premium-comparison" element={<PremiumComparisonWidget />} />
+          <Route path="/tools/term-insurance-compare" element={<TermInsuranceCompare />} />
           <Route path="/blog" element={<BlogLayout />}>
             <Route index element={<BlogIndex />} />
             <Route path="best-lic-plans-2026-comparison-guide" element={<BlogBestLicPlans2026 />} />

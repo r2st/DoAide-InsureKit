@@ -284,6 +284,18 @@ const TOOL_CATEGORIES = [
         icon: "📖",
       },
       {
+        path: "/tools/term-insurance-compare",
+        name: "Term Insurance Compare",
+        desc: "Compare term insurance plans from LIC, HDFC, Max Life, ICICI & more",
+        icon: "🛡️",
+      },
+      {
+        path: "/insurance-needs-calculator",
+        name: "Insurance Needs Calculator",
+        desc: "Calculate how much life insurance cover you actually need",
+        icon: "🧮",
+      },
+      {
         path: "/claim-settlement-ratio",
         name: "Claim Settlement Ratio",
         desc: "Compare IRDAI claim settlement ratios for 20+ life insurance companies",
