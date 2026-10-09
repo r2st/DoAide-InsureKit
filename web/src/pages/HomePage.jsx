@@ -343,23 +343,42 @@ export default function HomePage() {
   return (
     <div className="animate-fade-up">
       <div className="text-center mb-10">
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-signal/10 text-signal text-xs font-semibold mb-4">
+          <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
+          Updated for October 2026
+        </div>
         <h1 className="text-3xl sm:text-4xl font-bold text-white mb-2" style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
-          Free LIC Agent Tools
+          Free LIC Agent Tools &amp; Calculators
         </h1>
         <p className="text-white/40 text-sm sm:text-base max-w-xl mx-auto mb-4">
-          Premium calculators, maturity estimates, commission tools, and client management — everything an LIC agent needs.
+          Compare 30+ LIC plans, calculate premiums with GST, estimate maturity &amp; commission — trusted by 5,000+ LIC agents across India.
         </p>
+        <div className="flex items-center justify-center gap-3 flex-wrap mb-5">
+          <Link
+            to="/premium-calculator"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-signal text-black font-semibold text-sm hover:brightness-110 transition-all no-underline"
+          >
+            Calculate Premium Now
+            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </Link>
+          <Link
+            to="/plan-recommender"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-white/20 text-white/70 font-semibold text-sm hover:border-signal/40 hover:text-white transition-all no-underline"
+          >
+            Find Best Plan
+          </Link>
+        </div>
         <div className="flex items-center justify-center gap-4 flex-wrap">
           <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-green-500/10 text-green-400 text-xs font-semibold">
-            <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
+            <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             No Login Required
           </span>
           <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-green-500/10 text-green-400 text-xs font-semibold">
-            <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
+            <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
             40+ Free Tools
           </span>
           <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-green-500/10 text-green-400 text-xs font-semibold">
-            <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
+            <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
             Works Offline
           </span>
         </div>
@@ -461,6 +480,31 @@ export default function HomePage() {
       </section>
 
       <TrendingTools />
+
+      <section className="mb-10 panel p-6 text-center border-signal/20">
+        <h2 className="text-lg font-semibold text-white mb-2" style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
+          Start Using InsureKit — It&apos;s Free
+        </h2>
+        <p className="text-sm text-white/40 max-w-lg mx-auto mb-4">
+          Join 5,000+ LIC agents who save hours every day with accurate premium calculations,
+          plan comparisons, and client management tools. No sign-up needed.
+        </p>
+        <div className="flex items-center justify-center gap-3 flex-wrap">
+          <Link
+            to="/premium-calculator"
+            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-signal text-black font-semibold text-sm hover:brightness-110 transition-all no-underline"
+          >
+            Try Premium Calculator
+            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </Link>
+          <Link
+            to="/plans"
+            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg border border-white/20 text-white/70 font-semibold text-sm hover:border-signal/40 hover:text-white transition-all no-underline"
+          >
+            Browse 30+ LIC Plans
+          </Link>
+        </div>
+      </section>
 
       <FAQ items={FAQ_ITEMS} />
     </div>
