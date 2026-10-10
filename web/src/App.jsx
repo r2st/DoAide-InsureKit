@@ -91,6 +91,11 @@ import BlogLicSurrenderValueCalculatorGuide from "./pages/blog/LicSurrenderValue
 import BlogHowMuchLifeInsurance from "./pages/blog/HowMuchLifeInsurance";
 import BlogTermVsWholeLife from "./pages/blog/TermVsWholeLife";
 import BlogInsurancePlanningNewlyweds from "./pages/blog/InsurancePlanningNewlyweds";
+import BlogLicTermInsurancePlans2026 from "./pages/blog/LicTermInsurancePlans2026";
+import BlogHealthVsLifeInsurance from "./pages/blog/HealthVsLifeInsurance";
+import BlogCalculateLifeInsuranceCoverage from "./pages/blog/CalculateLifeInsuranceCoverage";
+import InsurancePremiumEstimator from "./pages/InsurancePremiumEstimator";
+import PolicyComparisonTool from "./pages/PolicyComparisonTool";
 import ToolTracker from "./components/ToolTracker";
 import SocialProofBar from "./components/SocialProofBar";
 import ReferralBanner from "./components/ReferralBanner";
@@ -195,6 +200,8 @@ export default function App() {
           <Route path="/insurance-needs-calculator" element={<InsuranceNeedsCalculator />} />
           <Route path="/premium-comparison" element={<PremiumComparisonWidget />} />
           <Route path="/tools/term-insurance-compare" element={<TermInsuranceCompare />} />
+          <Route path="/tools/premium-estimator" element={<InsurancePremiumEstimator />} />
+          <Route path="/tools/policy-comparison" element={<PolicyComparisonTool />} />
           <Route path="/blog" element={<BlogLayout />}>
             <Route index element={<BlogIndex />} />
             <Route path="best-lic-plans-2026-comparison-guide" element={<BlogBestLicPlans2026 />} />
@@ -207,6 +214,9 @@ export default function App() {
             <Route path="how-much-life-insurance" element={<BlogHowMuchLifeInsurance />} />
             <Route path="term-vs-whole-life-insurance" element={<BlogTermVsWholeLife />} />
             <Route path="insurance-planning-newlyweds" element={<BlogInsurancePlanningNewlyweds />} />
+            <Route path="lic-term-insurance-plans-2026" element={<BlogLicTermInsurancePlans2026 />} />
+            <Route path="health-vs-life-insurance" element={<BlogHealthVsLifeInsurance />} />
+            <Route path="calculate-life-insurance-coverage" element={<BlogCalculateLifeInsuranceCoverage />} />
           </Route>
         </Routes>
       </main>

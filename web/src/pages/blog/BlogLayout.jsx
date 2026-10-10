@@ -51,6 +51,21 @@ const ARTICLES = [
     title: "Insurance Planning for Newlyweds in India — A Complete Guide",
     description: "Complete insurance planning guide for newly married couples in India. Term insurance, health cover, savings plans, and budget allocation for newlyweds.",
   },
+  {
+    slug: "lic-term-insurance-plans-2026",
+    title: "LIC Term Insurance Plans 2026: Complete Comparison Guide",
+    description: "Compare all LIC term insurance plans — Tech Term 854, Jeevan Amar 855, Jeevan Kiran 875. Premium comparison, features, riders, claim ratio, and buying guide.",
+  },
+  {
+    slug: "health-vs-life-insurance",
+    title: "Health Insurance vs Life Insurance: Which Should You Buy First?",
+    description: "Health insurance vs life insurance comparison for Indians. Which to buy first, coverage needs, tax benefits under 80C and 80D, and how to budget for both.",
+  },
+  {
+    slug: "calculate-life-insurance-coverage",
+    title: "How to Calculate Your Life Insurance Coverage Need",
+    description: "Step-by-step guide to calculating the right life insurance coverage using income multiplier, HLV, and expense methods with Indian examples and calculators.",
+  },
 ];
 
 export { ARTICLES };

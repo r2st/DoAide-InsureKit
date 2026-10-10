@@ -665,6 +665,51 @@ const META = {
       { q: "How much should a couple spend on insurance?", a: "3-5% of combined income on term + health insurance is the minimum. Total insurance spend including savings plans should not exceed 15-20% of household income." },
     ],
   },
+  "/blog/lic-term-insurance-plans-2026": {
+    title: "LIC Term Insurance Plans 2026: Complete Comparison Guide | InsureKit",
+    description: "Compare all LIC term insurance plans — Tech Term 854, Jeevan Amar 855, Jeevan Kiran 875. Premium comparison, features, riders, claim ratio, and buying guide.",
+    keywords: "LIC term insurance, LIC Tech Term 854, Jeevan Amar 855, Jeevan Kiran 875, LIC term plan comparison, best LIC term plan, term insurance India 2026",
+    faq: [
+      { q: "Which is the best LIC term insurance plan?", a: "LIC Tech Term (854) is the best value with the lowest premiums. Jeevan Amar (855) offers increasing cover. Jeevan Kiran (875) returns premiums on survival." },
+      { q: "Is LIC term insurance cheaper than private?", a: "LIC premiums are slightly higher, but the 98.6% claim settlement ratio and government backing make the premium difference worthwhile for many buyers." },
+    ],
+  },
+  "/blog/health-vs-life-insurance": {
+    title: "Health Insurance vs Life Insurance: Which Should You Buy First? | InsureKit",
+    description: "Health insurance vs life insurance comparison for Indians. Which to buy first, coverage needs, tax benefits under 80C and 80D, and budgeting for both.",
+    keywords: "health insurance vs life insurance, health or life insurance first, 80C vs 80D, insurance priority India, health insurance India, life insurance India",
+    faq: [
+      { q: "Should I buy health or life insurance first?", a: "If single with no dependents, buy health insurance first. If you have a spouse or children, buy life insurance (term plan) first. Ideally buy both together — combined cost is under ₹15,000/year for a 25-year-old." },
+      { q: "Can life insurance cover hospital bills?", a: "No. Life insurance pays only on death or maturity. Health insurance covers hospitalisation, surgery, and medical expenses. They solve different problems." },
+    ],
+  },
+  "/blog/calculate-life-insurance-coverage": {
+    title: "How to Calculate Your Life Insurance Coverage Need | InsureKit",
+    description: "Calculate the right life insurance coverage using income multiplier, HLV, and expense methods. Step-by-step examples for Indian salaried professionals.",
+    keywords: "life insurance coverage calculator, how much life insurance, HLV calculator, insurance cover needed India, life insurance calculation, human life value",
+    faq: [
+      { q: "What is the thumb rule for life insurance?", a: "10-15 times annual income. A 30-year-old earning ₹10L/year needs ₹1-1.5 Cr. Use the expense-based method for more accuracy — it accounts for loans, children's education, and existing cover." },
+      { q: "How often should I review my coverage?", a: "Every 2-3 years or after major life events: marriage, child birth, home loan, salary hike. Coverage need increases with dependents and loans but decreases as children grow up." },
+    ],
+  },
+  "/tools/premium-estimator": {
+    title: "Insurance Premium Estimator — Compare Premiums Across Insurers | DoAide InsureKit",
+    description: "Estimate insurance premiums based on age, coverage amount, and policy term. Compare indicative premiums across LIC, HDFC Life, Max Life, ICICI Prudential, SBI Life, and Tata AIA.",
+    keywords: "insurance premium estimator, insurance premium calculator, term insurance premium, compare insurance premiums, cheapest insurance premium, insurance cost India",
+    faq: [
+      { q: "How accurate are premium estimates?", a: "These are indicative estimates based on public rate patterns. Actual premiums vary by ±10-15% based on medical history, BMI, occupation, and insurer underwriting. Get formal quotes for exact pricing." },
+      { q: "Why does smoking affect premium?", a: "Smokers pay 40-80% higher premiums due to increased mortality risk. Some insurers include chewing tobacco and e-cigarettes in the smoker category." },
+    ],
+  },
+  "/tools/policy-comparison": {
+    title: "Policy Comparison Tool — Compare 2-3 Insurance Policies Side by Side | DoAide InsureKit",
+    description: "Compare any 2-3 insurance policies side by side. Enter policy details, see features, premiums, coverage, and benefits compared in one view. Share via WhatsApp or print.",
+    keywords: "policy comparison tool, compare insurance policies, insurance comparison, compare LIC policies, insurance policy compare, side by side insurance comparison",
+    faq: [
+      { q: "Can I compare policies from different insurers?", a: "Yes! Compare any policies side by side — LIC vs private, term vs endowment, or same insurer with different parameters." },
+      { q: "What is cover per rupee?", a: "It shows how much coverage (sum assured) you get for every ₹1 of premium paid. Higher is better — term plans score highest on this metric." },
+    ],
+  },
   "/guides/ulip-vs-mutual-fund": {
     title: "ULIP vs Mutual Fund: Which is Better in 2026? | DoAide InsureKit",
     description: "Detailed comparison of ULIPs and mutual funds — charges, returns, tax benefits, flexibility, and suitability. Make an informed investment choice.",

@@ -296,6 +296,18 @@ const TOOL_CATEGORIES = [
         icon: "🧮",
       },
       {
+        path: "/tools/premium-estimator",
+        name: "Premium Estimator",
+        desc: "Estimate insurance premiums across insurers by age, cover & term",
+        icon: "💲",
+      },
+      {
+        path: "/tools/policy-comparison",
+        name: "Policy Comparison Tool",
+        desc: "Compare 2-3 policies side by side — any insurer, any type",
+        icon: "📋",
+      },
+      {
         path: "/claim-settlement-ratio",
         name: "Claim Settlement Ratio",
         desc: "Compare IRDAI claim settlement ratios for 20+ life insurance companies",
